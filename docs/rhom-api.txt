@@ -1,0 +1,17 @@
+## Rhom Class API - Perform Database Operation on Rho Model Objects
+
+The [Rhom Class API](http://docs.rhomobile.com/rhodes/rhom#rhom-api) allows access to the Rhodes mini database object mapper, performing database operation on Rho model objects.
+
+`clear_notification` - Clear notification for the object.  
+`delete_all(conditions)` - Delete all Rho model objects for a source, filtering by conditions.  
+`destroy` - Destroy a Rho model object.  
+`find, find_all, find_by_sql` - Find Rho model objects.  
+`new(attributes)` - Create a new Rho model object.  
+`create(attributes)` - Create a new Rho model object and save it to the database.  
+`paginate(limit_condition)` - Call `find` with a limit on the number of records.  
+`sync(callback, callback_data, show_status_popup)` - Start the sync process for a Rho model.  
+`set_notification(url, params)` - Set a notification to be called when the sync is complete for this model.  
+`update_attributes(attributes)` - Updates the current Rho model object‚Äôs attributes and saves it to the database.  
+`save` - Saves the current rhom object to the database.  
+`can_modify` - Check if the Rho model object is currently being synced.  
+`changed?` - Determine if a Rho model object has local database changes that need to be synchronized.

@@ -1,6 +1,6 @@
 # Alert API - Popup, Vibrate, Play for System Alerts
 
-The [Alert Class API](http://docs.rhomobile.com/rhodes/device-caps#alerts) lets you call system alert methods for popup, vibrate, or playing audio files.
+Call system alert methods for popup, vibrate, or playing audio files.
 
 ## Alert.hide_popup
 
@@ -10,15 +10,15 @@ Closes the current popup window.
 
 Play the file if the media type is supported by the phone. The file must in the application; for example, /apps/public/test-file.mp3.
 
-`file_name.ext` - The path to the file name, ending in the file name and extension.  
-`media_type` - Media type can be specified explicitly, or can be recognized from the file extension. Known file extensions: .mp3 – audio/mpeg; .wav – audio/x-wav
+file_name.ext - The path to the file name, ending in the file name and extension.  
+media_type - Media type can be specified explicitly, or can be recognized from the file extension. Known file extensions: .mp3 – audio/mpeg; .wav – audio/x-wav
 
 ## Alert.show_popup( { :message, :title, :icon, :buttons, :callback } )
 
 Bring the application up front and show a popup message.
 
-`:message` – text displayed in the popup window.  
-`:title` – title of the popup window.  
+:message – text displayed in the popup window.  
+:title – title of the popup window.  
 :icon – path to an image, or :alert for ! icon, :question for ? icon, :info for information icon.  
 :buttons – array of buttons defined by id and title. Specify either by hash with :id and :title keys, or by string.  
 :callback – url called on button click. Its @params hash is :button_id, :button_title, and :button_index.

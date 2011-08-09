@@ -1,0 +1,23 @@
+# Rhom Database Functions - Reset and Seed the Database
+
+Rhom database functions allow you to reset the Rhom database.
+
+## Rhom.database_full_reset(reset_client_info, reset_local_models)
+
+Deletes all records from the property bag and model tables.
+
+reset_client_info - true if client_info table will be cleaned, false otherwise.
+reset_local_models - true if local (non-synced models) will be cleaned, false otherwise.
+
+## Rhom.database_full_reset_and_logout
+
+Perform a full reset, then logout the RhoSync client.
+ZZZZZ I might want to rephrase this?
+
+## Rhom.database_fullclient_reset_and_logout
+
+Equivalent to `Rhom::Rhom.database_full_reset(true)` followed by `SyncEngine.logout`.
+
+## Rhom.database_local_reset
+
+Reset only local (non-sync-enabled) models.

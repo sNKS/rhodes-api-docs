@@ -1,0 +1,90 @@
+# AsyncHttp API - Connect Directly to Web Services
+
+Asynchronously make calls to http services.
+
+## AsyncHttp.get(url, headers, callback)
+
+Perform an HTTP GET request to the specified URL.
+
+url – URL of the request.  
+headers – Hash of headers to send with the request.  
+callback – Callback action to execute when the request is done.   
+callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
+ZZZZZZZZ put in link to RhoSupport  
+authentication – (optional) Send Basic Auth header with request.
+:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+
+The authentication parameter takes the form:
+
+	:::ruby
+	:authentication => {
+	  :type => :basic, 
+	  :username => "john", 
+	  :password => "secret"
+	} 
+
+## AsyncHttp.post(url, headers, callback)
+
+Perform HTTP POST request to the specified URL.
+
+url – URL of the request.  
+headers – Hash of headers to send with the request.  
+callback – Callback action to execute when the request is done.   
+callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
+ZZZZZZZZ put in link to RhoSupport  
+authentication – (optional) Send Basic Auth header with request.
+:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+
+The authentication parameter takes the form:
+
+	:::ruby
+	:authentication => {
+	  :type => :basic, 
+	  :username => "john", 
+	  :password => "secret"
+	}
+
+## AsyncHttp.download_file(url, headers, filename, callback, callback_param)
+
+Download a file to the specified filename.
+
+url – URL of the request.  
+headers – Hash of headers to send with the request.  
+callback – Callback action to execute when the request is done.   
+callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
+ZZZZZZZZ put in link to RhoSupport  
+authentication – (optional) Send Basic Auth header with request.
+:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+
+The authentication parameter takes the form:
+
+	:::ruby
+	:authentication => {
+	  :type => :basic, 
+	  :username => "john", 
+	  :password => "secret"
+	}
+
+## AsyncHttp.upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
+
+Upload the specified file using HTTP POST.
+
+url – URL of the request.  
+headers – Hash of headers to send with the request.  
+callback – Callback action to execute when the request is done.   
+callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
+ZZZZZZZZ put in link to RhoSupport  
+authentication – (optional) Send Basic Auth header with request.
+:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+
+The authentication parameter takes the form:
+
+	:::ruby
+	:authentication => {
+	  :type => :basic, 
+	  :username => "john", 
+	  :password => "secret"
+	}
+## AsyncHttp.cancel
+
+Cancel the current AsyncHttp call.
