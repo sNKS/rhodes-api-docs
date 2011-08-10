@@ -1,12 +1,18 @@
 development:
+  dirs:
+    apis: './docs'
   index: 'rhodes_api_edge'
   pdfkithost: 'localhost:9393'
   rhonav_host: 'https://app.rhohub.com'
 edge:
+  dirs:
+    apis: './docs'
   index: 'rhodes_api_edge'
   pdfkithost: 'rhodesapi-edge.rhomobile.com'
   rhonav_host: 'https://app.rhohub.com'
 production:
+  dirs:
+    apis: './docs'
   index: 'rhodes_api'
   pdfkithost: 'rhodesapi.rhomobile.com'
   rhonav_host: 'https://app.rhohub.com'
