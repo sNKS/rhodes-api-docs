@@ -6,10 +6,11 @@ Asynchronously make calls to http services.
 
 Cancel the current AsyncHttp call.
 
-## download_file(url, headers, filename, callback, callback_param)
+## download_file
 
 Download a file to the specified filename.
 
+Syntax: download_file(url, headers, filename, callback, callback_param)  
 url – URL of the request.  
 headers – Hash of headers to send with the request.  
 callback – Callback action to execute when the request is done.   
@@ -27,10 +28,11 @@ The authentication parameter takes the form:
 	  :password => "secret"
 	}
 
-## get(url, headers, callback)
+## get
 
 Perform an HTTP GET request to the specified URL.
 
+Syntax: get(url, headers, callback)  
 url – URL of the request.  
 headers – Hash of headers to send with the request.  
 callback – Callback action to execute when the request is done.   
@@ -48,10 +50,11 @@ The authentication parameter takes the form:
 	  :password => "secret"
 	} 
 
-## post(url, headers, callback)
+## post
 
 Perform HTTP POST request to the specified URL.
 
+Syntax: post(url, headers, callback)  
 url – URL of the request.  
 headers – Hash of headers to send with the request.  
 callback – Callback action to execute when the request is done.   
@@ -73,6 +76,7 @@ The authentication parameter takes the form:
 
 Upload the specified file using HTTP POST.
 
+Syntax: upload_file(:url, :headers, :filename, :body, :callback, :callback_param)  
 url – URL of the request.  
 headers – Hash of headers to send with the request.  
 callback – Callback action to execute when the request is done.   
