@@ -8,9 +8,9 @@ Closes the current popup window.
 
 ## play_file
 
-Play the file if the media type is supported by the phone. The file must in the application; for example, /apps/public/test-file.mp3.
+ZZZZZ No syntax
 
-Syntax: play_file(file_name.ext, media_type)
+Play the file if the media type is supported by the phone. The file must in the application; for example, /apps/public/test-file.mp3.
 
 file_name.ext - The path to the file name, ending in the file name and extension.  
 media_type - Media type can be specified explicitly, or can be recognized from the file extension. Known file extensions: .mp3 – audio/mpeg; .wav – audio/x-wav
@@ -18,6 +18,8 @@ media_type - Media type can be specified explicitly, or can be recognized from t
 ## show_popup
 
 Bring the application up front and show a popup message.
+
+ZZZZZ show syntax 1
 
 Syntax: show_popup(popup_message)
 
@@ -33,10 +35,13 @@ popup_message - a text string or a hash of the following form:
 
 Show status messages. The status window will close after clicking on hide button.
 
-Syntax: show_status(title, status_text, hide_button_label)
+ZZZ show syntax 2
 
-status_text – text displayed in status window  
-hide_button_label – label of hide button
+	:::ruby
+	show_status(title, status_text, hide_button_label)
+
+`status_text` – text displayed in status window  
+`hide_button_label` – label of hide button
 
 ## vibrate
 
