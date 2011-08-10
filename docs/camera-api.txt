@@ -2,24 +2,38 @@
 
 Use the camera on a device.
 
-## get_camera_info(camera_type)
+## get_camera_info
 
 Get camera information. Returns max_resolution: a hash with width and height numeric values (returns NIL if the camera_type is not supported).
 
+Syntax: get_camera_info(camera_type)
+
 camera_type – main or front. Default = main. 
 
-## choose_picture(camera_callback_url)
+## choose_picture
 
 Choose a picture from an album.
 
-## take_picture(camera_callback_url, options_hash)
-
-Take a picture. Returns 
+Syntax: choose_picture(camera_callback_url)
 
 camera_callback_url - url to the callback method. Parameters in camera callback:
 
 * status – “ok”, “cancel”, “error”  
-* message – if status == error, then in this value contain message about error  
+* message – if status = error, contains message about error  
+* image_uri – uri of saved image file  
+* image_width – image width * “image_height” – image height  
+* image_format – “png”, “jpg”
+
+## take_picture
+
+Take a picture.
+
+Syntax: take_picture(camera_callback_url, options_hash)
+
+camera_callback_url - url to the callback method. Parameters in camera callback:
+
+* status – “ok”, “cancel”, “error”  
+* message – if status = error, contains message about error 
 * image_uri – uri of saved image file  
 * image_width – image width * “image_height” – image height  
 * image_format – “png”, “jpg”

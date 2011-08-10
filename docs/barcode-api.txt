@@ -6,7 +6,8 @@ Allows the device to recognize a barcode.
 
 Recognizes a barcode on an image. Returns a string with recognized code, or emty string if the barcode is not recognized.
 
-Syntax: barcode_recognize(image_file_full_path)  
+Syntax: barcode_recognize(image_file_full_path)
+
 image_file_full_path - path to the image.
 
 ## take_barcode

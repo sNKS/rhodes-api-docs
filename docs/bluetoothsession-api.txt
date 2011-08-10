@@ -35,8 +35,7 @@ Write data to the connected device.
 
 connected_device_name – name of the connected device.  
 data - array of byte/fixnum  
-ZZZZZZ Okay, what the heck is fixnum?  
-ZZZZZZ Does this return anything?
+ZZZZZZ Okay, what the heck is fixnum? And does this method return anything?
 
 ## read_string(connected_device_name)
 
