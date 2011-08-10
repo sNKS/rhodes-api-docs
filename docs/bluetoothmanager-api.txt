@@ -10,9 +10,11 @@ Returns true if Bluetooth is available on the device, false otherwise.
 
 Turn Bluetooth off.  
 
-## set_device_name(name)
+## set_device_name
 
 Change the local device name.
+
+Syntax: set_device_name(name)
 
 name - The new device name.
 
@@ -24,26 +26,32 @@ Get local device name for current device.
 
 Returns the last error: OK or ERROR or CANCEL.
 
-## create_session(role, callback_url)
+## create_session
 
 Creates a Bluetooth session. Returns OK or ERROR.
+
+Syntax: create_session(role, callback_url)
 
 role – ROLE_SERVER or ROLE_CLIENT  
 callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
  * status – OK / ERROR / CANCEL
  * connected_device_name – name of the connected device
 
-## create_server_and_wait_for_connection(callback_url)
+## create_server_and_wait_for_connection
 
 Connect without user interface. Make the current device discoverable for another device and wait for the client connection from the other device.
+
+Syntax: create_server_and_wait_for_connection(callback_url)
 
 callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
  * status – OK / ERROR / CANCEL
  * connected_device_name – name of the connected device
 
-## create_client_connection_to_device(server_name, callback_url)
+## create_client_connection_to_device
 
 Connect without user interface. Make the client connection to another device.
+
+Syntax: create_client_connection_to_device(server_name, callback_url)
 
 server_name – name of other device. If you connect with user interface, you recieve this name as connected_device_name.
 callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
