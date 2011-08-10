@@ -1,30 +1,30 @@
-# Bluetooth API - Connect to a Bluetooth Device
+# BluetoothManager API
 
-The BluetoothManager API makes a connection between your Bluetooth-equipped device and another Bluetooth-equipped device.
+Makes a connection between your Bluetooth-equipped device and another Bluetooth-equipped device.
 
-## BluetoothManager.is_bluetooth_available
+## is_bluetooth_available
 
 Returns true if Bluetooth is available on the device, false otherwise.
 
-## BluetoothManager.off_bluetooth
+## off_bluetooth
 
 Turn Bluetooth off.  
 
-## BluetoothManager.set_device_name(name)
+## set_device_name(name)
 
 Change the local device name.
 
 name - The new device name.
 
-## BluetoothManager.get_device_name
+## get_device_name
 
 Get local device name for current device.  
 
-## BluetoothManager.get_last_error
+## get_last_error
 
 Returns the last error: OK or ERROR or CANCEL.
 
-## BluetoothManager.create_session(role, callback_url)
+## create_session(role, callback_url)
 
 Creates a Bluetooth session. Returns OK or ERROR.
 
@@ -33,7 +33,7 @@ callback_url – url to a callback method called after session is created or can
  * status – OK / ERROR / CANCEL
  * connected_device_name – name of the connected device
 
-## BluetoothManager.create_server_and_wait_for_connection(callback_url)
+## create_server_and_wait_for_connection(callback_url)
 
 Connect without user interface. Make the current device discoverable for another device and wait for the client connection from the other device.
 
@@ -41,7 +41,7 @@ callback_url – url to a callback method called after session is created or can
  * status – OK / ERROR / CANCEL
  * connected_device_name – name of the connected device
 
-## BluetoothManager.create_client_connection_to_device(server_name, callback_url)
+## create_client_connection_to_device(server_name, callback_url)
 
 Connect without user interface. Make the client connection to another device.
 
@@ -50,7 +50,7 @@ callback_url – url to a callback method called after session is created or can
  * status – OK / ERROR / CANCEL
  * connected_device_name – name of the connected device
 
-## BluetoothManager.stop_current_connection_process
+## stop_current_connection_process
 
 Connect without user interface. Cancel the current connection.
 
