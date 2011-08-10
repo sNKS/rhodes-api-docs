@@ -13,9 +13,9 @@ Play the file if the media type is supported by the phone. The file must in the 
 file_name.ext - The path to the file name, ending in the file name and extension.  
 media_type - Media type can be specified explicitly, or can be recognized from the file extension. Known file extensions: .mp3 – audio/mpeg; .wav – audio/x-wav
 
-## Alert.show_popup( { :message, :title, :icon, :buttons, :callback } )
+## Alert.show_popup(popup_message)
 
-Bring the application up front and show a popup message.
+Bring the application up front and show a popup message, which is a text string or a hash of the following form:
 
 :message – text displayed in the popup window.  
 :title – title of the popup window.  
