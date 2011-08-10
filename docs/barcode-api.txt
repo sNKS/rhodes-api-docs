@@ -16,5 +16,5 @@ Android only. Opena a user interface for real-time barcode recognizing from the 
 Syntax: take_barcode(url_for :action => :take_callback)
 
 callback: 
-ÒstatusÓ Ğ ÒokÓ or ÒcancelÓ  
-ÒbarcodeÓ Ğ recognized barcode string
+â€œstatusâ€ â€“ â€œokâ€ or â€œcancelâ€  
+â€œbarcodeâ€ â€“ recognized barcode string
