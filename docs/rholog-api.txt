@@ -1,13 +1,15 @@
-# RhoLog Class - Print Messages in the Log File rholog.txt
+# RhoLog Class
 
-## RhoLog.info(category, message)
+Print Messages in the Log File rholog.txt
+
+## info(category, message)
 
 Print an information message and timestamp in the rholog.txt file.
 
 category - String. Category of the informational message.  
 message - String. The informational message.
 
-## RhoLog.error(category, message)
+## error(category, message)
 
 Print an error message and timestamp  in the rholog.txt file.
 

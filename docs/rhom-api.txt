@@ -75,7 +75,20 @@ ZZZZZZZZ Shouldn't I change all RhoSync to RhoConnect? Or do that in October?
 ZZZZZZZZ Ask Lars about having a folder in there, I think I will want that.  
 ZZZZZZZ instructions to clone from git. I think point to git to set up, then give clone instruction?
 
-## Rhom.set_notification(notification_url, params)
+## can_modify
+
+Returns ture if the Rhodes model object is not currently being synced (if it is being synced, you should disable editing of the object).  
+ZZZZ make sure you are consistent with this term!
+
+## changed?
+
+Returns true if a Rhodes model object has local database changes that need to be synchronized, false otherwise.
+
+## save
+
+Saves the current Rhodes model object to the database.
+
+## set_notification(notification_url, params)
 
 Set a notification to be called when the sync is complete for this model.
 
@@ -83,21 +96,9 @@ notification_url - the url for your notification callback method.
 params - paramters for the callback method.
 ZZZZZZZ this has also been called data? I want consistency!
 
-## Rhom.update_attributes(attributes)
+## update_attributes(attributes)
 
 Updates the current Rho model object attributes and saves it to the database. This is the fastest way to add or update model attributes.
 
 attributes - The name and value pairs for the model attributes, such as `{"name" => "ABC Inc.", "industry" => "Technology"}`.
 
-## Rhom.save
-
-Saves the current Rhodes model object to the database.
-
-## Rhom.can_modify
-
-Returns ture if the Rhodes model object is not currently being synced (if it is being synced, you should disable editing of the object).  
-ZZZZ make sure you are consistent with this term!
-
-## Rhom.changed?
-
-Returns true if a Rhodes model object has local database changes that need to be synchronized, false otherwise.

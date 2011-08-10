@@ -1,8 +1,8 @@
-# RingtoneManager API - View and Play Ringtones
+# RingtoneManager API
 
 View and play a device's ringtones.
 
-## RingtoneManager.get_all_ringtones
+## get_all_ringtones
 
 Get all ringtones on the device.
 
@@ -13,14 +13,14 @@ Returns a hash containing key/value pairs, where the key is the user-friendly na
 	:::ruby
 	@ringtones = RingtoneManager::get_all_ringtones
 
-## RingtoneManager.play @ringtones['my_ringtone']
+## play @ringtones['my_ringtone']
 
 Play a ringtone.
 
-@ringtones - The hash of ringtones returned by RingtoneManager.get_all_ringtones.  
+@ringtones - The hash of ringtones returned by get_all_ringtones.  
 my_ringtone - The ringtone to play from the hash.
 
-## RingtoneManager.stop
+## stop
 
 Stop playing a ringtone. Can safely be called even if no ringtone is playing.
 

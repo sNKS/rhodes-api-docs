@@ -2,7 +2,7 @@
 
 Access error messages.
 
-## RhoError.message
+## message
 
 Translate the Rho error codes to a text message.
 

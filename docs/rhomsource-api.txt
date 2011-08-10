@@ -1,41 +1,42 @@
-# RhomSource API - Access Sync Information
+# RhomSource API
 
 Exposes sync information, which you can use for alerts, status pages, and so on.
 
-## RhomSource.find(source_name)
+## distinct_objects
+
+Returns the number of records for this source.
+
+## find(source_name)
 
 Load a RhomSource object.
 
 source_name - The name of the source on the RhoSync server.
 
-## RhomSource.source_id
+## last_deleted_size
 
-Returns the id of a source.
+Returns the number of records deleted on last sync.
 
-## RhomSource.name
+## last_inserted_size
 
-Returns the name of the source.
+Returns the number of records inserted on last sync.
 
-## RhomSource.last_updated
-
-Returns the last time the source was synchronized, in `Time.at` format.
-
-## RhomSource.last_inserted_size
-
-Returns the number of records inserted on last sync.  
-
-## RhomSource.last_deleted_size
-
-Returns the number of records deleted on last sync.  
-
-## RhomSource.last_sync_duration
+## last_sync_duration
 
 Returns the duration in seconds of the last sync for this source.  
 
-## RhomSource.last_sync_success
+## last_sync_success
 
-Returns 1 if last sync was successful, 0 if it failed.  
+Returns 1 if last sync was successful, 0 if it failed.
 
-## RhomSource.distinct_objects
+## last_updated
 
-Returns the number of records for this source.
+Returns the last time the source was synchronized, in `Time.at` format.
+
+## name
+
+Returns the name of the source.
+
+## source_id
+
+Returns the id of a source.
+

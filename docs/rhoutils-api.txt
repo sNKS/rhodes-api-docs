@@ -1,11 +1,10 @@
-# Rhom Database Functions - Reset and Seed the Database
+# Rhom Database Functions
 
-The RhoUtils database function allows you to seed the Rhom database.
+Seed the Rhom database.
 
-## RhoUtils.load_offline_data(table_array, seed_prefix_directory)
+## load_offline_data(table_array, seed_prefix_directory)
 
 Seed the Rhom database with initial data.
 
 table_array - Array containing table names, which corresponds to pipe-delimited files.  
-ZZZZZZZZ  
-seed_prefix_directory - Relative path to a directory which contains  containing a directory named fixtures containing the files listed in table_array.
+seed_prefix_directory - Relative path to a directory containing a directory named fixtures, which contains the files listed in table_array.

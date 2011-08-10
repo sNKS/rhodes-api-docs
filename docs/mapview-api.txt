@@ -1,12 +1,14 @@
-# MapView API - Provides a Map Interface
+# MapView API 
 
-The [MapView Class API](http://docs.rhomobile.com/rhodes/device-caps#mapview) provides an embeddable map interface with the create method and various settings and annotations depending on the map provider (such as Google).
+Provides an embeddable map interface with the create method and various settings and annotations depending on the map provider (such as Google).
 
 ZZZZZZZ Hmmph, really, is this accurate below?!?!?!
 
-## MapView.create map_params - Create a map on your device.
+## create map_params
 
-map_params - A hash (ZZZZZZZZ yes? this is a hash?) consisting of:
+Create a map on your device.
+
+map_params - A hash consisting of:
 
 provider - The provider. 'Google' supported on iPhone, Android and Blackberry. 'ESRI' supported on iPhone, Android, Blackberry, and Windows Mobile.
 settings - Map settings.
