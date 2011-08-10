@@ -6,17 +6,19 @@ Call system alert methods for popup, vibrate, or playing audio files.
 
 Closes the current popup window.
 
-## play_file(file_name.ext, media_type)
+## play_file
 
 Play the file if the media type is supported by the phone. The file must in the application; for example, /apps/public/test-file.mp3.
 
+Syntax: play_file(file_name.ext, media_type)  
 file_name.ext - The path to the file name, ending in the file name and extension.  
 media_type - Media type can be specified explicitly, or can be recognized from the file extension. Known file extensions: .mp3 – audio/mpeg; .wav – audio/x-wav
 
-## show_popup(popup_message)
+## show_popup
 
 Bring the application up front and show a popup message.
 
+Syntax: show_popup(popup_message)  
 popup_message - a text string or a hash of the following form:
 
 :message – text displayed in the popup window.  
@@ -25,28 +27,19 @@ popup_message - a text string or a hash of the following form:
 :buttons – array of buttons defined by id and title. Specify either by hash with :id and :title keys, or by string.  
 :callback – url called on button click. Its @params hash is :button_id, :button_title, and :button_index.
 
-Example Call:
-
-	:::ruby
-	Alert.show_popup( {
-	  :message => 'Some message', 
-	  :title => 'Custom title', 
-	  :icon => '/public/images/icon.png',
-	  :buttons => ["Yes", "No", 
-	    {:id => 'cancel', :title => 'Cancel all'}],
-	    :callback => url_for(:action => :on_dismiss_popup) } )
-
-## show_status(title, status_text, hide_button_label)
+## show_status
 
 Show status messages. The status window will close after clicking on hide button.
 
+Syntax: show_status(title, status_text, hide_button_label)  
 status_text – text displayed in status window  
 hide_button_label – label of hide button
 
-## vibrate(duration_in_milliseconds)
+## vibrate
 
 Vibrate the device.
 
+Syntax: vibrate(duration_in_milliseconds)  
 duration_in_milliseconds - vibrate for the number of milliseconds, up to 25500; if 0 or no duration is specified, vibrate for 2500 milliseconds.
 
 
