@@ -1,4 +1,4 @@
 section 'getting-started', "Rhodes API Reference" do
   topic 'home',                 'Home'
-  topic 'some-api',             'Some API'
+  topic 'alert-api',             'Alert API'
 end
