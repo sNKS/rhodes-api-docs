@@ -1,15 +1,15 @@
-## RhoLog Class - Print Messages in the Log File rholog.txt
+# RhoLog Class - Print Messages in the Log File rholog.txt
 
 ## RhoLog.info(category, message)
 
-Print an information message in the rholog.txt file.
+Print an information message and timestamp in the rholog.txt file.
 
 category - String. Category of the informational message.  
 message - String. The informational message.
 
 ## RhoLog.error(category, message)
 
-Print an error message in the rholog.txt file.
+Print an error message and timestamp  in the rholog.txt file.
 
 category - String. Category of the error message.  
 message - String. The error message.

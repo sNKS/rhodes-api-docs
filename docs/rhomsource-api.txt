@@ -36,6 +36,6 @@ Returns the duration in seconds of the last sync for this source.
 
 Returns 1 if last sync was successful, 0 if it failed.  
 
-## RhomSource.distinct objects
+## RhomSource.distinct_objects
 
 Returns the number of records for this source.

@@ -1,0 +1,45 @@
+# MapView API - Provides a Map Interface
+
+The [MapView Class API](http://docs.rhomobile.com/rhodes/device-caps#mapview) provides an embeddable map interface with the create method and various settings and annotations depending on the map provider (such as Google).
+
+ZZZZZZZ Hmmph, really, is this accurate below?!?!?!
+
+## MapView.create map_params - Create a map on your device.
+
+map_params - A hash (ZZZZZZZZ yes? this is a hash?) consisting of:
+
+provider - The provider. 'Google' supported on iPhone, Android and Blackberry. 'ESRI' supported on iPhone, Android, Blackberry, and Windows Mobile.
+settings - Map settings.
+annotations - array of map annotation objects (list of pins on the map).
+
+### settings
+
+map_type - display "standard", "satellite", or "hybrid" map.
+
+region - two types allowed:
+
+* [latitude,longitude,latitudeDelta,longitudeDelta]. The area displayed by the map view.  
+latitude,longitude - the map coordinate of the region center.  
+latitudeDelta – Degrees of north-to-south distance. One degree of latitude is approximately 111 kilometers (69 miles).
+longitudeDelta – Degrees of east-to-west distance. One degree of longitude is approximately 111 kilometers (69 milies) at the equator, and 0 kilometers at the poles.
+
+* {:center => center, :radius => radius}. The area displayed by the map view.
+center – string describing center of area that is allowed by google geocoding service. Examples: “1 infinite loop, cupertino, ca 95014”, “California, USA”, “37.365519,-121.982918”  
+radius – radius of displayed area measured in degrees
+
+zoom_enabled – true if zoom of the map is enabled
+
+scroll_enabled – true if scrool of the map is enabled
+
+shows_user_location – true if current user location is displayed on the map  
+api_key – Maps JavaScript API Key (sign up for it here). Note that this parameter is ignored on Android! For Android you should get another key and specify it in the app’s build.yml as described here.  
+ZZZZZ add urls for here
+
+### Annotations
+
+latitude,longitude – map coordinate of the annotation  
+street_address – if map coordinate is not specified, framework will attempt to obtain it using provided street address from google geo-coding service  
+title – title of the annotation callout  
+subtitle – subtitle of the annotation callout  
+url – url to follow when user clicks on the callout button
+

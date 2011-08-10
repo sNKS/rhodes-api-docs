@@ -1,0 +1,33 @@
+# Camera API
+
+Lets you use the camera on a device.
+
+## Camera.take_picture(camera_callback_url, options_hash)
+
+Take a picture.
+
+camera_callback_url - url to the callback method. Parameters in camera callback:
+
+* “status” – “ok”, “cancel”, “error”
+* “message” – if status == error, then in this value contain message about error 
+* “image_uri” – uri of saved image file
+* “image_width” – image width * “image_height” – image height
+* “image_format” – “png”, “jpg”
+
+options_hash - hash of options. Used only on iOS and Android.
+
+ * camera_type – main or front. Default value = main.
+ * desired_width – desired width in pixels. Default value = max camera width. 
+ * desired_height – desired height in pixels. Default value = max camera height. 
+ * color_model - RGB or Grayscale. Default = RGB. 
+ * format - image format. jpg or png. Default = jpg.
+ * enable_editing – boolean. Enables post photo capture image customizing; image will captured reduced to screen size (not full size). Supported only on iPhone. Default = true.
+
+
+
+
+
+
+## Camera.choose_picture(camera_callback_url)
+
+Choose a picture from an album.

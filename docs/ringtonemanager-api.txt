@@ -26,6 +26,3 @@ Stop playing a ringtone. Can safely be called even if no ringtone is playing.
 
 Currently implemented for Android, Blackberry and Windows mobile. On Blackberry, only the user installed ringtones are accessible. System preinstalled ringtones are not accessible due to Blackberry limitations.
 
-
-
-

@@ -1,0 +1,7 @@
+# Barcode API
+
+Allows the device to recognize a barcode.
+
+## Barcode.barcode_recognize(image_file_full_path)
+
+Recognizes a barcode on an image.
