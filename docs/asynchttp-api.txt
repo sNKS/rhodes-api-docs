@@ -16,7 +16,7 @@ callback – Callback action to execute when the request is done.
 callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
 ZZZZZZZZ put in link to RhoSupport  
 authentication – (optional) Send Basic Auth header with request.
-:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+ssl_verify_peer – (optional) Verify SSL certificates. Default = true.
 
 The authentication parameter takes the form:
 
@@ -37,7 +37,7 @@ callback – Callback action to execute when the request is done.
 callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
 ZZZZZZZZ put in link to RhoSupport  
 authentication – (optional) Send Basic Auth header with request.
-:ssl_verify_peer – (optional) Verify SSL certificates, true by default.
+ssl_verify_peer – (optional) Verify SSL certificates. Default = true.
 
 The authentication parameter takes the form:
 
@@ -77,7 +77,7 @@ url – URL of the request.
 headers – Hash of headers to send with the request.  
 callback – Callback action to execute when the request is done.   
 callback_param – (optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.  
-ZZZZZZZZ put in link to RhoSupport  
+ZZZZZZZZ put in link to RhoSupport.url_encode  
 authentication – (optional) Send Basic Auth header with request.
 :ssl_verify_peer – (optional) Verify SSL certificates, true by default.
 
