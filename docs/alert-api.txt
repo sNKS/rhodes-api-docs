@@ -2,7 +2,7 @@
 
 Call system alert methods for popup, vibrate, or playing audio files.
 
-## Alert.hide_popup
+## hide_popup
 
 Closes the current popup window.
 
@@ -36,16 +36,17 @@ Example Call:
 	    {:id => 'cancel', :title => 'Cancel all'}],
 	    :callback => url_for(:action => :on_dismiss_popup) } )
 
-## vibrate(duration_in_milliseconds)
-
-Vibrate the device.
-
-duration_in_milliseconds - vibrate for the number of milliseconds, up to 25500; if 0 or no duration is specified, vibrate for 2500 milliseconds.
-
 ## show_status(title, status_text, hide_button_label)
 
 Show status messages. The status window will close after clicking on hide button.
 
 status_text – text displayed in status window  
 hide_button_label – label of hide button
+
+## vibrate(duration_in_milliseconds)
+
+Vibrate the device.
+
+duration_in_milliseconds - vibrate for the number of milliseconds, up to 25500; if 0 or no duration is specified, vibrate for 2500 milliseconds.
+
 
