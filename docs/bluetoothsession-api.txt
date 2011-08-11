@@ -2,50 +2,145 @@
 
 Controls the session between your Bluetooth-equipped device and another Bluetooth-equipped device.
 
-## set_callback(connected_device_name, session_callback_url)
+## set_callback
 
 Set the Bluetooth session callback. Returns OK or ERROR.
 
-connected_device_name – name of the connected device.  
-session_callback_url - url to the callback method. Parameters in callback:
- * connected_device_name – name of connected device
- * event_type – SESSION_INPUT_DATA_RECEIVED or ERROR or SESSION_DISCONNECT
+	:::ruby
+	set_callback(connected_device_name, session_callback_url)
 
-## disconnect(connected_device_name)
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device.</td>
+</tr>
+<tr>
+	<td><code>session_callback_url</code></td>
+	<td>url to a callback method. Parameters received in the callback:
+		<table border="1">
+			<tr>
+				<td><code>connected_device_name</code></td>
+				<td>name of connected device</td>
+			</tr>
+			<tr>
+				<td><code>event_type</code></td>
+				<td>SESSION_INPUT_DATA_RECEIVED or ERROR or SESSION_DISCONNECT</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+## disconnect
 
 Disconnect from the device. Returns OK or ERROR.
 
-connected_device_name – name of the connected device. 
+	:::ruby
+	disconnect(connected_device_name)
+
+<table border="1">
+<tr>
+	<table border="1">
+<tr>
+	<td><code>role</code></td>
+	<td>ROLE_SERVER or ROLE_CLIENT</td>
+</tr>
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback:
+		<table border="1">
+			<tr>
+				<td><code>status</code></td>
+				<td>OK / ERROR / CANCEL</td>
+			</tr>
+			<tr>
+				<td><code>connected_device_name</code></td>
+				<td>Name of the device connected via Bluetooth.</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table><td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device that is to be disconnected.</td>
+</tr>
+</table>
 
 ## get_status(connected_device_name)
 
 Get the session status. Returns received but not read data size (ZZZZ I do not know what this means!!!!); -1 if error, 0 if empty(not actually received data)
 
-connected_device_name – name of the connected device. 
+	:::ruby
+	get_status(connected_device_name)
 
-## read(connected_device_name)
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device.</td>
+</tr>
+</table>
+
+## read
 
 Read data from the connected device. Returns an array of bytes.
 
-connected_device_name – name of the connected device.
+	:::ruby
+	read(connected_device_name)
 
-## write(connected_device_name, data)
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device that is read from.</td>
+</tr>
+</table>
+
+## write
 
 Write data to the connected device.
 
-connected_device_name – name of the connected device.  
-data - array of byte/fixnum  
-ZZZZZZ Okay, what the heck is fixnum? And does this method return anything?
+	:::ruby
+	write(connected_device_name, data)
 
-## read_string(connected_device_name)
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device that is written to.</td>
+</tr>
+<tr>
+	<td><code>data</code></td>
+	<td>The information to write to the connected device. Array of bytes or fixnum.</td>
+</tr>
+</table>
+
+## read_string
 
 Read string from the connected device. Returns a string.
 
+	:::ruby
+	read_string(connected_device_name)
+
 connected_device_name – name of the connected device.
 
-## write_string(connected_device_name, data)
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device that is read from.</td>
+</tr>
+</table>
+
+## write_string
 
 Write string to the connected device. Returns OK or ERROR.
 
-connected_device_name – name of the connected device.  
-data - a string.
+	:::ruby
+	write_string(connected_device_name, data)
+
+<table border="1">
+<tr>
+	<td><code>connected_device_name</code></td>
+	<td>String. The name of the connected Bluetooth device that is written to.</td>
+</tr>
+<tr>
+	<td><code>data</code></td>
+	<td>The information to write to the connected device. String.</td>
+</tr>
+</table>

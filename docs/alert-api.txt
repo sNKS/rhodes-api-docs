@@ -55,7 +55,7 @@ Bring the application up front and show a message in a popup window.
 
 ## show_status
 
-Show status messages in a window. The status window closes after the user clicks on the hide button.
+Display a window containing a status message. The window closes after the user clicks on its hide button.
 
 	:::ruby
 	show_status(title, status_text, hide_button_label)

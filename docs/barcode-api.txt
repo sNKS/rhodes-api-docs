@@ -18,11 +18,20 @@ Recognizes a barcode on an image. Returns a string with recognized code, or emty
 
 ## take_barcode
 
-Android only. Opena a user interface for real-time barcode recognizing from the camera. If a barcode is found, user can confirm recognizing barcode or continue recognizing the barcode. If user confirmed or cancelled the callback will be called.
+Android only. Opena a user interface for real-time barcode recognition from the device camera. If a barcode is found, the user can confirm barcode recognition, or continue to try to recognize the barcode. When the user confirms or cancels, the callback is called.
 
 	:::ruby
 	take_barcode(url_for :action => :take_callback)
 
-callback: 
-“status” – “ok” or “cancel”  
-“barcode” – recognized barcode string
+The callback receives these parameters:
+
+<table border="1">
+<tr>
+	<td><code>status</code></td>
+	<td>ok or cancel</td>
+</tr>
+<tr>
+	<td><code>barcode</code></td>
+	<td>The string for the recognized barcode.</td>
+</tr>
+</table>

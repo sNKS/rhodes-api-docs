@@ -14,9 +14,15 @@ Turn Bluetooth off.
 
 Change the local device name.
 
-Syntax: set_device_name(name)
+	:::ruby
+	set_device_name(name)
 
-name - The new device name.
+<table border="1">
+<tr>
+	<td><code>name</code></td>
+	<td>String. The new name for the device.</td>
+</tr>
+</table>
 
 ## get_device_name
 
@@ -30,35 +36,86 @@ Returns the last error: OK or ERROR or CANCEL.
 
 Creates a Bluetooth session. Returns OK or ERROR.
 
-Syntax: create_session(role, callback_url)
+	:::ruby
+	create_session(role, callback_url)
 
-role – ROLE_SERVER or ROLE_CLIENT  
-callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
- * status – OK / ERROR / CANCEL
- * connected_device_name – name of the connected device
+<table border="1">
+<tr>
+	<td><code>role</code></td>
+	<td>ROLE_SERVER or ROLE_CLIENT</td>
+</tr>
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback:
+		<table border="1">
+			<tr>
+				<td><code>status</code></td>
+				<td>OK / ERROR / CANCEL</td>
+			</tr>
+			<tr>
+				<td><code>connected_device_name</code></td>
+				<td>Name of the device connected via Bluetooth.</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
 
 ## create_server_and_wait_for_connection
 
-Connect without user interface. Make the current device discoverable for another device and wait for the client connection from the other device.
+Connect without a user interface. Makes the current device discoverable for another device, and waits for the client connection from the other device.
 
-Syntax: create_server_and_wait_for_connection(callback_url)
+	:::ruby
+	create_server_and_wait_for_connection(callback_url)
 
-callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
- * status – OK / ERROR / CANCEL
- * connected_device_name – name of the connected device
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback:
+		<table border="1">
+			<tr>
+				<td><code>status</code></td>
+				<td>OK / ERROR / CANCEL</td>
+			</tr>
+			<tr>
+				<td><code>connected_device_name</code></td>
+				<td>Name of the device connected via Bluetooth.</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
 
 ## create_client_connection_to_device
 
 Connect without user interface. Make the client connection to another device.
 
-Syntax: create_client_connection_to_device(server_name, callback_url)
+	:::ruby
+	create_client_connection_to_device(server_name, callback_url)
 
-server_name – name of other device. If you connect with user interface, you recieve this name as connected_device_name.
-callback_url – url to a callback method called after session is created or canceled. Parameters received in the callback:
- * status – OK / ERROR / CANCEL
- * connected_device_name – name of the connected device
+<table border="1">
+<tr>
+	<td><code>server_name</code></td>
+	<td>The name of the other device. If you connect with user interface, you receive this name as connected_device_name.</td>
+</tr>
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback:
+		<table border="1">
+			<tr>
+				<td><code>status</code></td>
+				<td>OK / ERROR / CANCEL</td>
+			</tr>
+			<tr>
+				<td><code>connected_device_name</code></td>
+				<td>Name of the device connected via Bluetooth.</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
 
 ## stop_current_connection_process
 
-Connect without user interface. Cancel the current connection.
+When connecting without user interface (`create_server_and_wait_for_connection`), cancel the current connection.
 
