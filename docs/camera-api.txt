@@ -6,7 +6,8 @@ Use the camera on a device.
 
 Get camera information. Returns max_resolution: a hash with width and height numeric values (returns NIL if the camera_type is not supported).
 
-Syntax: get_camera_info(camera_type)
+	:::ruby
+	get_camera_info(camera_type)
 
 camera_type – main or front. Default = main. 
 
@@ -14,9 +15,10 @@ camera_type – main or front. Default = main.
 
 Choose a picture from an album.
 
-Syntax: choose_picture(camera_callback_url)
+	:::ruby
+	choose_picture(camera_callback_url)
 
-camera_callback_url - url to the callback method. Parameters in camera callback:
+`camera_callback_url` - url to the callback method. Parameters in camera callback:
 
 * status – “ok”, “cancel”, “error”  
 * message – if status = error, contains message about error  
@@ -28,9 +30,10 @@ camera_callback_url - url to the callback method. Parameters in camera callback:
 
 Take a picture.
 
-Syntax: take_picture(camera_callback_url, options_hash)
+	:::ruby
+	take_picture(camera_callback_url, options_hash)
 
-camera_callback_url - url to the callback method. Parameters in camera callback:
+`camera_callback_url` - url to the callback method. Parameters in camera callback:
 
 * status – “ok”, “cancel”, “error”  
 * message – if status = error, contains message about error 
@@ -38,7 +41,7 @@ camera_callback_url - url to the callback method. Parameters in camera callback:
 * image_width – image width * “image_height” – image height  
 * image_format – “png”, “jpg”
 
-options_hash - hash of options. Used only on iOS and Android.
+`options_hash` - hash of options. Used only on iOS and Android.
 
  * camera_type – main or front. Default value = main.  
  * desired_width – desired width in pixels. Default value = max camera width.  

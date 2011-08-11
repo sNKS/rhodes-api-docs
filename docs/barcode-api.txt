@@ -12,7 +12,7 @@ Recognizes a barcode on an image. Returns a string with recognized code, or emty
 <table border="1">
 <tr>
 	<td><code>image_file_full_path</code></td>
-	<td>Path to the image.</td>
+	<td>Path to the image that contains the barcode to be recognized.</td>
 </tr>
 </table>
 
@@ -28,7 +28,7 @@ The callback receives these parameters:
 <table border="1">
 <tr>
 	<td><code>status</code></td>
-	<td>ok or cancel</td>
+	<td>OK or CANCEL</td>
 </tr>
 <tr>
 	<td><code>barcode</code></td>

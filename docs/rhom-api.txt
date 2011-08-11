@@ -2,23 +2,26 @@
 
 Allows access to the Rhodes mini database object mapper, performing database operation on Rho model objects.
 
-## Rhom.clear_notification
+## clear_notification
 
 Clear notification for the object.
 
-## Rhom.delete_all(conditions)
+## delete_all
 
 Delete all Rho model objects for a source, filtering by conditions.
 
+	:::ruby
+	Rhom.delete_all(conditions)
+
 conditions - filtering conditions, such as :conditions => {'industry'=>'electronics'}.
 
-## Rhom.destroy
+## destroy
 
 Destroy a Rho model object.
 
-## Rhom.find(arguments)
+## Rhom.find(*arguments)
 
-Find Rho model objects. The arguments you can use are:
+Find Rho model objects. The *arguments you can use are:
 
 :all - returns all objects w/ optional conditions  
 :first - returns first object matching conditions  
@@ -30,31 +33,45 @@ Find Rho model objects. The arguments you can use are:
 :per_page - (optional) maximum number of items return  
 :offset - (optional) offset from beginning of the list
 
-## Rhom.find_all
+## find_all
 
-Alias for find(:all,*args).
+Alias for find(:all,*arguments).
 
-## Rhom.find_by_sql(sql_query)
+## find_by_sql
 
 Returns rhom object(s) based on sql_query. This method works only for schema models.
 
+	:::ruby
+	find_by_sql(sql_query)
+
 sql_query - An sql query, such as `"SELECT * FROM Account"`.
 
-## Rhom.new(attributes)
+## new
 
 Create a new Rho model object.
 
+	:::ruby
+	new(attributes)
+
 attributes - Attributes assigned to the new model object, such as `{"name" => "ABC Inc.","address" => "555 5th St."}`.
 
-## Rhom.create(attributes)
+## create
 
 Create a new Rho model object and save it to the database.
 
+	:::ruby
+	create(attributes)
+
 attributes - Attributes assigned to the new model object, such as `{"name" => "ABC Inc.","address" => "555 5th St."}`.
 
-## Rhom.paginate(arguments)
+## paginate
 
-Call `find` with a limit on the number of records.  The arguments you can use are:
+Call `find` with a limit on the number of records.  
+
+	:::ruby
+	paginate(*arguments)
+
+The *arguments you can use are:
 
 :page - which page to return, used as offset in combination with :per_page  
 :per_page - with :page (used as offset), the number of records to return, such as `:page => 1, :per_page => 20`  
@@ -96,9 +113,12 @@ notification_url - the url for your notification callback method.
 params - paramters for the callback method.
 ZZZZZZZ this has also been called data? I want consistency!
 
-## update_attributes(attributes)
+## update_attributes
 
 Updates the current Rho model object attributes and saves it to the database. This is the fastest way to add or update model attributes.
+
+	:::ruby
+	update_attributes(attributes)
 
 attributes - The name and value pairs for the model attributes, such as `{"name" => "ABC Inc.", "industry" => "Technology"}`.
 

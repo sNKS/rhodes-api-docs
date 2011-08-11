@@ -2,9 +2,12 @@
 
 Seed the Rhom database.
 
-## load_offline_data(table_array, seed_prefix_directory)
+## load_offline_data
 
 Seed the Rhom database with initial data.
+
+	:::ruby
+	load_offline_data(table_array, seed_prefix_directory)
 
 table_array - Array containing table names, which corresponds to pipe-delimited files.  
 seed_prefix_directory - Relative path to a directory containing a directory named fixtures, which contains the files listed in table_array.

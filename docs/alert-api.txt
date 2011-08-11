@@ -45,7 +45,7 @@ Bring the application up front and show a message in a popup window.
 			<td>array of buttons defined by id and title. Specify either by hash with :id and :title keys, or by string.</td>
 		</tr>
 		<tr>
-			<td><code>:callback</code></td>
+			<td><b>:callback</b></td>
 			<td>url called on button click. Its @params hash is :button_id, :button_title, and :button_index.</td>
 		</tr>
 	</table>
@@ -70,7 +70,7 @@ Display a window containing a status message. The window closes after the user c
 	<td>The status message displayed in the popup status window.</td>
 </tr>
 <tr>
-	<td><b>hide_button_label</b></td>
+	<td><code>hide_button_label</code></td>
 	<td>The label text for the hide button in the popup status window.</td>
 </tr>
 </table>

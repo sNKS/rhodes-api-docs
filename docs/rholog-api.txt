@@ -1,10 +1,13 @@
 # RhoLog Class
 
-Print Messages in the Log File rholog.txt
+Print Messages in the log file rholog.txt
 
-## info(category, message)
+## info
 
 Print an information message and timestamp in the rholog.txt file.
+
+	:::ruby
+	info(category, message)
 
 category - String. Category of the informational message.  
 message - String. The informational message.
@@ -12,6 +15,9 @@ message - String. The informational message.
 ## error(category, message)
 
 Print an error message and timestamp  in the rholog.txt file.
+
+	:::ruby
+	error(category, message)
 
 category - String. Category of the error message.  
 message - String. The error message.
