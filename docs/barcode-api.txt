@@ -6,15 +6,22 @@ Allows the device to recognize a barcode.
 
 Recognizes a barcode on an image. Returns a string with recognized code, or emty string if the barcode is not recognized.
 
-Syntax: barcode_recognize(image_file_full_path)
+	:::ruby
+	barcode_recognize(image_file_full_path)
 
-image_file_full_path - path to the image.
+<table border="1">
+<tr>
+	<td><code>image_file_full_path</code></td>
+	<td>Path to the image.</td>
+</tr>
+</table>
 
 ## take_barcode
 
-Android only. Opena a user interface for real-time barcode recognizing from the camera. If a barcode is found, user can confirm recognizing barcode or continue recognizing the barcode. If user confirmed or cancelled the callback will be called. 
+Android only. Opena a user interface for real-time barcode recognizing from the camera. If a barcode is found, user can confirm recognizing barcode or continue recognizing the barcode. If user confirmed or cancelled the callback will be called.
 
-Syntax: take_barcode(url_for :action => :take_callback)
+	:::ruby
+	take_barcode(url_for :action => :take_callback)
 
 callback: 
 “status” – “ok” or “cancel”  
