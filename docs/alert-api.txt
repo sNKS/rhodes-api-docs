@@ -8,50 +8,71 @@ Closes the current popup window.
 
 ## play_file
 
-Play an audio file if that media type is supported by the device. The file must located in the application; for example, `/apps/public/test-file.mp3`.
+Play an audio file if that media type is supported by the device.
 
 	:::ruby
-	play_file(filename.ext, media_type)
+	play_file(path, media_type)
 
- * `file_name.ext` - The path to the file, ending in the file name and extension.  
- * **media_type** - Media type can be specified explicitly, or can be recognized from the file extension. The known file extensions are .mp3 – audio/mpeg and .wav – audio/x-wav.
+ZZZZZZ Question: is media_type optional? Is it a string of either ".mp3" or ".wav"?
+
+<table border="1">
+	<tr>
+		<td><code>path</code></td>
+		<td>The path to the file, ending in the file name and extension. The file must located in the application; for example, `/apps/public/test-file.mp3`.</td>
+	</tr>
+	<tr>
+		<td><code>media_type</code></td>
+		<td>Media type can be specified explicitly, or can be recognized from the file extension. The known file extensions are .mp3 – audio/mpeg and .wav – audio/x-wav.</td>
+	</tr>
+</table>
 
 ## show_popup
 
-Bring the application up front and show a message in a popup window.
+Bring the application up front and show a message in a popup window. The message can be passed as a string or a hash.
 
 	:::ruby
-	show_popup(popup_message)
+	show_popup "message"
 
 <table border="1">
 <tr>
-	<td><code>popup_message</code></td>
-	<td>a text string or a hash of the following form:
-	<table border="1">
-		<tr>
-			<td><code>:message</code></td>
-			<td>text displayed in the popup window</td>
-		</tr>
-		<tr>
-			<td><code>:title</code></td>
-			<td>title of the popup window</td>
-		</tr>
-		<tr>
-			<td><code>:icon</code></td>
-			<td>path to an image, or :alert for ! icon, :question for ? icon, :info for information icon.</td>
-		</tr>
-		<tr>
-			<td><code>:buttons</code></td>
-			<td>array of buttons defined by id and title. Specify either by hash with :id and :title keys, or by string.</td>
-		</tr>
-		<tr>
-			<td><b>:callback</b></td>
-			<td>url called on button click. Its @params hash is :button_id, :button_title, and :button_index.</td>
-		</tr>
-	</table>
-	</td>
+	<td><code>message</code></td>
+	<td>a text string</td>
 </tr>
 </table>
+
+	:::ruby
+	show_popup( {
+      :message => string, 
+      :title => string, 
+      :icon => string,
+      :buttons => [string_or_hash],
+      :callback => url )
+
+<table border="1">
+	<tr>
+		<td><code>:message</code></td>
+		<td>text displayed in the popup window</td>
+	</tr>
+	<tr>
+		<td><code>:title</code></td>
+		<td>title of the popup window</td>
+	</tr>
+	<tr>
+		<td><code>:icon</code></td>
+		<td>path to an image, or :alert for ! icon, :question for ? icon, :info for information icon.</td>
+	</tr>
+	<tr>
+		<td><code>:buttons</code></td>
+		<td>array of buttons. Specify each button either by hash with :id and :title keys, or by a string.</td>
+	</tr>
+	<tr>
+		<td><code>:callback</code></td>
+		<td>url called on button click, such as `url_for(:action => :on_dismiss_popup)`. It is called with a @params hash of :button_id, :button_title, and :button_index.</td>
+	</tr>
+</table>
+
+Click for an example of show_popup and a hash message.
+ZZZZZZ Put the anchor into the devel reference and link to it.
 
 ## show_status
 
@@ -63,21 +84,19 @@ Display a window containing a status message. The window closes after the user c
 <table border="1">
 <tr>
 	<td><code>title</code></td>
-	<td>The title on the status message popup window.</td>
+	<td>String. The title on the status message popup window.</td>
 </tr>
 <tr>
 	<td><code>status_text</code></td>
-	<td>The status message displayed in the popup status window.</td>
+	<td>String. The status message displayed in the popup status window.</td>
 </tr>
 <tr>
 	<td><code>hide_button_label</code></td>
-	<td>The label text for the hide button in the popup status window.</td>
+	<td>String. The label text for the hide button in the popup status window.</td>
 </tr>
 </table>
 
 ## vibrate
-
-Vibrate the device for a specified time.
 
 	:::ruby
 	vibrate(duration)
@@ -85,7 +104,7 @@ Vibrate the device for a specified time.
 <table border="1">
 <tr>
 	<td><code>duration</code></td>
-	<td>Vibrate the device for this number of milliseconds, up to 25500; if 0 or not specified, vibrate for 2500 milliseconds.</td>
+	<td>Integer. Vibrate the device for this number of milliseconds, up to 25500; if 0 or not specified, vibrate for 2500 milliseconds.</td>
 </tr>
 </table>
 

@@ -9,8 +9,26 @@ Opens a window on the device where user draws his signature. Saves the  signatur
 	:::ruby
 	take_signature(callback_url, image_format)
 
-callback_url - url to callback method called after the user enters the signature. Callback parameters:
-* status – OK or CANCEL.
-* signature_uri – path to the signature image.
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to callback method called after the user enters a signature.</td>
+</tr>
+<tr>
+	<td><code>image_format</code></td>
+	<td>The image format: "jpg" or "png".</td>
+</tr>
+</table>
 
-image_format - The image format: jpg or png.
+Callback method parameters:
+
+<table border="1">
+<tr>
+	<td><code>status</code></td>
+	<td>OK or CANCEL.</td>
+</tr>
+<tr>
+	<td><code>signature_uri</code></td>
+	<td>path to the signature image.</td>
+</tr>
+</table>

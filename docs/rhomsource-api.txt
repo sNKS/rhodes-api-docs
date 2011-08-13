@@ -8,9 +8,16 @@ Returns the number of records for this source.
 
 ## find(source_name)
 
-Load a RhomSource object.
+Returns a RhomSource object.
 
 source_name - The name of the source on the RhoSync server.
+
+<table border="1">
+<tr>
+	<td><code>source_name</code></td>
+	<td>The name of the source on the RhoSync server.</td>
+</tr>
+</table>
 
 ## last_deleted_size
 

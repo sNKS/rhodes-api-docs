@@ -1,0 +1,68 @@
+# GeoLocation API
+
+Access geological information from your device.
+
+The [GeoLocation Class API](http://docs.rhomobile.com/rhodes/device-caps#geolocation) allows you to access geological information using Ruby calls in your controller.
+
+## latitude
+
+Get current latitude.
+
+## longitude
+
+Get current longitude.
+
+## known_position?
+
+Returns true if the location system is up and running, false otherwise.
+
+## set_notification
+
+Set callback to track location changes.
+
+	:::ruby
+	set_notification(callback, callback_params, ping_gpssystem_timeout)
+
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url for the callback method called upon a location change notification.</td>
+</tr>
+<tr>
+	<td><code>callback_params</code></td>
+	<td>Parameters for the callback method.</td>
+</tr>
+<tr>
+	<td><code>ping_gpssystem_timeout</code></td>
+	<td>(optional) Redefine the timeout in seconds for the gps system reading. If 0, system timeout used.</td>
+</tr>
+</table>
+
+callback paramiters:
+
+<table border="1">
+<tr>
+	<td><code>known_position</code></td>
+	<td>ZZZZ What is this? a boolean?</td>
+</tr>
+<tr>
+	<td><code>latitude</code></td>
+	<td>Parameters for the callback method.</td>
+</tr>
+<tr>
+	<td><code>longitude</code></td>
+	<td>(optional) Redefine the timeout in seconds for the gps system reading. If 0, system timeout used.</td>
+</tr>
+</table>
+
+
+known_position, latitude, longitude, available, status(‘error’, ‘ok’), error_code(from RhoError)
+
+
+
+## haversine_distance
+
+Get the distance between two points in miles.
+
+	:::ruby
+	haversine_distance(latitude1, longitude1, latitude2, longitude2)

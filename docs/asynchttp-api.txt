@@ -16,11 +16,15 @@ Download a file to the specified filename.
 <table border="1">
 <tr>
 	<td><code>:url</code></td>
-	<td>URL of the request.</td>
+	<td>url of the request.</td>
 </tr>
 <tr>
 	<td><code>:headers</code></td>
 	<td>Hash of headers to send with the request.</td>
+</tr>
+<tr>
+	<td><code>:filename</code></td>
+	<td>The path and name where the downloaded file is received.</td>
 </tr>
 <tr>
 	<td><code>:callback</code></td>
@@ -30,24 +34,7 @@ Download a file to the specified filename.
 	<td><code>:callback_param</code></td>
 	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
 </tr>
-<tr>
-	<td><code>;authentication</code></td>
-	<td>(optional) Send Basic Auth header with request.</td>
-</tr>
-<tr>
-	<td><code>:ssl_verify_peer</code></td>
-	<td>(optional) Verify SSL certificates. Default = true.</td>
-</tr>
 </table>
-
-The authentication parameter takes the form:
-
-	:::ruby
-	:authentication => {
-	  :type => :basic, 
-	  :username => "john", 
-	  :password => "secret"
-	}
 
 ## get
 
@@ -73,7 +60,7 @@ Syntax: get(:url, :headers, :callback, :callback_param)
 	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
 </tr>
 <tr>
-	<td><code>;authentication</code></td>
+	<td><code>:authentication</code></td>
 	<td>(optional) Send Basic Auth header with request.</td>
 </tr>
 <tr>
@@ -95,7 +82,7 @@ The authentication parameter takes the form:
 
 Perform HTTP POST request to the specified URL.
 
-Syntax: post(:url, :headers, :callback, :callback_param)
+Syntax: post(:url, :headers, :body, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -107,6 +94,10 @@ Syntax: post(:url, :headers, :callback, :callback_param)
 	<td>Hash of headers to send with the request.</td>
 </tr>
 <tr>
+	<td><code>:body</code></td>
+	<td>String. The message body of the HTTP POST.</td>
+</tr>
+<tr>
 	<td><code>:callback</code></td>
 	<td>Callback action to execute when the request is done.</td>
 </tr>
@@ -115,7 +106,7 @@ Syntax: post(:url, :headers, :callback, :callback_param)
 	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
 </tr>
 <tr>
-	<td><code>;authentication</code></td>
+	<td><code>:authentication</code></td>
 	<td>(optional) Send Basic Auth header with request.</td>
 </tr>
 <tr>
@@ -149,29 +140,19 @@ Syntax: upload_file(:url, :headers, :filename, :body, :callback, :callback_param
 	<td>Hash of headers to send with the request.</td>
 </tr>
 <tr>
+	<td><code>:filename</code></td>
+	<td>The path and name of the file to be uploaded.</td>
+</tr>
+<tr>
+	<td><code>:body</code></td>
+	<td>Leave this value blank, AsyncHttp will fill in multipart body.</td>
+</tr>
+<tr>
 	<td><code>:callback</code></td>
-	<td>Callback action to execute when the request is done.</td>
+	<td>Callback action to execute when the upload request is done.</td>
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
 	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
 </tr>
-<tr>
-	<td><code>;authentication</code></td>
-	<td>(optional) Send Basic Auth header with request.</td>
-</tr>
-<tr>
-	<td><code>:ssl_verify_peer</code></td>
-	<td>(optional) Verify SSL certificates. Default = true.</td>
-</tr>
 </table>
-
-The authentication parameter takes the form:
-
-	:::ruby
-	:authentication => {
-	  :type => :basic, 
-	  :username => "john", 
-	  :password => "secret"
-	}
-

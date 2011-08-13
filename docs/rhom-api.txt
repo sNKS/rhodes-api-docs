@@ -1,6 +1,6 @@
-# Rhom API - Perform Database Operation on Rho Model Objects
+# Rhodes Model API - Perform Database Operation on Rhodes Model Objects
 
-Allows access to the Rhodes mini database object mapper, performing database operation on Rho model objects.
+Allows access to the Rhodes mini database object mapper, performing database operation on Rhodes model objects.
 
 ## clear_notification
 
@@ -8,61 +8,110 @@ Clear notification for the object.
 
 ## delete_all
 
-Delete all Rho model objects for a source, filtering by conditions.
+Delete all Rhodes model objects for a source, filtering by conditions.
 
 	:::ruby
-	Rhom.delete_all(conditions)
+	delete_all(:conditions)
 
-conditions - filtering conditions, such as :conditions => {'industry'=>'electronics'}.
+<table border="1">
+<tr>
+	<td><code>:conditions</code></td>
+	<td>(optional) hash of attribute/values; delete only objects matching these criteria, such as <code>:conditions => {'industry'=>'electronics'}</code>.</td>
+</tr>
+</table>
 
 ## destroy
 
-Destroy a Rho model object.
+Destroy a Rhodes model object.
 
-## Rhom.find(*arguments)
+## find(argument list)
 
-Find Rho model objects. The *arguments you can use are:
+Find Rho model objects. The argument list can consist of the following arguements.
 
-:all - returns all objects w/ optional conditions  
-:first - returns first object matching conditions  
-:count - returns number of objects matching conditions  
-:conditions - (optional) hash of attribute/values to match supports sql fragment(i.e. "name like 'rhomobile') or sql fragment with binding (you have to define :select with sql queries) (i.e. ["name like ?", "'#{company#}'"]) Note: use single comma around string values  
-:order - (optional) attribute(s) to order the list  
-:orderdir - (optional) order direction('ASC' (default), 'DESC' )  
-:select - (optional) array of string attributes to return with the object.  This is useful if your model has a lot of attributes but your query only needs a few of them.  
-:per_page - (optional) maximum number of items return  
-:offset - (optional) offset from beginning of the list
+<table border="1">
+<tr>
+	<td><code>:all</code></td>
+	<td>returns all objects; can use optional <code>:conditions</code>.</td>
+</tr>
+<tr>
+	<td><code>:first</code></td>
+	<td>returns first object matching <code>:conditions</code>.</td>
+</tr>
+<tr>
+	<td><code>:count</code></td>
+	<td>returns the number of objects matching these <code>:conditions</code>.</td>
+</tr>
+<tr>
+	<td><code>:conditions</code></td>
+	<td>(optional) hash of attribute/values. Also supports sql fragments (i.e. "name like 'rhomobile'") or sql fragment with binding (you have to define :select with sql queries) (i.e. ["name like ?", "'#{company#}'"]) Use a comma around string values.</td>
+</tr>
+<tr>
+	<td><code>:order</code></td>
+	<td>(optional) attribute(s) to order the list.</td>
+</tr>
+<tr>
+	<td><code>:orderdir</code></td>
+	<td>(optional) Order direction: 'ASC' asending, 'DESC' descending. Default = 'ASC'.)</td>
+</tr>
+<tr>
+	<td><code>:select</code></td>
+	<td>(optional) array of string attributes to return with the object. Useful if your model has many attributes and your query only needs a few of them.</td>
+</tr>
+<tr>
+	<td><code>:per_page</code></td>
+	<td>(optional) maximum number of items to return.</td>
+</tr>
+<tr>
+	<td><code>:offset</code></td>
+	<td>(optional) offset from beginning of the list.</td>
+</tr>
+</table>
 
 ## find_all
 
-Alias for find(:all,*arguments).
+Alias for find(:all, argument list).
 
 ## find_by_sql
 
-Returns rhom object(s) based on sql_query. This method works only for schema models.
+Returns Rhodes model object(s) based on sql_query. This method works only for schema models.
 
 	:::ruby
 	find_by_sql(sql_query)
 
-sql_query - An sql query, such as `"SELECT * FROM Account"`.
+<table border="1">
+<tr>
+	<td><code>sql_query</code></td>
+	<td>An sql query, such as <code>"SELECT * FROM Account"</code>.</td>
+</tr>
+</table>
 
 ## new
 
-Create a new Rho model object.
+Create a new Rhodes model object.
 
 	:::ruby
 	new(attributes)
 
-attributes - Attributes assigned to the new model object, such as `{"name" => "ABC Inc.","address" => "555 5th St."}`.
+<table border="1">
+<tr>
+	<td><code>attributes</code></td>
+	<td>List of attributes assigned to the new model object, such as <code>{"name" => "ABC Inc.","address" => "555 5th St."}</code>.</td>
+</tr>
+</table>
 
 ## create
 
-Create a new Rho model object and save it to the database.
+Create a new Rhodes model object and save it to the database.
 
 	:::ruby
 	create(attributes)
 
-attributes - Attributes assigned to the new model object, such as `{"name" => "ABC Inc.","address" => "555 5th St."}`.
+<table border="1">
+<tr>
+	<td><code>attributes</code></td>
+	<td>List of attributes assigned to the new model object, such as <code>{"name" => "ABC Inc.","address" => "555 5th St."}</code>.</td>
+</tr>
+</table>
 
 ## paginate
 
@@ -73,29 +122,51 @@ Call `find` with a limit on the number of records.
 
 The *arguments you can use are:
 
-:page - which page to return, used as offset in combination with :per_page  
-:per_page - with :page (used as offset), the number of records to return, such as `:page => 1, :per_page => 20`  
-:conditions - same as find with :conditions  
-:order - same as find with :order  
-:select - same as find with :select  
+<table border="1">
+<tr>
+	<td><code>:page</code></td>
+	<td>which page to return.</td>
+</tr>
+<tr>
+	<td><code>:per_page</code></td>
+	<td>with :page (used as offset), the number of records to return, such as <code>:page => 1, :per_page => 20</code>
+</tr>
+<tr>
+	<td><code>:conditions</code></td>
+	<td>same as find with <code>:conditions</code></td>
+</tr>
+<tr>
+	<td><code>:order</code></td>
+	<td>same as find with <code>:order</code></td>
+</tr>
+<tr>
+	<td><code>:select</code></td>
+	<td>same as find with <code>:select</code></td>
+</tr>
+</table>
 
-## Rhom.sync(callback, callback_data, show_status_popup)
+## sync(callback_url, callback_data, show_status_popup)
 
-Start the sync process for a Rho model.
+Start the sync process for a Rhodes model.
 
-callback_url - the url for your sync callback method. If this argument is used, SyncEngine.set_notification is called before SyncEngine.dosync.  
-(ZZZZZZZZ well, try to get the callback argument name consistent, but do not let that slow you down!)  
-callback_data - Data for the callback method.  
-show_status_popup - true if you want to show a popup window upon sync, false otherwise.
-
-ZZZZZZZZ Shouldn't I change all RhoSync to RhoConnect? Or do that in October?  
-ZZZZZZZZ Ask Lars about having a folder in there, I think I will want that.  
-ZZZZZZZ instructions to clone from git. I think point to git to set up, then give clone instruction?
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>the url for the sync callback method. If this is used, SyncEngine.set_notification is called before SyncEngine.dosync.</td>
+</tr>
+<tr>
+	<td><code>callback_data</code></td>
+	<td>Data for the callback method.</td>
+</tr>
+<tr>
+	<td><code>show_status_popup</code></td>
+	<td>true if you want to show a popup window upon sync, false otherwise.</td>
+</tr>
+</table>
 
 ## can_modify
 
-Returns ture if the Rhodes model object is not currently being synced (if it is being synced, you should disable editing of the object).  
-ZZZZ make sure you are consistent with this term!
+Returns true if the Rhodes model object is not currently being synced (if it is being synced, you should disable editing of the object).
 
 ## changed?
 
@@ -105,13 +176,20 @@ Returns true if a Rhodes model object has local database changes that need to be
 
 Saves the current Rhodes model object to the database.
 
-## set_notification(notification_url, params)
+## set_notification(callback_url, params)
 
 Set a notification to be called when the sync is complete for this model.
 
-notification_url - the url for your notification callback method.
-params - paramters for the callback method.
-ZZZZZZZ this has also been called data? I want consistency!
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>the url for your sync is finished notification callback method.</td>
+</tr>
+<tr>
+	<td><code>params</code></td>
+	<td>parameters for the callback method.</td>
+</tr>
+</table>
 
 ## update_attributes
 
@@ -120,5 +198,10 @@ Updates the current Rho model object attributes and saves it to the database. Th
 	:::ruby
 	update_attributes(attributes)
 
-attributes - The name and value pairs for the model attributes, such as `{"name" => "ABC Inc.", "industry" => "Technology"}`.
+<table border="1">
+<tr>
+	<td><code>attributes</code></td>
+	<td>List of attributes and their updated values, such as <code>{"name" => "ABC Inc.","address" => "555 5th St."}</code>.</td>
+</tr>
+</table>
 

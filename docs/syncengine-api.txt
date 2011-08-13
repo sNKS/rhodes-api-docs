@@ -2,20 +2,27 @@
 
 Synchronize data for the Rhodes model and handle updates between the Rhodes application and the RhoSync server.
 
-
-ZZZZZZZ where should I discuss @param, which is where a lot of the data will come from for these methods?
-
-
 ## login
 
 Authenticates the user with the RhoSync server.
 
 	:::ruby
-	login(login, password, callback)
+	login(login, password, callback_url)
 
-login - The ZZZZZ is this the username?
-password - The password for the RhoSync server.  
-callback - a url_for call to handle the result of the login request with a callback.
+<table border="1">
+<tr>
+	<td><code>login</code></td>
+	<td>The login name for the RhoSync server.</td>
+</tr>
+<tr>
+	<td><code>password</code></td>
+	<td>The password for the RhoSync server.</td>
+</tr>
+<tr>
+	<td><code>callback_url</code></td>
+	<td>url to the callback method that is called when the login is finished.</td>
+</tr>
+</table>
 
 ## logout
 
@@ -32,7 +39,12 @@ Start a synchronization with the RhoSync server and show an optional sync status
 	:::ruby
 	dosync(show_sync_status)
 
-show_sync_status - True if you want to show a sync status popup, false otherwise.
+<table border="1">
+<tr>
+	<td><code>show_sync_status</code></td>
+	<td>True if you want to show a sync status popup, false otherwise.</td>
+</tr>
+</table>
 
 ## dosync_source
 
@@ -41,9 +53,17 @@ Start a synchronization with the RhoSync server for a given source id or source 
 	:::ruby
 	dosync_source(source_id_or_name, show_sync_status)
 
-source_id_or_name - Source name or ID.  
-ZZZZ the example shows Product.get_source_id.to_i and Product.get_source_name. I do not know where these came from! A class I have to document?  
-show_sync_status - True if you want to show a sync status popup, false otherwise.
+<table border="1">
+<tr>
+	<td><code>source_id_or_name</code></td>
+	<td>The source name or ID.</td>
+</tr><tr>
+	<td><code>show_sync_status</code></td>
+	<td>True if you want to show a sync status popup, false otherwise.</td>
+</tr>
+</table>  
+
+ZZZZ The example shows Product.get_source_id.to_i and Product.get_source_name. Are these methods from a RhoSync Source API? I can't find them in the documentation.
 
 ## lock_sync_mutex
 
@@ -64,10 +84,20 @@ Set notification callback for a model.
 	:::ruby
 	set_notification(source_id, callback_url, params)
 
-source_id - The source id for the RhoSync server.  
-callback_url - url_for call to a callback for notification.
-
-ZZZZ What should I write here about @params and its contents? 
+<table border="1">
+<tr>
+	<td><code>source_id</code></td>
+	<td>The source id for the RhoSync server. If -1, set notification for all Rhodes models, and the callback is not removed after the sync process completes.</td>
+</tr>
+<tr>
+	<td><code>callback_url</code></td>
+	<td>path to the callback method called when the sync is complete.</td>
+</tr>
+<tr>
+	<td><code>params</code></td>
+	<td>parameters for the callback method.</td>
+</tr>
+</table>
 
 ## clear_notification
 
@@ -76,7 +106,12 @@ Clears the synchronization notification for a given source id.
 	:::ruby
 	clear_notification(source_id)
 
-source_id - The source id for the RhoSync server.
+<table border="1">
+<tr>
+	<td><code>source_id</code></td>
+	<td>The id of the source on the RhoSync server.</td>
+</tr>
+</table>
 
 ## on_sync_create_error
 
@@ -85,9 +120,20 @@ Perform an action upon a synchronization create error.
 	:::ruby
 	on_sync_create_error(source_name, objects, action)
 
-source_name - The name of the RhoSync server.  
-objects - One or more error objects.  
-action - :delete to remove the object from client, :recreate to push this object to the server again at the next sync.
+<table border="1">
+<tr>
+	<td><code>source_name</code></td>
+	<td>The name of the source on the RhoSync server.</td>
+</tr>
+<tr>
+	<td><code>objects</code></td>
+	<td>One or more error objects.</td>
+</tr>
+<tr>
+	<td><code>action</code></td>
+	<td>:delete to remove the object from client, :recreate to push this object to the server again at the next sync.</td>
+</tr>
+</table>
 
 ## on_sync_update_error
 
@@ -96,11 +142,24 @@ Perform an action upon a sync update error.
 	:::ruby
 	on_sync_update_error(source_name, objects, action, rollback_objects)
 
-source_name - The name of the RhoSync server.  
-objects - One or more error objects.  
-action - :retry to push the update object operation to server again at next sync, :rollback to write the rollback_objects to client database.  
-rollback_objects - Contains objects attributes before failed update and sends by server. should be specified for :rollback action.  
-ZZZZZZ I do NOT know what the above means!!!!!!!!!
+<table border="1">
+<tr>
+	<td><code>source_name</code></td>
+	<td>The name of the source on the RhoSync server.</td>
+</tr>
+<tr>
+	<td><code>objects</code></td>
+	<td>One or more error objects.</td>
+</tr>
+<tr>
+	<td><code>action</code></td>
+	<td>:retry to push the update object operation to server again at next sync, :rollback to write the rollback_objects to client database.</td>
+</tr>
+<tr>
+	<td><code>rollback_objects</code></td>
+	<td>must be specified for :rollback action. Contains the attributes for the objects before a failed update and send by the server.</td>
+</tr>
+</table>
 
 ## on_sync_delete_error
 
@@ -109,9 +168,20 @@ Perform action upon a synchronization delete error.
 	:::ruby
 	on_sync_delete_error(src_name, objects, action)
 
-source_name - The name of the RhoSync server.  
-objects - One or more error objects.  
-action - :retry – will push delete object operation to server again at next sync. ZZZZZZZ so either :retry or nil?
+<table border="1">
+<tr>
+	<td><code>source_name</code></td>
+	<td>The name of the source on the RhoSync server.</td>
+</tr>
+<tr>
+	<td><code>objects</code></td>
+	<td>One or more error objects.</td>
+</tr>
+<tr>
+	<td><code>action</code></td>
+	<td>:retry – will push delete object operation to server again at next sync.</td>
+</tr>
+</table>
 
 ## set_pollinterval
 
@@ -120,7 +190,12 @@ Updates the SyncEngine poll interval.
 	:::ruby
 	set_pollinterval(interval)
 
-interval - number of seconds for the poll interval. 0 disables polling-based synchronization (you may still use push-based-synchronization).
+<table border="1">
+<tr>
+	<td><code>interval</code></td>
+	<td>number of seconds for the poll interval. 0 disables polling-based synchronization (you may still use push-based-synchronization).</td>
+</tr>
+</table>
 
 ## set_syncserver
 
@@ -129,7 +204,12 @@ Sets the RhoSync server address and stores it in rhoconfig.txt.
 	:::ruby
 	set_syncserver(server_url)
 
-server_url - the path to the RhoSync server.
+<table border="1">
+<tr>
+	<td><code>server_url</code></td>
+	<td>The url for the RhoSync server.</td>
+</tr>
+</table>
 
 ## set_objectnotify_url
 
@@ -137,6 +217,13 @@ Set the callback for when the SyncEngine notifies when a specific object on the 
 
 	:::ruby
 	set_objectnotify_url(callback_url)
+
+<table border="1">
+<tr>
+	<td><code>callback_url</code></td>
+	<td>The url for the callback method called upon the SyncEngine notification.</td>
+</tr>
+</table>
 
 callback_url - the url for the callback.
 
@@ -147,11 +234,16 @@ Set the synchronization page size for the SyncEngine.
 	:::ruby
 	set_pagesize(size)
 
-size - Size of the SyncEngine synchronization page. Default is 2000.
+<table border="1">
+<tr>
+	<td><code>size</code></td>
+	<td>Size of the SyncEngine synchronization page. Default is 2000.</td>
+</tr>
+</table>
 
 ## get_pagesize
 
-Get the current sync page size for the SyncEngine.  
+Returns the current sync page size for the SyncEngine. 
 
 ## enable_status_popup
 
@@ -160,13 +252,23 @@ Enable or disable the show status popup.
 	:::ruby
 	enable_status_popup(true_or_false)
 
-true_or_false - true to enable the show status popup. Default is false, except for Blackberry where default is true.
+<table border="1">
+<tr>
+	<td><code>true_or_false</code></td>
+	<td>true to enable the show status popup. Default is false, except for Blackberry where default is true.</td>
+</tr>
+</table>
 
 ## set_ssl_verify_peer(true_or_false)
 
-Enable or disable verification of RhoSync ssl certificates.  
+Enable or disable verification of RhoSync ssl certificates.
 
-true_or_false - true to enable verification of RhoSync ssl certificates. Default is true.
+<table border="1">
+<tr>
+	<td><code>true_or_false</code></td>
+	<td>true to enable verification of RhoSync ssl certificates. Default is true.</td>
+</tr>
+</table>
 
 ## get_user_name
 
@@ -179,14 +281,43 @@ Returns the current username of the SyncEngine session if logged_in is true; if 
 Call search on the RhoSync application.
 
 	:::ruby
-	search(source_names, from, search_params, offset, max_results, callback, callback_param, progress_step)
+	search(:source_names, :from, :search_params, :offset, max_results, :callback, :callback_param, :progress_step)
 
-source_names - (optional) list of source names for when you wish to search the RhoSync server in multiple sources.  
-from - Sets the RhoSync path that records will be fetched with (optional). Default is 'search'.  
-search_params - hash containing key/value search items.  
-offset - Starting record to be returned.  
-max_results - Maximum number of records to be returned.  
-callback - Callback to be executed after search is completed.  
-callback_param - (optional) Parameters passed to callback.  
-progress_step - (optional) Define how often the search callback will be executed with 'in_progress' state.  
-sync_changes - (optional) true or false(default). Define this if the client changes the send to server before search.
+<table border="1">
+<tr>
+	<td><code>:source_names</code></td>
+	<td>(optional) list of source names for when you wish to search the RhoSync server in multiple sources.</td>
+</tr>
+<tr>
+	<td><code>:from</code></td>
+	<td>(optional) Sets the RhoSync path that records will be fetched with. Default is 'search'.</td>
+</tr>
+<tr>
+	<td><code>:search_params</code></td>
+	<td>hash containing key/value search items.</td>
+</tr>
+<tr>
+	<td><code>:offset</code></td>
+	<td>Starting record to be returned.</td>
+</tr>
+<tr>
+	<td><code>:max_results</code></td>
+	<td>Maximum number of records to be returned.</td>
+</tr>
+<tr>
+	<td><code>:callback</code></td>
+	<td>Callback to be executed after search is completed.</td>
+</tr>
+<tr>
+	<td><code>:callback_param</code></td>
+	<td>(optional) Parameters passed to callback.</td>
+</tr>
+<tr>
+	<td><code>:progress_step</code></td>
+	<td>(optional) Define how often the search callback will be executed with 'in_progress' state.</td>
+</tr>
+<tr>
+	<td><code>:sync_changes</code></td>
+	<td>(optional) true or false(default). Define if the client changes the send to server before search.</td>
+</tr>
+</table>

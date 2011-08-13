@@ -1,0 +1,112 @@
+# DateTimePicker API
+
+Allow the user to choose date or time.
+ZZZZZZZ I need a better description of what the methods are doing.
+
+## choose
+
+Have the user choose a date or time.
+
+	:::ruby
+	choose(callback, title, initial_time, fmt, opaque)
+
+<table border="1">
+<tr>
+	<td><code>callback</code></td>
+	<td>url to callback method that is called when the user chooses a date/time and presses OK or Cancel.</td>
+</tr>
+<tr>
+	<td><code>title</code></td>
+	<td>The title of the date/time input field.</td>
+</tr>
+<tr>
+	<td><code>initial_time</code></td>
+	<td>The inital time.</td>
+</tr>
+<tr>
+	<td><code>fmt</code></td>
+	<td>The format of the input field: 0 - full date and time, 1 - date only, 2 - time only.</td>
+</tr>
+<tr>
+	<td><code>opaque</code></td>
+	<td>(optional) </td>
+</tr>
+</table>
+
+## choose_with_range
+
+	:::ruby
+	choose_with_range(callback, title, initial_time, fmt, user_data, mindatetime, maxdatetime)
+
+<table border="1">
+<tr>
+	<td><code>callback</code></td>
+	<td>url to callback method that is called when the user chooses a date/time and presses OK or Cancel.</td>
+</tr>
+<tr>
+	<td><code>title</code></td>
+	<td>The title of the date/time input field.</td>
+</tr>
+<tr>
+	<td><code>initial_time</code></td>
+	<td>The time.</td>
+</tr>
+<tr>
+	<td><code>fmt</code></td>
+	<td>The format of the input field: 0 - full date and time, 1 - date only, 2 - time only.</td>
+</tr>
+<tr>
+	<td><code>user_data</code></td>
+	<td>(optional) </td>
+</tr>
+<tr>
+	<td><code>mindatetime</code></td>
+	<td>minimum datetime for setup range. Setup to Time.at(0) for no limit.</td>
+</tr>
+<tr>
+	<td><code>maxdatetime</code></td>
+	<td>maximum datetime for setup range. Setup to Time.at(0) for no limit.</td>
+</tr>
+</table>
+
+## set_change_value_callback
+
+Set a callback for listen “on change” event; if you use this method, use it before each call of the choose methods.
+
+ZZZZZZ "on change" event? where did that come from?
+
+<table border="1">
+<tr>
+	<td><code>callback</code></td>
+	<td>url to callback method that is called on the "on change" event.</td>
+</tr>
+</table>
+
+## callback method
+
+The callback method uses the following parameters.
+
+<table border="1">
+<tr>
+	<td><code>status</code></td>
+	<td>"ok" or "cancel"</td>
+</tr>
+<tr>
+	<td><code>result</code></td>
+	<td>String. The selected date as the number of seconds since Epoch. Ruby time can be created from it using the Time::at method. No result if status = "cancel".</td>
+</tr>
+<tr>
+	<td><code>user_data</code></td>
+	<td>(optional) the same string that was passed into the choose method.</td>
+</tr>
+<tr>
+	<td><code>mindatetime</code></td>
+	<td>minimum datetime for setup range. Setup to Time.at(0) for no limit.</td>
+</tr>
+<tr>
+	<td><code>maxdatetime</code></td>
+	<td>maximum datetime for setup range. Setup to Time.at(0) for no limit.</td>
+</tr>
+</table>
+
+

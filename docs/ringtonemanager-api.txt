@@ -2,30 +2,28 @@
 
 View and play a device's ringtones.
 
+Currently implemented for Android, Blackberry and Windows mobile. On Blackberry, only the user installed ringtones are accessible. System preinstalled ringtones are not accessible due to Blackberry limitations.
+
 ## get_all_ringtones
 
 Get all ringtones on the device.
 
 Returns a hash containing key/value pairs, where the key is the user-friendly name of ringtone, and the value is its full file name.
 
-### Example
-
-	:::ruby
-	@ringtones = RingtoneManager::get_all_ringtones
-
 ## play
 
-Play a ringtone.
+Play a ringtone. If called while another ringtone is playing, the old ringtone will stop playing and the new one will start playing.
 
 	:::ruby
-	play @ringtones['my_ringtone']
+	play ringtone
 
-@ringtones - The hash of ringtones returned by get_all_ringtones.  
-my_ringtone - The ringtone to play from the hash.
+<table border="1">
+<tr>
+	<td><code>ringtone</code></td>
+	<td>A ringtone from the ringtone hash returned by get_all_ringtones, such as <code>@ringtones['My Ringtone']</code>.</td>
+</tr>
+</table>
 
 ## stop
 
 Stop playing a ringtone. Can safely be called even if no ringtone is playing.
-
-Currently implemented for Android, Blackberry and Windows mobile. On Blackberry, only the user installed ringtones are accessible. System preinstalled ringtones are not accessible due to Blackberry limitations.
-

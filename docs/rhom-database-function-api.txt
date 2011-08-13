@@ -1,6 +1,6 @@
-# Rhom Database Functions
+# Rhom API
 
-Reset and Seed the rhodes model database.
+Reset the Rhodes model database.
 
 ## database_fullclient_reset_and_logout
 
@@ -13,14 +13,21 @@ Deletes all records from the property bag and model tables.
 	:::ruby
 	database_full_reset(reset_client_info, reset_local_models)
 
-reset_client_info - true if client_info table will be cleaned, false otherwise.
-reset_local_models - true if local (non-synced models) will be cleaned, false otherwise.
+<table border="1">
+<tr>
+	<td><code>reset_client_info</code></td>
+	<td>true if client_info table will be cleaned, false otherwise.</td>
+</tr>
+<tr>
+	<td><code>reset_local_models</code></td>
+	<td>true if local (non-synced models) will be cleaned, false otherwise.</td>
+</tr>
+</table>
 
-## Rhom.database_full_reset_and_logout
+## database_full_reset_and_logout
 
 Perform a full reset, then logout the RhoSync client.
-ZZZZZ I might want to rephrase this?
 
-## Rhom.database_local_reset
+## database_local_reset
 
 Reset only local (non-sync-enabled) models.

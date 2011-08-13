@@ -16,17 +16,7 @@ Set the Bluetooth session callback. Returns OK or ERROR.
 </tr>
 <tr>
 	<td><code>session_callback_url</code></td>
-	<td>url to a callback method. Parameters received in the callback:
-		<table border="1">
-			<tr>
-				<td><code>connected_device_name</code></td>
-				<td>name of connected device</td>
-			</tr>
-			<tr>
-				<td><code>event_type</code></td>
-				<td>SESSION_INPUT_DATA_RECEIVED or ERROR or SESSION_DISCONNECT</td>
-			</tr>
-		</table>
+	<td>url to a callback method. Parameters received in the callback: connected_device_name - name of connected device; event_type - SESSION_INPUT_DATA_RECEIVED or ERROR or SESSION_DISCONNECT
 	</td>
 </tr>
 </table>
@@ -47,17 +37,7 @@ Disconnect from the device. Returns OK or ERROR.
 </tr>
 <tr>
 	<td><code>callback_url</code></td>
-	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback:
-		<table border="1">
-			<tr>
-				<td><code>status</code></td>
-				<td>OK / ERROR / CANCEL</td>
-			</tr>
-			<tr>
-				<td><code>connected_device_name</code></td>
-				<td>Name of the device connected via Bluetooth.</td>
-			</tr>
-		</table>
+	<td>url to a callback method called after the Bluetooth session is created or canceled. Parameters received in the callback: status of OK / ERROR / CANCEL, and connected_device_name (the name of the device connected via Bluetooth.
 	</td>
 </tr>
 </table><td><code>connected_device_name</code></td>
@@ -67,7 +47,7 @@ Disconnect from the device. Returns OK or ERROR.
 
 ## get_status(connected_device_name)
 
-Get the session status. Returns received but not read data size (ZZZZ I do not know what this means!!!!); -1 if error, 0 if empty(not actually received data)
+Get the session status. Returns either the received but not read data size; or -1 if error; or 0 if empty (did not receive data).
 
 	:::ruby
 	get_status(connected_device_name)
