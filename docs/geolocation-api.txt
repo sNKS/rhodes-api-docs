@@ -38,27 +38,27 @@ Set callback to track location changes.
 </tr>
 </table>
 
-callback paramiters:
+Examples of parameters to use in your callback:
 
 <table border="1">
 <tr>
 	<td><code>known_position</code></td>
-	<td>ZZZZ What is this? a boolean?</td>
+	<td>Return from known_position? method.</td>
 </tr>
 <tr>
 	<td><code>latitude</code></td>
-	<td>Parameters for the callback method.</td>
+	<td>Return from call to latitude method.</td>
 </tr>
 <tr>
 	<td><code>longitude</code></td>
-	<td>(optional) Redefine the timeout in seconds for the gps system reading. If 0, system timeout used.</td>
+	<td>Return from call to longitude method.</td>
 </tr>
+<tr>
+	<td><code>status</code></td>
+	<td>"OK" or "ERROR"</td>
 </table>
 
-
-known_position, latitude, longitude, available, status(‘error’, ‘ok’), error_code(from RhoError)
-
-
+ZZZZZZZ Why does the devel guide show these callback parameters; can't you actually set them to anything? known_position, latitude, longitude, available, status(‘error’, ‘ok’), error_code(from RhoError)
 
 ## haversine_distance
 
@@ -66,3 +66,22 @@ Get the distance between two points in miles.
 
 	:::ruby
 	haversine_distance(latitude1, longitude1, latitude2, longitude2)
+
+<table border="1">
+<tr>
+	<td><code>latitude1</code></td>
+	<td>Latitude of the first point.</td>
+</tr>
+<tr>
+	<td><code>longitude1</code></td>
+	<td>Longitude of the first point.</td>
+</tr>
+<tr>
+	<td><code>latitude2</code></td>
+	<td>Latitude of the second point.</td>
+</tr>
+<tr>
+	<td><code>longitude2</code></td>
+	<td>Longitude of the second point.</td>
+</tr>
+</table>

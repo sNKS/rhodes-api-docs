@@ -1,0 +1,61 @@
+## RhoContact Methods
+
+Access a Device Contacts
+
+The [RhoContact Class API](http://docs.rhomobile.com/rhodes/device-caps#pim-contacts) provides access to a device's phone book and contacts. It has such properties as id, first and last name, and phone numbers, and it has such methods as:
+
+## find
+
+Returns the contacts in the device phone book.
+
+	:::ruby
+	find(contacts)
+
+<table border="1">
+<tr>
+	<td><code>contacts</code></td>
+	<td>:all - Return a hash of hashes of all the contacts. @params['id'] - return a hash of the properties of the contact identified by this id.</td>
+</tr>
+</table>
+
+## create!
+
+Create a new contact in the phonebook, setting its properties passed as a parameter hash.
+
+	:::ruby
+	create!(@params['contact'])
+
+<table border="1">
+<tr>
+	<td><code>contact</code></td>
+	<td>A hash containing the contact properties.</td>
+</tr>
+</table>
+
+## destroy
+
+Delete this contact from the phonebook.
+
+	:::ruby
+	delete(@params['id'])
+
+<table border="1">
+<tr>
+	<td><code>id</code></td>
+	<td>Delete the contact identified by this id</td>
+</tr>
+</table>
+
+## update_attributes
+
+Create a new contact in the phonebook, setting its properties passed as a parameter hash.
+
+	:::ruby
+	update_attributes(@params['contact'])
+
+<table border="1">
+<tr>
+	<td><code>contact</code></td>
+	<td>A hash containing the contact properties to change for this contact.</td>
+</tr>
+</table>

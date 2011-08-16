@@ -1,0 +1,39 @@
+## Application Menu Methods - Customize the Application Menus
+
+Customize the native application menu and controller menu items.
+
+## @default_menu
+
+Write this method in application.rb to customize the Rhodes default menu.
+
+	:::ruby
+	@default_menu = { 
+	  "Item Label 1" => "/item1path", 
+	  "Item Label 2" => "/item2path",
+	   ... 
+	} #=> overrides the Rhodes default menu
+
+<table border="1">
+<tr>
+	<td><code>Item Label 1</code></td>
+	<td>Menu action or a path to a view (.erb) file</td>
+</tr>
+</table>
+
+## @menu
+
+Write this method in a controller.rb file to customize a controller menu.
+
+	:::ruby
+	@menu = { 
+	  "Item Label 1" => "/item1path", 
+	  "Item Label 2" => "/item2path",
+	   ... 
+	} #=> overrides the Rhodes default menu
+	
+<table border="1">
+<tr>
+	<td><code>Item Label 1</code></td>
+	<td>Menu action or a path to a view (.erb) file.</td>
+</tr>
+</table>
