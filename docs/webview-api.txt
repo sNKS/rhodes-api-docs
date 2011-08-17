@@ -1,4 +1,4 @@
-## WebView API
+# WebView API
 
 Call on the WebView directly from your controller.
 

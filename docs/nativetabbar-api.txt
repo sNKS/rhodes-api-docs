@@ -1,4 +1,4 @@
-## NativeTabbar API - Display a Tabbar
+# NativeTabbar API - Display a Tabbar
 
 The NativeTabbar methods let you customize the Rhodes tabbar at runtime.
 

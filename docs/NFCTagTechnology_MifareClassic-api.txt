@@ -1,0 +1,159 @@
+# NFCTagTechnology_MifareClassic Class API
+
+Subset of NFCTagTechnology.
+
+## Constants
+
+	:::term
+	KEY_DEFAULT = [0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
+	KEY_MIFARE_APPLICATION_DIRECTORY = [0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5]
+	KEY_NFC_FORUM =[0xD3, 0xF7, 0xD3, 0xF7, 0xD3, 0xF7]    
+	
+## Types
+
+	:::term
+	TYPE_CLASSIC = 0
+	TYPE_PLUS = 1
+	TYPE_PRO = 2
+	TYPE_UNKNOWN = -1
+
+## get_type
+
+Returns an int: the type of a MifareClassic tag.
+
+### NFCTagTechnology_MifareClassic.convert_type_to_string(type)
+
+Returns a string: the named type of a MifareClassic tag.
+
+	:::ruby
+	convert_type_to_string(type)
+
+<table border="1">
+<tr>
+	<td><code>type</code></td>
+	<td>int: the type of a MifareClassic tag.</td>
+</tr>
+</table>
+
+## write_block(index, block)
+
+Writes a block to a MifareClassic tag.
+
+	:::ruby
+	write_block(index, block)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to where in the tag sector the block will be written.</td>
+</tr>
+<tr>
+	<td><code>block</code></td>
+	<td>a 16 byte array written to the tag.</td>
+</tr>
+</table>
+
+## read_block(index)
+
+Returns a block: a 16 byte array of data read from a MifareClassic tag.
+
+	:::ruby
+	read_block(index)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to where in the tag sector the block is read from.</td>
+</tr>
+</table>
+
+## get_size
+
+Return the size in bytes of a MifareClassic tag.
+
+## get_block_count
+
+Return the number of blocks in a MifareClassic tag.
+
+## get_sector_count
+
+Returns the sector count in a MifareClassic tag.
+
+### NFCTagTechnology_MifareClassic.get_blocks_in_sector_count(index)
+
+Returns the number of blocks in a sector of a MifareClassic tag.
+
+	:::ruby
+	get_blocks_in_sector_count(index)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to the tag sector.</td>
+</tr>
+</table>
+
+## sector_to_block
+
+Returns the index of the first block in a sector in a MifareClassic tag.
+ZZZZZZ This definition needs to be reviewed.
+
+	:::ruby
+	sector_to_block(index)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to the tag sector.</td>
+</tr>
+</table>
+	
+## authenticate_sector_with_key_A
+
+Authenticates a sector with a key. Returns true if the authenticate was passed.
+
+	:::ruby
+	authenticate_sector_with_key_A(index, key)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to the tag sector.</td>
+</tr>
+<tr>
+	<td><code>key</code></td>
+	<td>a 6 byte array containing the key.</td>
+</tr>
+</table>
+
+## authenticate_sector_with_key_B
+
+Authenticates a sector with a key. Returns true if the authenticate was passed.
+
+	:::ruby
+	authenticate_sector_with_key_B(index, key)
+
+<table border="1">
+<tr>
+	<td><code>index</code></td>
+	<td>integer: the index to the tag sector.</td>
+</tr>
+<tr>
+	<td><code>key</code></td>
+	<td>a 6 byte array containing the key.</td>
+</tr>
+</table>
+
+## transceive
+
+Sends data in a byte array to a tag and returns the result from the tag in a byte array.
+
+	:::ruby
+	transceive(data)
+
+<table border="1">
+<tr>
+	<td><code>data</code></td>
+	<td>byte[] sent to the tag.</td>
+</tr>
+</table>

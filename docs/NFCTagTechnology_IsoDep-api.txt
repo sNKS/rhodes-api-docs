@@ -1,0 +1,39 @@
+# NFCTagTechnology_IsoDep API
+
+Subclass of NFCTagTechnology.
+
+## get_hi_layer_responce
+
+Returns a byte array containing the hi layer response.
+
+## get_historical_bytes
+
+Returns a byte array containing the historical bytes.
+
+## set_timeout
+
+Sets a timeout.
+
+	:::ruby
+	set_timeout(timeout)
+
+<table border="1">
+<tr>
+	<td><code>timeout</code></td>
+	<td>int. The timeout.</td>
+</tr>
+</table>
+
+## transceive
+
+Sends data in a byte array to a tag and returns the result from the tag in a byte array.
+
+	:::ruby
+	transceive(data)
+
+<table border="1">
+<tr>
+	<td><code>data</code></td>
+	<td>byte[] sent to the tag.</td>
+</tr>
+</table>

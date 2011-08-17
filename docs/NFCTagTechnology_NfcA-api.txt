@@ -1,0 +1,25 @@
+# NFCTagTechnology_NfcA API
+	    
+Subset of NFCTagTechnology class.
+
+## get_Atqa
+
+Returns a byte array containing Atqa.
+
+## get_Sak
+
+Returns an int containing Sak.
+
+## transceive
+
+Sends data in a byte array to a tag and returns the result from the tag in a byte array.
+
+	:::ruby
+	transceive(data)
+
+<table border="1">
+<tr>
+	<td><code>data</code></td>
+	<td>byte[] sent to the tag.</td>
+</tr>
+</table>

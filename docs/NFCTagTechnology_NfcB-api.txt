@@ -1,0 +1,25 @@
+# NFCTagTechnology_NfcB API
+
+Subclass of NFCTagTechnology.
+
+## get_application_data
+
+Returns byte[] - application data from an NfcB tag.
+
+## get_protocol_info
+
+Returns byte[] - protocol information from an NfcB tag.
+
+### transceive
+
+Sends data in a byte array to a tag and returns the result from the tag in a byte array.
+
+	:::ruby
+	transceive(data)
+
+<table border="1">
+<tr>
+	<td><code>data</code></td>
+	<td>byte[] sent to the tag.</td>
+</tr>
+</table>

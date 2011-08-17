@@ -1,0 +1,33 @@
+# NFCTagTechnology_NdefFormatable API
+
+Subclass of NFCTagTechnology.
+
+## format
+
+Formats a NdefMessage to NdefFormatable format.
+ZZZZZZ Needs a correct definition.
+
+	:::ruby
+	format(msg)
+
+<table border="1">
+<tr>
+	<td><code>msg</code></td>
+	<td>an NdefMessage.</td>
+</tr>
+</table>
+
+## format_read_only
+
+Formats a NdefMessage to NdefFormatable read-only format.
+ZZZZZZ Needs a correct definition.
+
+	:::ruby
+	format_read_only(msg)
+
+<table border="1">
+<tr>
+	<td><code>msg</code></td>
+	<td>an NdefMessage.</td>
+</tr>
+</table>

@@ -1,0 +1,25 @@
+# NFCTagTechnology_NfcF API
+
+Subset of NFCTagTechnology.
+
+## get_manufacturer
+
+Returns byte[] - the manufacturer.
+
+## get_system_code
+
+Returns byte[] - the system code.
+
+### transceive
+
+Sends data in a byte array to a tag and returns the result from the tag in a byte array.
+
+	:::ruby
+	transceive(data)
+
+<table border="1">
+<tr>
+	<td><code>data</code></td>
+	<td>byte[] sent to the tag.</td>
+</tr>
+</table>

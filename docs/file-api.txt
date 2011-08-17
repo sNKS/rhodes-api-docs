@@ -1,11 +1,65 @@
-## File API - Access the Rhodes File Structure
+# File API
 
-The [File Class API](http://docs.rhomobile.com/rhodes/device-caps#file-system-access) allows access to the Rhodes file structure.
+Allows access to the Rhodes file structure.
 
-ZZZZZZ Is this the general Ruby File API? Why binread? I guessed it is for media.
+## binread
 
-`join(string, string)` - Joins two strings.  
-`open(fileName)` - Open a file.  
-`write(content)` - Write to a file.  
-`close` - Close a file.  
-`binread(fileName)` - Read a file (binread for images and other media).
+Reads a file (binread for images and other media) and returns its binary content.
+
+	binread(fileName)
+
+<table border="1">
+<tr>
+	<td><code>fileName</code></td>
+	<td>String. Name of the file to read.</td>
+</tr>
+</table>
+
+## join
+
+Joins two strings.
+
+	:ruby
+	join(string, string)
+
+## new
+
+Create a new file.
+
+	:::ruby
+	new(fileName)
+
+<table border="1">
+<tr>
+	<td><code>fileName</code></td>
+	<td>String. Name of the file to create.</td>
+</tr>
+</table>
+
+## open
+
+	:::ruby
+	open(fileName)
+
+<table border="1">
+<tr>
+	<td><code>fileName</code></td>
+	<td>String. Name of the file to open.</td>
+</tr>
+</table>
+
+## write
+
+	:::ruby
+	write(content)
+
+<table border="1">
+<tr>
+	<td><code>content</code></td>
+	<td>Binary data (as returned from binread).</td>
+</tr>
+</table>
+
+## close
+
+Close a file.
