@@ -1,0 +1,13 @@
+# NdefMessage API
+
+Convert an NdefMessage into a format from which you can extract data.
+
+## get_byte_array
+
+Returns a byte array containing the NdefMessage.
+
+## get_records
+
+Converts an NdefMessage into an NdefRecord array containing the records in the Ndef Message.
+
+Returns NdefRecord[], an array containing the records in an NdefMessage.

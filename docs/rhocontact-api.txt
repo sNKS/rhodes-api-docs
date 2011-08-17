@@ -1,8 +1,8 @@
-## RhoContact Methods
+## RhoContact API
 
 Access a Device Contacts
 
-The [RhoContact Class API](http://docs.rhomobile.com/rhodes/device-caps#pim-contacts) provides access to a device's phone book and contacts. It has such properties as id, first and last name, and phone numbers, and it has such methods as:
+Provides access to a device's phone book and contacts.
 
 ## find
 

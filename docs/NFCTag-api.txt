@@ -1,0 +1,25 @@
+# NFCTag API
+
+Use the NFCTag class to get the NFC tag in certain formats, such as Ndef.
+
+## get_tech(tech_name)
+
+Returns an object with the implementation of the requested NFC tech based on the NFCTagTechnology class. Refer to the NFCTagTechnology class for the types of NFC tech you can request.
+
+	:::ruby
+	get_tech(tech_name)
+
+<table border="1">
+<tr>
+	<td><code>tech_name</code></td>
+	<td>Tech name based on the NFCTagTechnology class.</td>
+</tr>
+</table>
+
+## get_tech_list
+
+Returns a string array containing the NFC tag. 
+
+## get_ID
+
+Returns a byte array containing the NFC tag ID. 

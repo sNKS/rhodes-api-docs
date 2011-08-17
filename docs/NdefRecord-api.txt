@@ -1,0 +1,85 @@
+# NdefRecord API
+
+Get data from near field communications Ndef tag records.
+
+An Ndef record consists of a hash.
+
+	:::ruby
+	ID = 'id'
+	TNF = 'tnf'
+	TYPE = 'type'
+	PAYLOAD = 'payload'
+
+The Type Name Format (TNF part of the hash) is a 3-bit field that indicates how you interprete the type field (TYPE). Here is a list of the TNF values.
+
+	:::ruby
+	TNF_ABSOLUTE_URI = 3
+	TNF_EMPTY = 0
+	TNF_EXTERNAL_TYPE = 4
+	TNF_MIME_MEDIA = 2
+	TNF_UNCHANGED = 6
+	TNF_UNKNOWN = 5
+	TNF_WELL_KNOWN = 1
+
+The RTD text type (TYPE part of the hash) is used with the TNF_WELL_KNOWN value.
+
+	:::ruby
+	RTD_TEXT = [0x54]   # "T"
+	RTD_URI = [0x55] # "U"
+	RTD_SMART_POSTER = [0x53, 0x70] # "Sp"
+	RTD_ALTERNATIVE_CARRIER = [0x61, 0x63]   # "ac"
+	RTD_HANDOVER_CARRIER = [0x48, 0x63] # "Hc"
+	RTD_HANDOVER_REQUEST = [0x48, 0x72] # "Hr"
+	RTD_HANDOVER_SELECT = [0x48, 0x73] # "Hs"
+
+Here is some code that creates a hash for an NdefRecord, which will be part of an NFCMessage to be pushed to an NFC-capable mobile device.
+
+	:::ruby
+	hash = { 'id' => [0], 'type' => Rho::NdefRecord::RTD_URI, 'tnf' => Rho::NdefRecord::TNF_WELL_KNOWN, 'payload' => payload}
+
+## NdefRecord get methods
+
+You can extract data from an Ndef record with the following methods:
+
+	:::ruby
+	get_id                   # returns byte[] 
+	get_tnf                  # returns int
+	get_type                 # returns byte[]
+	get_payload              # returns byte[]
+	get_payload_as_string    # returns string
+	get_byte_array           # returns byte[]
+
+## make_hash
+
+Returns a hash from an Ndef record, from which you can then extract data with the NdefRecord get methods. The hash has the following format:
+
+ * 'id' - byte[]
+ * 'tnf' - int
+ * 'type' - byte[]
+ * 'payload' - byte[]
+ * 'payload_as_string' - string
+
+## convert_Tnf_to_string
+
+Returns a string that is a text description of the Type Name Format.
+
+	:::ruby
+	convert_Tnf_to_string(tnf)
+
+<table border="1">
+<tr>
+	<td><code>tnf</code></td>
+	<td>Int. The Type Name Format (TNF) from an Ndef record hash.</td>
+</tr>
+</table>
+
+## NdefRecord.convert_RTD_to_string(rtd)
+
+Returns a string that is a text description of the rtd (type part of the NdefRecord hash).
+
+<table border="1">
+<tr>
+	<td><code>rtd</code></td>
+	<td>A byte array. The rtd (type) from an NdefRecord hash.</td>
+</tr>
+</table>
