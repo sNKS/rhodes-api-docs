@@ -1,0 +1,62 @@
+# RhoEvent API
+
+Access a device's calendar and events.
+
+## find
+
+Returns the events in the device calendar.
+
+	:::ruby
+	find(events)
+
+<table border="1">
+<tr>
+	<td><code>events</code></td>
+	<td>:all - Return a hash of hashes of all the events. @params['id'] - return a hash of the properties of the event identified by this id.</td>
+</tr>
+</table>
+
+
+
+`find(:all, :start_date=>start, :end_date => endtime, :find_type=>'starting', :include_repeating => true )` - Return the properties of all events in the date range.
+
+## create!
+
+Creates a new event in the calendar. Returns a hash of the properties in the event.
+
+<table border="1">
+<tr>
+	<td><code>event</code></td>
+	<td>@params['event'] - a hash of the properties for the new event.</td>
+</tr>
+</table>
+
+## update_attributes
+
+Update the properties for this event and save the event in the calendar.
+
+<table border="1">
+<tr>
+	<td><code>event</code></td>
+	<td>@params['event'] - a hash of the updated properties for the new event.</td>
+</tr>
+</table>
+
+## destroy
+
+Update the properties for this event and save the event in the calendar.
+
+<table border="1">
+<tr>
+	<td><code>event</code></td>
+	<td>@params['event'] - a hash of the updated properties for the new event.</td>
+</tr>
+</table>
+
+
+
+`create!(@params['event'])` - Create a new event in the calendar.
+
+`update_attributes(@params['event'])` - Update the attributes of the event.
+
+`destroy(@params['id'])` - Delete the identified event from the calendar.

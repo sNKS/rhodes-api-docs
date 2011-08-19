@@ -1,4 +1,4 @@
-## RhoContact API
+# RhoContact API
 
 Access a Device Contacts
 

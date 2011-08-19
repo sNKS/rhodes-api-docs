@@ -1,4 +1,4 @@
-# Rhodes Model API - Perform Database Operation on Rhodes Model Objects
+# Rhodes Model API
 
 Allows access to the Rhodes mini database object mapper, performing database operation on Rhodes model objects.
 

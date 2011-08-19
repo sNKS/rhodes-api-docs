@@ -99,6 +99,10 @@ options_hash is used only on iOS and Android. Parameters:
 	<td>desired width in pixels. Default = max camera width.</td>
 </tr>
 <tr>
+	<td><code>desired_height</code></td>
+	<td>desired height in pixels. Default = max camera height.</td>
+</tr>
+<tr>
 	<td><code>color_model</code></td>
 	<td>"RGB" or "Grayscale". Default = "RGB".</td>
 </tr>
@@ -109,5 +113,9 @@ options_hash is used only on iOS and Android. Parameters:
 <tr>
 	<td><code>enable_editing</code></td>
 	<td>(iPhone only) boolean. Enables post photo capture image customizing; image will captured reduced to screen size (not full size). Default = true.</td>
+</tr>
+<tr>
+	<td><code>flash_mode</code></td>
+	<td>(Android only) String. "off", "on", "auto", "red-eye", "torch".</td>
 </tr>
 </table>

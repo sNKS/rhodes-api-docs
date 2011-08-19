@@ -1,4 +1,4 @@
-# Timer API - Use a Timer
+# Timer API
 
 Lets the device use a timer.
 
