@@ -1,4 +1,4 @@
-## RhoConfig API
+# RhoConfig API
 
 The RhoConfig API allow access to the configuration properties.
 

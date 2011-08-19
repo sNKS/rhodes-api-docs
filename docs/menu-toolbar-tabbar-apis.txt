@@ -1,4 +1,4 @@
-## Native Menu-Toolbar-Tabbar Actions
+# Native Menu-Toolbar-Tabbar Actions
 
 Perform actions on menus, toolbars, and tabbars.
 

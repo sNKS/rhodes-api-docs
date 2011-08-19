@@ -1,4 +1,4 @@
-## Application Menu Methods - Customize the Application Menus
+# Application Menu Methods - Customize the Application Menus
 
 Customize the native application menu and controller menu items.
 
