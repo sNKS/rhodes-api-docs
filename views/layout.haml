@@ -33,11 +33,11 @@
 
   <div id="container">
   	<div id="docsnav" <% if @print != 0 %> style="display:none" <% end %> >
-  		<form action="/search">
-  			<div id="search">
-  				<input type="text" name="q" size="31" value="<%= params[:q] || '' %>" />
-  			</div>
-  		</form>
+  		<!-- form action="/search">
+  		  <div id="search">
+  		    <input type="text" name="q" size="31" value="<%= params[:q] || '' %>" />
+  	      </div>
+  		</form -->
 
   		<ul>
   			<% sections.each do |slug, title, topics| %>
