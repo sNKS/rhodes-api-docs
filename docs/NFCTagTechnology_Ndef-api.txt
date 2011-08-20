@@ -4,11 +4,11 @@ Subset of NFCTagTechnology class.
 
 ## Types
 	        
-MIFARE_CLASSIC = 'com.nxp.ndef.mifareclassic'
-NFC_FORUM_TYPE_1 = 'org.nfcforum.ndef.type1'
-NFC_FORUM_TYPE_2 = 'org.nfcforum.ndef.type2'
-NFC_FORUM_TYPE_3 = 'org.nfcforum.ndef.type3'
-NFC_FORUM_TYPE_4 = 'org.nfcforum.ndef.type4'
+	MIFARE_CLASSIC = 'com.nxp.ndef.mifareclassic'
+	NFC_FORUM_TYPE_1 = 'org.nfcforum.ndef.type1'
+	NFC_FORUM_TYPE_2 = 'org.nfcforum.ndef.type2'
+	NFC_FORUM_TYPE_3 = 'org.nfcforum.ndef.type3'
+	NFC_FORUM_TYPE_4 = 'org.nfcforum.ndef.type4'
 
 ## get_max_size
 
@@ -16,7 +16,6 @@ Returns int - Maximum size of the Ndef tag.
 
 ## is_writable
 
-ZZZZ is the spelling correct for this method name?
 Returns true if the Ndef tag is writeable, false otherwise.
 
 ## can_make_read_only

@@ -1,11 +1,10 @@
 # DateTimePicker API
 
-Allow the user to choose date or time.
-ZZZZZZZ I need a better description of what the methods are doing.
+Allows the user to choose date and time.
 
 ## choose
 
-Have the user choose a date or time.
+Opens a window where the user can choose date and time.
 
 	:::ruby
 	choose(callback, title, initial_time, fmt, opaque)
@@ -13,11 +12,11 @@ Have the user choose a date or time.
 <table border="1">
 <tr>
 	<td><code>callback</code></td>
-	<td>url to callback method that is called when the user chooses a date/time and presses OK or Cancel.</td>
+	<td>url to the callback method that is called when the user chooses a date/time and presses OK or Cancel.</td>
 </tr>
 <tr>
 	<td><code>title</code></td>
-	<td>The title of the date/time input field.</td>
+	<td>The title of the date/time input window.</td>
 </tr>
 <tr>
 	<td><code>initial_time</code></td>
@@ -29,7 +28,7 @@ Have the user choose a date or time.
 </tr>
 <tr>
 	<td><code>opaque</code></td>
-	<td>(optional) </td>
+	<td>(optional) callback data (i.e. the state of the form) that you want to preserve so you can re-populate the page with data. For example, if your datetime field in a form is the 3rd out of 5 fields, once the user picks the datetime, you want to re-render the form with fields 1 and 2 still filled in.</td>
 </tr>
 </table>
 
@@ -71,9 +70,7 @@ Have the user choose a date or time.
 
 ## set_change_value_callback
 
-Set a callback for listen “on change” event; if you use this method, use it before each call of the choose methods.
-
-ZZZZZZ "on change" event? where did that come from?
+Set a callback to listen for an on change event; if you use this method, use it before each call of the choose methods.
 
 <table border="1">
 <tr>

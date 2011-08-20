@@ -26,7 +26,7 @@ Destroy a Rhodes model object.
 
 ## find(argument list)
 
-Find Rho model objects. The argument list can consist of the following arguements.
+Find Rho model objects. The argument list can consist of the following arguments.
 
 <table border="1">
 <tr>

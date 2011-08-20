@@ -1,4 +1,4 @@
-# NFCTagTechnology_MifareClassic Class API
+# NFCTagTechnology_MifareClassic API
 
 Subset of NFCTagTechnology.
 
@@ -96,7 +96,6 @@ Returns the number of blocks in a sector of a MifareClassic tag.
 ## sector_to_block
 
 Returns the index of the first block in a sector in a MifareClassic tag.
-ZZZZZZ This definition needs to be reviewed.
 
 	:::ruby
 	sector_to_block(index)

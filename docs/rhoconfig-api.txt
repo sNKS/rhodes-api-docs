@@ -11,8 +11,6 @@ The properties in the rhoconfig.txt file for a Rhodes application are available 
 
 For a list of the configuration properties, [click here](http://docs.rhomobile.com/rhodes/configuration#run-time-configuration)
 
-ZZZZ Is there an app_property method as shown in the devel guide, or is app_property a place holder for a configuration property?
-
 ## exists?
 
 Checks to see if a configuration property exists for this Rhodes application.

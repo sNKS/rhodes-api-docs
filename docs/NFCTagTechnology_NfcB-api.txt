@@ -10,7 +10,7 @@ Returns byte[] - application data from an NfcB tag.
 
 Returns byte[] - protocol information from an NfcB tag.
 
-### transceive
+## transceive
 
 Sends data in a byte array to a tag and returns the result from the tag in a byte array.
 

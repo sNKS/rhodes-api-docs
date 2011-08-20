@@ -47,7 +47,7 @@ Disconnect from the device. Returns OK or ERROR.
 
 ## get_status(connected_device_name)
 
-Get the session status. Returns either the received but not read data size; or -1 if error; or 0 if empty (did not receive data).
+Get the session status. Returns the size of the data received by the bluetooth connection (data has not been read or parsed yet); or -1 if error; or 0 if empty (did not receive data).
 
 	:::ruby
 	get_status(connected_device_name)

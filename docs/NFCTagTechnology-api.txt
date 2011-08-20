@@ -6,15 +6,15 @@ Use the NFCTagTechnology to connect to NFC tags and to determine their type.
 
 The NFCTagTechnology class has several properties to determine the type of the NFC tag.
 
- * ISODEP = 'IsoDep'
- * MIFARE_CLASSIC = 'MifareClassic'
- * MIFARE_ULTRALIGHT = 'MifareUltralight'
- * NDEF = 'Ndef'
- * NDEF_FORMATABLE = 'NdefFormatable'
- * NFCA = 'NfcA'
- * NFCB = 'NfcB'
- * NFCF = 'NfcF'
- * NFCV = 'NfcV'
+	ISODEP = 'IsoDep'
+	MIFARE_CLASSIC = 'MifareClassic'
+	MIFARE_ULTRALIGHT = 'MifareUltralight'
+	NDEF = 'Ndef'
+	NDEF_FORMATABLE = 'NdefFormatable'
+	NFCA = 'NfcA'
+	NFCB = 'NfcB'
+	NFCF = 'NfcF'
+	NFCV = 'NfcV'
 
 ## get_name
 

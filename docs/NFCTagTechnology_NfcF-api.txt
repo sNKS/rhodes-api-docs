@@ -10,7 +10,7 @@ Returns byte[] - the manufacturer.
 
 Returns byte[] - the system code.
 
-### transceive
+## transceive
 
 Sends data in a byte array to a tag and returns the result from the tag in a byte array.
 

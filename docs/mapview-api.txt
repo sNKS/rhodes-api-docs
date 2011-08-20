@@ -64,7 +64,7 @@ map_params is a hash consisting of:
 </tr>
 <tr>
 	<td><code>api_key</code></td>
-	<td>Maps JavaScript API Key (sign up for it here). Note that this parameter is ignored on Android! For Android you should get another key and specify it in the app’s build.yml as described here. ZZZZZ add urls for here</td>
+	<td>Maps JavaScript API Key (sign up for it here). (Ignored in Android; for Android you should get another key and specify it in the app's build.yml as described here).</td>
 </tr>
 </table>
 

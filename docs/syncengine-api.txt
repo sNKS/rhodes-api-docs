@@ -61,9 +61,7 @@ Start a synchronization with the RhoSync server for a given source id or source 
 	<td><code>show_sync_status</code></td>
 	<td>True if you want to show a sync status popup, false otherwise.</td>
 </tr>
-</table>  
-
-ZZZZ The example shows Product.get_source_id.to_i and Product.get_source_name. Are these methods from a RhoSync Source API? I can't find them in the documentation.
+</table>
 
 ## lock_sync_mutex
 

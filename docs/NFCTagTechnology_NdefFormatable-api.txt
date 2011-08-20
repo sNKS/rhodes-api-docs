@@ -5,7 +5,6 @@ Subclass of NFCTagTechnology.
 ## format
 
 Formats a NdefMessage to NdefFormatable format.
-ZZZZZZ Needs a correct definition.
 
 	:::ruby
 	format(msg)
@@ -20,7 +19,6 @@ ZZZZZZ Needs a correct definition.
 ## format_read_only
 
 Formats a NdefMessage to NdefFormatable read-only format.
-ZZZZZZ Needs a correct definition.
 
 	:::ruby
 	format_read_only(msg)

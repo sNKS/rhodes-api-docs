@@ -8,7 +8,6 @@ Returns int - the dsf ID.
 
 ## get_responce_flags
 
-ZZZ spelling for the method name?
 Returns int - the response flags.
 
 ## transceive

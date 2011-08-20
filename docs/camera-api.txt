@@ -42,7 +42,6 @@ Parameters in the camera callback method:
 	<td>uri to the chosen image stored in the /public/db-files folder; the image file has an auto-generated name.</td>
 </tr>
 </table>
-ZZZZZZZ why uri instead of url? Can I say url instead?
 
 ## take_picture
 

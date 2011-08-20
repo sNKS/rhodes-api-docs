@@ -16,9 +16,39 @@ Returns the events in the device calendar.
 </tr>
 </table>
 
+## find in a range
 
+Returns the events in the device calendar within a specified range.
 
-`find(:all, :start_date=>start, :end_date => endtime, :find_type=>'starting', :include_repeating => true )` - Return the properties of all events in the date range.
+	:::ruby
+	find(:all, :start_date, :end_date, :find_type, :include_repeating)
+
+<table border="1">
+<tr>
+	<td><code>:all</code></td>
+	<td>Search all the events.</td>
+</tr>
+<tr>
+	<td><code>:all</code></td>
+	<td>Search all the events.</td>
+</tr>
+<tr>
+	<td><code>:start_date</code></td>
+	<td>The start date of the range to search.</td>
+</tr>
+<tr>
+	<td><code>:end_date</code></td>
+	<td>The end date of the range to search.</td>
+</tr>
+<tr>
+	<td><code>:find_type</code></td>
+	<td>'starting' - searches for events starting between start_date and end_date. 'ending' - searches for events ending between start_date and end_date. 'occurring' - searches for events that have any part of the event occurring during the period specified by start_date and end_date.</td>
+</tr>
+<tr>
+	<td><code>:include_repeating</code></td>
+	<td>false - do not include repeating occurrences of an event in the search. true - include repeating occurrences of an event in the search.</td>
+</tr>
+</table>
 
 ## create!
 
@@ -52,11 +82,3 @@ Update the properties for this event and save the event in the calendar.
 	<td>@params['event'] - a hash of the updated properties for the new event.</td>
 </tr>
 </table>
-
-
-
-`create!(@params['event'])` - Create a new event in the calendar.
-
-`update_attributes(@params['event'])` - Update the attributes of the event.
-
-`destroy(@params['id'])` - Delete the identified event from the calendar.

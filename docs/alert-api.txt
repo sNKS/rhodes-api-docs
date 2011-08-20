@@ -13,8 +13,6 @@ Play an audio file if that media type is supported by the device.
 	:::ruby
 	play_file(path, media_type)
 
-ZZZZZZ Question: is media_type optional? Is it a string of either ".mp3" or ".wav"?
-
 <table border="1">
 	<tr>
 		<td><code>path</code></td>
@@ -22,7 +20,7 @@ ZZZZZZ Question: is media_type optional? Is it a string of either ".mp3" or ".wa
 	</tr>
 	<tr>
 		<td><code>media_type</code></td>
-		<td>Media type can be specified explicitly, or can be recognized from the file extension. The known file extensions are .mp3 – audio/mpeg and .wav – audio/x-wav.</td>
+		<td>(optional) Media type can be specified explicitly, or can be recognized from the file extension. The known file extensions are ".mp3" – audio/mpeg and ".wav" – audio/x-wav.</td>
 	</tr>
 </table>
 
@@ -72,7 +70,6 @@ Bring the application up front and show a message in a popup window. The message
 </table>
 
 Click for an example of show_popup and a hash message.
-ZZZZZZ Put the anchor into the devel reference and link to it.
 
 ## show_status
 

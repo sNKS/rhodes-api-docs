@@ -32,7 +32,7 @@ Download a file to the specified filename.
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
 </tr>
 </table>
 
@@ -57,7 +57,7 @@ Syntax: get(:url, :headers, :callback, :callback_param)
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
 </tr>
 <tr>
 	<td><code>:authentication</code></td>
@@ -103,7 +103,7 @@ Syntax: post(:url, :headers, :body, :callback, :callback_param)
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
 </tr>
 <tr>
 	<td><code>:authentication</code></td>
@@ -153,6 +153,6 @@ Syntax: upload_file(:url, :headers, :filename, :body, :callback, :callback_param
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode. (ZZZ put in link)</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
 </tr>
 </table>
