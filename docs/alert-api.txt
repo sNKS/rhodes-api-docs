@@ -33,7 +33,7 @@ Bring the application up front and show a message in a popup window. The message
 	:::ruby
 	show_popup "message"
 
-<table border="1">
+<table border="1" width="100%">
 <tr>
 	<td><code>message</code></td>
 	<td>a text string</td>
