@@ -10,6 +10,8 @@ Cancel the current AsyncHttp call.
 
 Download a file to the specified filename.
 
+[Click for an example of download_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-download_file-ex)
+
 	:::ruby
 	download_file(:url, :headers, :filename, :callback, :callback_param)
 
@@ -32,7 +34,7 @@ Download a file to the specified filename.
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with [RhoSupport.url_encode](http://edgedocs.rhomobile.com/rhodes/application#rhosupport-class).</td>
 </tr>
 </table>
 
@@ -40,7 +42,10 @@ Download a file to the specified filename.
 
 Perform an HTTP GET request to the specified URL.
 
-Syntax: get(:url, :headers, :callback, :callback_param)
+[Click for an example of get.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-get-ex)
+
+	:::ruby
+	get(:url, :headers, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -57,7 +62,7 @@ Syntax: get(:url, :headers, :callback, :callback_param)
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with [RhoSupport.url_encode](http://edgedocs.rhomobile.com/rhodes/application#rhosupport-class).</td>
 </tr>
 <tr>
 	<td><code>:authentication</code></td>
@@ -69,20 +74,31 @@ Syntax: get(:url, :headers, :callback, :callback_param)
 </tr>
 </table>
 
-The authentication parameter takes the form:
+The authentication parameter is a hash with parameters such as the following.
 
-	:::ruby
-	:authentication => {
-	  :type => :basic, 
-	  :username => "john", 
-	  :password => "secret"
-	} 
+<table border="1">
+<tr>
+	<td><code>:type</code></td>
+	<td>type of request, such as :basic.</td>
+</tr>
+<tr>
+	<td><code>:username</code></td>
+	<td>the user name.</td>
+</tr>
+<tr>
+	<td><code>:password</code></td>
+	<td>the password.</td>
+</tr>
+</table>
 
 ## post
 
 Perform HTTP POST request to the specified URL.
 
-Syntax: post(:url, :headers, :body, :callback, :callback_param)
+[Click for an example of post.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-post-ex)
+
+	:::ruby
+	post(:url, :headers, :body, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -103,7 +119,7 @@ Syntax: post(:url, :headers, :body, :callback, :callback_param)
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with [RhoSupport.url_encode](http://edgedocs.rhomobile.com/rhodes/application#rhosupport-class).</td>
 </tr>
 <tr>
 	<td><code>:authentication</code></td>
@@ -115,20 +131,31 @@ Syntax: post(:url, :headers, :body, :callback, :callback_param)
 </tr>
 </table>
 
-The authentication parameter takes the form:
+The authentication parameter is a hash with parameters such as the following.
 
-	:::ruby
-	:authentication => {
-	  :type => :basic, 
-	  :username => "john", 
-	  :password => "secret"
-	}
+<table border="1">
+<tr>
+	<td><code>:type</code></td>
+	<td>type of request, such as :basic.</td>
+</tr>
+<tr>
+	<td><code>:username</code></td>
+	<td>the user name.</td>
+</tr>
+<tr>
+	<td><code>:password</code></td>
+	<td>the password.</td>
+</tr>
+</table>
 
 ## upload_file
 
 Upload the specified file using HTTP POST.
 
-Syntax: upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
+[Click for an example of upload_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-upload_file-ex)
+
+	:::ruby
+	upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -153,6 +180,6 @@ Syntax: upload_file(:url, :headers, :filename, :body, :callback, :callback_param
 </tr>
 <tr>
 	<td><code>:callback_param</code></td>
-	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with RhoSupport.url_encode.</td>
+	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with [RhoSupport.url_encode](http://edgedocs.rhomobile.com/rhodes/application#rhosupport-class).</td>
 </tr>
 </table>

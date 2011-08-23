@@ -71,6 +71,17 @@ Bring the application up front and show a message in a popup window. The message
 	</tr>
 </table>
 
+Example call:
+
+	:::ruby
+	Alert.show_popup( {
+	    :message => 'Some message', 
+	    :title => 'Custom title', 
+	    :icon => '/public/images/icon.png',
+	    :buttons => ["Yes", "No", 
+	        {:id => 'cancel', :title => 'Cancel all'}],
+	    :callback => url_for(:action => :on_dismiss_popup) } )
+
 ## show_status
 
 Display a window containing a status message. The window closes after the user clicks on its hide button.
