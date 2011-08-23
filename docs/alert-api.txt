@@ -16,7 +16,7 @@ Play an audio file if that media type is supported by the device.
 <table border="1">
 	<tr>
 		<td><code>path</code></td>
-		<td>The path to the file, ending in the file name and extension. The file must located in the application; for example, `/apps/public/test-file.mp3`.</td>
+		<td>The path to the file, ending in the file name and extension. The file must located in the application; for example, <code>/apps/public/test-file.mp3</code>.</td>
 	</tr>
 	<tr>
 		<td><code>media_type</code></td>
@@ -27,6 +27,8 @@ Play an audio file if that media type is supported by the device.
 ## show_popup
 
 Bring the application up front and show a message in a popup window. The message can be passed as a string or a hash.
+
+[Click for an example of show_popup with a button and callback.](http://docs.rhomobile.com/rhodes/device-caps#alerts)
 
 	:::ruby
 	show_popup "message"
@@ -65,15 +67,15 @@ Bring the application up front and show a message in a popup window. The message
 	</tr>
 	<tr>
 		<td><code>:callback</code></td>
-		<td>url called on button click, such as `url_for(:action => :on_dismiss_popup)`. It is called with a @params hash of :button_id, :button_title, and :button_index.</td>
+		<td>url called on button click, such as <code>url_for(:action => :on_dismiss_popup)</code>. It is called with a @params hash of :button_id, :button_title, and :button_index.</td>
 	</tr>
 </table>
-
-Click for an example of show_popup and a hash message.
 
 ## show_status
 
 Display a window containing a status message. The window closes after the user clicks on its hide button.
+
+[Click for an example of show_status.](http://docs.rhomobile.com/rhodes/device-caps#alert-show-status-ex)
 
 	:::ruby
 	show_status(title, status_text, hide_button_label)
