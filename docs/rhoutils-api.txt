@@ -1,4 +1,4 @@
-# RhoUtil API
+# RhoUtils API
 
 Seed the Rhom database.
 

@@ -6,11 +6,11 @@ The [GeoLocation Class API](http://docs.rhomobile.com/rhodes/device-caps#geoloca
 
 ## latitude
 
-Get current latitude.
+Get current latitude in degrees.
 
 ## longitude
 
-Get current longitude.
+Get current longitude in degrees.
 
 ## known_position?
 
@@ -68,18 +68,18 @@ Get the distance between two points in miles.
 <table border="1">
 <tr>
 	<td><code>latitude1</code></td>
-	<td>Latitude of the first point.</td>
+	<td>Latitude of the first point in degrees.</td>
 </tr>
 <tr>
 	<td><code>longitude1</code></td>
-	<td>Longitude of the first point.</td>
+	<td>Longitude of the first point in degrees.</td>
 </tr>
 <tr>
 	<td><code>latitude2</code></td>
-	<td>Latitude of the second point.</td>
+	<td>Latitude of the second point in degrees.</td>
 </tr>
 <tr>
 	<td><code>longitude2</code></td>
-	<td>Longitude of the second point.</td>
+	<td>Longitude of the second point in degrees.</td>
 </tr>
 </table>

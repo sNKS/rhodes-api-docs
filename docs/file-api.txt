@@ -17,10 +17,17 @@ Reads a file (binread for images and other media) and returns its binary content
 
 ## join
 
-Joins two strings.
+Joins two strings and returns them in one string.
 
-	:ruby
-	join(string, string)
+	:::ruby
+	join(string1, string2)
+
+<table border="1">
+<tr>
+	<td><code>string1, string2</code></td>
+	<td>The two strings to join.</td>
+</tr>
+</table>
 
 ## new
 

@@ -4,62 +4,21 @@ Access a Device Contacts
 
 Provides access to a device's phone book and contacts.
 
-## Properties
+## Contact Properties
 
 The contact properties are stored in a hash.
 
-<table border="1">
-<tr>
-	<td><code>id</code></td>
-	<td>id for this event.</td>
-</tr>
-<tr>
-	<td><code>title</code></td>
-	<td>String. The event title.</td>
-</tr>
-<tr>
-	<td><code>location</code></td>
-	<td>String. The event location.</td>
-</tr>
-<tr>
-	<td><code>notes</code></td>
-	<td>String. Notes added to this event.</td>
-</tr>
-<tr>
-	<td><code>start_date</code></td>
-	<td>Start date for this event in Time.utc format.</td>
-</tr>
-<tr>
-	<td><code>end_date</code></td>
-	<td>End date for this event in Time.utc format.</td>
-</tr>
-<tr>
-	<td><code>reminder</code></td>
-	<td>(Blackberry and Windows only) int. event reminder in minutes.</td>
-</tr>
-<tr>
-	<td><code>privacy</code></td>
-	<td>(Blackberry and Windows only) 'public', 'private', or 'confidential'.</td>
-</tr>
-<tr>
-	<td><code>canceled</code></td>
-	<td>(iPhone and Android only).</td>
-</tr>
-<tr>
-	<td><code>oragnizer</code></td>
-	<td>(iPhone and Android only) String. The event organizer.</td>
-</tr>
-<tr>
-	<td><code>attendees</code></td>
-	<td>(iPhone and Android only) String. The attendees.</td>
-</tr>
-<tr>
-	<td><code>last_modified</code></td>
-	<td>(iPhone and Android only) Datetime when the event was last modified.</td>
-</tr>
-</table>
+All devices support these properties: "id", "first_name", "last_name",“ "mobile_number", "home_number", "business_number", "email_address", "company_name".
 
-Recurrence properties: “recurrence”, “frequency”(‘daily’, ‘weekly’, ‘monthly’, ‘yearly’), “interval”, “end_date” , “days”(array of 7 items, 1 – means event is triggered – Mon-Sun), “months” ( array of 12 items, Jan-Dec), “weeks”(array of 5 items, first-fifth ), “count”(how many occurrences), “day_of_month”(1..31)
+The iPhone supports additional properites: "prefix", "first_name", "middle_name", "last_name", "suffix", "nickname", "birthday", "anniversary", "created", "updated", "company_name", "job_title", "assistant_name", "assistant_number", "spouse_name", "person_note". The "birthday", "anniversary", "created",  and "updated" properties use a string date formatted as YYYY-MM-DD.
+
+Address properties: "street_address_1", "city_1", "state_1", "zip_1", "country_1" "street_address_2", "city_2", "state_2", "zip_2", "country_2" "street_address_3", "city_3", "state_3", "zip_3", "country_3". Address 1 is mapped to "work," 2 to "home," 3 to "other".
+
+Email addresses: "email_address", "home_email_address", "other_email_address". "email_address" is mapped to "work".
+
+Phone numbers: "business_number", "home_number", "mobile_number", "main_number", "pager_number", "home_fax", "work_fax".
+
+Home pages: "home_page"
 
 ## find
 
