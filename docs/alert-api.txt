@@ -75,7 +75,7 @@ Bring the application up front and show a message in a popup window. The message
 
 Display a window containing a status message. The window closes after the user clicks on its hide button.
 
-[Click for an example of show_status.](http://docs.rhomobile.com/rhodes/device-caps#alert-show-status-ex)
+[Click for an example of show_status.](http://edgedocs.rhomobile.com/rhodes/device-caps#alert-show-status-ex)
 
 	:::ruby
 	show_status(title, status_text, hide_button_label)
