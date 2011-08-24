@@ -2,6 +2,8 @@
 
 Makes a connection between your Bluetooth-equipped device and another Bluetooth-equipped device.
 
+[Click for an example of using bluetooth.](http://edgedocs.rhomobile.com/rhodes/device-caps#bluetooth-ex)
+
 ## is_bluetooth_available
 
 Returns true if Bluetooth is available on the device, false otherwise.
