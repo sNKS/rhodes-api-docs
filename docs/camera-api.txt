@@ -1,6 +1,14 @@
 # Camera API
 
-Use the camera on a device.
+Use the camera on a device. See the controller and view in the /app/Image folder of the [System API Samples application](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/Image/controller.rb) for an example.
+
+## Enabling the Camera
+
+To use the camera API, you need to enable the camera on the device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	capabilities:
+	  - camera
 
 ## get_camera_info
 
@@ -48,14 +56,25 @@ Parameters in the camera callback method:
 Take a picture.
 
 	:::ruby
-	take_picture(callback_url, options_hash)
+	take_picture(callback_url, settings)
 
 <table border="1">
 <tr>
 	<td><code>callback_url</code></td>
 	<td>url to the callback method.</td>
 </tr>
+<tr>
+	<td><code>settings</code></td>
+	<td>(Android and iOS only) a hash of additional parameters.</td>
+</tr>
 </table>
+
+Sample call:
+	:::ruby
+	settings = { :camera_type => @params['camera_type'], 
+	  :color_model => @params['color_model'], :enable_editing => en_ed, 
+	  :desired_width => width, :desired_height => height, :flash_mode => 'auto' }
+    Camera::take_picture(url_for(:action => :camera_callback), settings)
 
 Parameters in the camera callback method:
 
@@ -86,7 +105,7 @@ Parameters in the camera callback method:
 </tr>
 </table>
 
-options_hash is used only on iOS and Android. Parameters:
+`settings` is a hash used only on iOS and Android. Parameters:
 
 <table border="1">
 <tr>

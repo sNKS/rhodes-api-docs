@@ -1,6 +1,6 @@
 # RhomSource API
 
-Exposes sync information, which you can use for alerts, status pages, and so on.
+Exposes sync information, which you can use for alerts, status pages, and so on. For some examples, refer to [Accessing Sync Info with RhomSource in Using the Local Database with Rhom](http://docs.rhomobile.com/rhodes/rhom#accessing-sync-info-with-rhomsource).
 
 ## distinct_objects
 

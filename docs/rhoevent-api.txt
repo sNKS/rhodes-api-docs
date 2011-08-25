@@ -2,6 +2,16 @@
 
 Access a device's calendar and events.
 
+For examples on how to use the RhoEvent API, see the view and controller in the /app/Calendar folder in the [System API Samples application](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/Calendar/controller.rb).
+
+## Enabling the Calendar
+
+To use the RhoEvent API, you need to enable read and write for the calendar on the device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	capabilities:
+	  - calendar
+
 ## find
 
 Returns the events in the device calendar.
@@ -50,6 +60,15 @@ Returns the events in the device calendar within a specified range.
 </tr>
 </table>
 
+Code sample:
+
+	:::ruby
+	start = Time.utc(2007, 'jan', 1, 0, 0, 0)
+    finish = Time.utc(2012, 'dec', 31, 23, 59, 59)
+    @@events = Rho::RhoEvent.find(:all, :start_date => start, 
+    	:end_date => finish, :find_type => 'starting', 
+        :include_repeating => true)
+
 ## create!
 
 Creates a new event in the calendar. Returns a hash of the properties in the event.
@@ -74,12 +93,12 @@ Update the properties for this event and save the event in the calendar.
 
 ## destroy
 
-Update the properties for this event and save the event in the calendar.
+Remove this event from the calendar.
 
 <table border="1">
 <tr>
 	<td><code>event</code></td>
-	<td>@params['event'] - a hash of the updated properties for the new event.</td>
+	<td>@params['id'] - remove the event identified by this id.</td>
 </tr>
 </table>
 

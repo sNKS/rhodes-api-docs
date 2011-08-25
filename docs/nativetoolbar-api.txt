@@ -1,6 +1,6 @@
 # NativeToolbar API
 
-The NativeToolbar methods let you create and remove toolbars at runtime.
+The NativeToolbar methods let you create and remove toolbars at runtime. Refer to [Native Toolbar Control in User Interface](http://edgedocs.rhomobile.com/rhodes/ui#native-toolbar-control) for a discussion and examples, and to [NativeToolbarTest in Rhodes-System-Api-Samples](https://github.com/rhomobile/rhodes-system-api-samples/tree/master/app/NativeToolbarTest/) for sample code.
 
 ## create
 
@@ -15,8 +15,6 @@ Creates a toolbar.
 	<td>Name/value array for the tabbar, such as <code>{:label => 'Main page',  :action => '/app', :icon => '/public/images/bar/colored_btn.png', :reload => true}</code></td>
 </tr>
 </table>
-
-toolbar-elements:
 
 The toolbar-elements parameter is a list of name/value pairs from the following list of toolbar elements.
 

@@ -11,12 +11,16 @@ Clear notification for the object.
 Delete all Rhodes model objects for a source, filtering by conditions.
 
 	:::ruby
-	delete_all(:conditions)
+	delete_all(:conditions, :op)
 
 <table border="1">
 <tr>
 	<td><code>:conditions</code></td>
 	<td>(optional) hash of attribute/values; delete only objects matching these criteria, such as <code>:conditions => {'industry'=>'electronics'}</code>.</td>
+</tr>
+<tr>
+	<td><code>:op</code></td>
+	<td>(optional) operator, such as "OR" or "IN". Allows you to have more than one set of conditions.</td>
 </tr>
 </table>
 
@@ -26,7 +30,7 @@ Destroy a Rhodes model object.
 
 ## find(argument list)
 
-Find Rho model objects. The argument list can consist of the following arguments.
+Find Rhodes model objects. The argument list can consist of the following arguments.
 
 <table border="1">
 <tr>
@@ -65,7 +69,13 @@ Find Rho model objects. The argument list can consist of the following arguments
 	<td><code>:offset</code></td>
 	<td>(optional) offset from beginning of the list.</td>
 </tr>
+<tr>
+	<td><code>:op</code></td>
+	<td>(optional) operator, such as "OR" or "IN". Allows you to have more than one set of conditions.</td>
+</tr>
 </table>
+
+For examples of find with advanced queries, see [Advanced Queries in Using the Local Database with Rhom](http://docs.rhomobile.com/rhodes/rhom#advanced-queries).
 
 ## find_all
 

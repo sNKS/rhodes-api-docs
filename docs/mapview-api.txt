@@ -1,22 +1,6 @@
 # MapView API 
 
-Provides an embeddable map interface.
-
-## Sample MapView.create call
-
-	:::ruby
-	map_params = {
-	     :provider => 'Google',
-	     :settings => {:map_type => "hybrid",:region => [@params['latitude'], @params['longitude'], 0.2, 0.2],
-                   :zoom_enabled => true,:scroll_enabled => true,:shows_user_location => false,
-                   :api_key => 'Google Maps API Key'},
-	     :annotations => [{:latitude => @params['latitude'], :longitude => @params['longitude'], :title => "Current location", :subtitle => ""},
-                      {:street_address => "Cupertino, CA 95014", :title => "Cupertino", :subtitle => "zip: 95014", 
-                       :url => "/app/GeoLocation/show?city=Cupertino"},
-                      {:street_address => "Santa Clara, CA 95051", :title => "Santa Clara", :subtitle => "zip: 95051", 
-                       :url => "/app/GeoLocation/show?city=Santa%20Clara"}]
-	}
-	MapView.create map_params
+Provides an embeddable map interface. See [GeoLocation/controller.rb of System API sample application](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/GeoLocation/controller.rb) for some examples of using the MapView class.
 
 ## create map_params
 
@@ -122,5 +106,21 @@ map_params is a hash consisting of:
 	<td>url to follow when user clicks on the callout button</td>
 </tr>
 </table>
+
+## Sample MapView.create call
+
+	:::ruby
+	map_params = {
+	     :provider => 'Google',
+	     :settings => {:map_type => "hybrid",:region => [@params['latitude'], @params['longitude'], 0.2, 0.2],
+                   :zoom_enabled => true,:scroll_enabled => true,:shows_user_location => false,
+                   :api_key => 'Google Maps API Key'},
+	     :annotations => [{:latitude => @params['latitude'], :longitude => @params['longitude'], :title => "Current location", :subtitle => ""},
+                      {:street_address => "Cupertino, CA 95014", :title => "Cupertino", :subtitle => "zip: 95014", 
+                       :url => "/app/GeoLocation/show?city=Cupertino"},
+                      {:street_address => "Santa Clara, CA 95051", :title => "Santa Clara", :subtitle => "zip: 95051", 
+                       :url => "/app/GeoLocation/show?city=Santa%20Clara"}]
+	}
+	MapView.create map_params
 
 

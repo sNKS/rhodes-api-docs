@@ -1,6 +1,8 @@
 # DateTimePicker API
 
-Allows the user to choose date and time.
+Allows the user to choose date and time. 
+
+See controller.rb and index.erb view in the [/app/DateTime folder of the System API Samples](https://github.com/rhomobile/rhodes-system-api-samples/tree/master/app/DateTime) application for an example.
 
 ## choose
 

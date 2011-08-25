@@ -1,6 +1,6 @@
 # RhoConfig API
 
-The RhoConfig API allow access to the configuration properties.
+The RhoConfig API allow access to the configuration properties. Refer to [Run time configuration](http://docs.rhomobile.com/rhodes/configuration#run-time-configuration) for a listing of the configuration properties and some code samples.
 
 ## configuration property methods
 

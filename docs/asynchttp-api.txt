@@ -152,7 +152,7 @@ The authentication parameter is a hash with parameters such as the following.
 
 Upload the specified file using HTTP POST.
 
-[Click for an example of upload_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-upload_file-ex)
+[Click for examples of upload_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-upload_file-ex)
 
 	:::ruby
 	upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
@@ -183,3 +183,82 @@ Upload the specified file using HTTP POST.
 	<td>(optional) Parameters to send to the callback. Parameters values should be url encoded with [RhoSupport.url_encode](http://edgedocs.rhomobile.com/rhodes/application#rhosupport-class).</td>
 </tr>
 </table>
+
+`upload_file` can also send multiple files in a single request.
+
+	:::ruby
+	upload_file(:url, :multipart)
+
+<table border="1">
+<tr>
+	<td><code>:url</code></td>
+	<td>URL of the request.</td>
+</tr>
+<tr>
+	<td><code>:multipart</code></td>
+	<td>Array of hashes containing file information.</td>
+</tr>
+</table>
+
+The :multipart hash contains the following parameters.
+
+<table border="1">
+<tr>
+	<td><code>:filename</code></td>
+	<td>Name of the file to be uploaded.</td>
+</tr>
+<tr>
+	<td><code>:filename_base</code></td>
+	<td>(optional) Base directory containing the :filename.</td>
+</tr>
+<tr>
+	<td><code>:name</code></td>
+	<td>(optional) File type, defaults to "blob".</td>
+</tr>
+<tr>
+	<td><code>:content_type</code></td>
+	<td>(optional) Content-Type header, defaults to "application/octet-stream".</td>
+</tr>
+</table>
+
+## Callback Parameters
+
+The :callback for the AsyncHttp methods executes when the AsyncHttp request is completed. The following parameters are available in an AsyncHttp callback.
+
+<table border="1">
+<tr>
+	<td><code>@params["body"]</code></td>
+	<td>The body of the HTTP response.</td>
+</tr>
+<tr>
+	<td><code>@params["headers"]</code></td>
+	<td>A hash containing the response headers.</td>
+</tr>
+<tr>
+	<td><code>@params["cookies"]</code></td>
+	<td>The server cookies, parsed and usable for subsequent requests.</td>
+</tr>
+<tr>
+	<td><code>@params["http_error"]</code></td>
+	<td>HTTP error code if response code was not 200.</td>
+</tr>
+</table>
+
+In the case of a JSON response (Content-Type=“application/json”), the `@params["body"]` will be parsed automatically and contain a ruby data structure. Otherwise, `@params["body"]` contains the raw response body.
+
+In the case of an XML response (Content-Type=“application/xml”), Rhodes can automatically parse the @params["body"] as well if you enable the “rexml extension” in your application.
+
+## Sample call
+
+	:::ruby
+	Rho::AsyncHttp.get(
+	  :url => "http://www.example.com",
+	  :headers => {"Cookie" => cookie},
+	  :callback => (url_for :action => :httpget_callback),
+	  :authentication => {
+	    :type => :basic, 
+	    :username => "john", 
+	    :password => "secret"
+	  }
+	)
+

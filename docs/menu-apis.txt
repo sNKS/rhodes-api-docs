@@ -1,10 +1,10 @@
 # Application Menu API
 
-Customize the native application menu and controller menu items.
+Customize the native application menu and controller menu items. Refer to [Application Menu in Device Capabilities](http://edgedocs.rhomobile.com/rhodes/ui#application-menu) for examples.
 
 ## @default_menu
 
-Write this method in application.rb to customize the Rhodes default menu.
+Set this paramter list in application.rb to customize the Rhodes default menu.
 
 	:::ruby
 	@default_menu = { 
@@ -22,7 +22,7 @@ Write this method in application.rb to customize the Rhodes default menu.
 
 ## @menu
 
-Write this method in a controller.rb file to customize a controller menu.
+Set this parameter list in a controller.rb file to customize a controller menu.
 
 	:::ruby
 	@menu = { 

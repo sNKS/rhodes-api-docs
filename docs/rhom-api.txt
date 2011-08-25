@@ -1,6 +1,6 @@
 # Rhom API
 
-Reset the Rhodes model database.
+Reset the Rhodes model database. For examples, see [Resetting the Database in Using the Local Database with Rhom](http://docs.rhomobile.com/rhodes/rhom#resetting-the-database).
 
 ## database_fullclient_reset_and_logout
 
@@ -16,11 +16,11 @@ Deletes all records from the property bag and model tables.
 <table border="1">
 <tr>
 	<td><code>reset_client_info</code></td>
-	<td>true if client_info table will be cleaned, false otherwise.</td>
+	<td>true to clean the client_info table, false otherwise.</td>
 </tr>
 <tr>
 	<td><code>reset_local_models</code></td>
-	<td>true if local (non-synced models) will be cleaned, false otherwise.</td>
+	<td>true to clean local (non-synced) models, false otherwise.</td>
 </tr>
 </table>
 

@@ -1,6 +1,6 @@
 # RhoLog Class
 
-Print Messages in the log file rholog.txt
+Print messages in the log file rholog.txt.
 
 ## info
 
@@ -20,7 +20,7 @@ Print an information message and timestamp in the rholog.txt file.
 </tr>
 </table>
 
-## error(category, message)
+## error
 
 Print an error message and timestamp  in the rholog.txt file.
 

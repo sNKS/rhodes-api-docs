@@ -1,6 +1,6 @@
 # File API
 
-Allows access to the Rhodes file structure.
+Allows access to the Rhodes file structure. Refer to [File System access in Device Capabilities](http://docs.rhomobile.com/rhodes/device-caps#file-system-access) for an example.
 
 ## binread
 
@@ -70,3 +70,21 @@ Create a new file.
 ## close
 
 Close a file.
+
+## Rhodes File structure
+
+	:::term
+	<rhodes root>  # system-dependent path
+	  apps         # Rho::RhoApplication::get_base_app_path
+	    app        # Rho::RhoApplication::get_app_path('app') - contain models
+	      model1   # Rho::RhoApplication::get_model_path('app','model1')
+	  public       # contains files from application public folder
+	  db           # contains schema and data files
+	    db-files   # contains files stored in database(blobs)
+	               # for file paths from camera callback etc: Rho::RhoApplication::get_blob_path(relative_file_path); 
+	               # to create file path for blob: Rho::RhoApplication::get_blob_folder()
+	  lib          # contains rho framework library files. Blackberry does not 
+	               # have this folder, library files are stored in jar
+	  RhoLog.txt   #application log
+
+[Click here to see the RhoApplication methods.](rhoapplication)

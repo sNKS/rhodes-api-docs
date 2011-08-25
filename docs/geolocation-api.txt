@@ -1,8 +1,16 @@
 # GeoLocation API
 
-Access geological information from your device.
+Access geolocation information from your device.
 
-The [GeoLocation Class API](http://docs.rhomobile.com/rhodes/device-caps#geolocation) allows you to access geological information using Ruby calls in your controller.
+See the controller and view in the [/app/GeoLocation folder of the System API Samples](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/GeoLocation/controller.rb) application for an example.
+
+## Enabling Geolocation
+
+To use the geolocation API, you need to enable geolocation on the device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	capabilities:
+	  - gps
 
 ## latitude
 
@@ -54,9 +62,20 @@ Callback parameters:
 	<td>Return from call to longitude method.</td>
 </tr>
 <tr>
+	<td><code>available</code></td>
+	<td>true if geolocation is available, false otherwise.</td>
+</tr>
+<tr>
 	<td><code>status</code></td>
 	<td>"OK" or "ERROR"</td>
+</tr>
+<tr>
+	<td><code>error_code</code></td>
+	<td>error code from RhoError.</td>
+</tr>
 </table>
+
+[Click here for the RhoError error code list.](rhoerror-api)
 
 ## haversine_distance
 

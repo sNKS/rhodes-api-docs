@@ -2,23 +2,15 @@
 
 Access a Device Contacts
 
-Provides access to a device's phone book and contacts.
+Provides access to a device's phone book and contacts. For a code example, see the view and controller in the [/app/Contacts folder in the System API Samples](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/Contacts/controller.rb) application.
 
-## Contact Properties
+## Enabling the Contacts
 
-The contact properties are stored in a hash.
+To use the RhoContact API, you need to enable read and write for the contacts on the device. Do this by adding that capability to the build.yml file:
 
-All devices support these properties: "id", "first_name", "last_name",“ "mobile_number", "home_number", "business_number", "email_address", "company_name".
-
-The iPhone supports additional properites: "prefix", "first_name", "middle_name", "last_name", "suffix", "nickname", "birthday", "anniversary", "created", "updated", "company_name", "job_title", "assistant_name", "assistant_number", "spouse_name", "person_note". The "birthday", "anniversary", "created",  and "updated" properties use a string date formatted as YYYY-MM-DD.
-
-Address properties: "street_address_1", "city_1", "state_1", "zip_1", "country_1" "street_address_2", "city_2", "state_2", "zip_2", "country_2" "street_address_3", "city_3", "state_3", "zip_3", "country_3". Address 1 is mapped to "work," 2 to "home," 3 to "other".
-
-Email addresses: "email_address", "home_email_address", "other_email_address". "email_address" is mapped to "work".
-
-Phone numbers: "business_number", "home_number", "mobile_number", "main_number", "pager_number", "home_fax", "work_fax".
-
-Home pages: "home_page"
+	:::yaml
+	capabilities:
+	  - pim
 
 ## find
 
@@ -75,3 +67,19 @@ Create a new contact in the phonebook, setting its properties passed as a parame
 	<td>A hash containing the contact properties to change for this contact.</td>
 </tr>
 </table>
+
+## Contact Properties
+
+The contact properties are stored in a hash.
+
+All devices support these properties: "id", "first_name", "last_name", "mobile_number", "home_number", "business_number", "email_address", "company_name".
+
+The iPhone supports additional properites: "prefix", "first_name", "middle_name", "last_name", "suffix", "nickname", "birthday", "anniversary", "created", "updated", "company_name", "job_title", "assistant_name", "assistant_number", "spouse_name", "person_note". The "birthday", "anniversary", "created",  and "updated" properties use a string date formatted as YYYY-MM-DD.
+
+Address properties: "street_address_1", "city_1", "state_1", "zip_1", "country_1" "street_address_2", "city_2", "state_2", "zip_2", "country_2" "street_address_3", "city_3", "state_3", "zip_3", "country_3". Address 1 is mapped to "work," 2 to "home," 3 to "other".
+
+Email addresses: "email_address", "home_email_address", "other_email_address". "email_address" is mapped to "work".
+
+Phone numbers: "business_number", "home_number", "mobile_number", "main_number", "pager_number", "home_fax", "work_fax".
+
+Home pages: "home_page"
