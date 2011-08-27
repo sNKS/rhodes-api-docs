@@ -7,7 +7,7 @@ Allows the device to take a signature and save it as an image with the method ta
 Opens a window on the device where user draws his signature. Saves the  signature as an image.
 
 	:::ruby
-	take_signature(callback_url, image_format)
+	SignatureTool::take_signature(callback_url, image_format)
 
 <table border="1">
 <tr>

@@ -1,13 +1,22 @@
-# NFCTag API
+# Rho::NFCTag API
 
 Use the NFCTag class to get the NFC tag in certain formats, such as Ndef.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## get_tech(tech_name)
 
 Returns an object with the implementation of the requested NFC tech based on the NFCTagTechnology class. Refer to the NFCTagTechnology class for the types of NFC tech you can request.
 
 	:::ruby
-	get_tech(tech_name)
+	Rho::NFCTag.get_tech(tech_name)
 
 <table border="1">
 <tr>
@@ -18,8 +27,14 @@ Returns an object with the implementation of the requested NFC tech based on the
 
 ## get_tech_list
 
-Returns a string array containing the NFC tag. 
+Returns a string array containing the NFC tag.
+
+	:::ruby
+	Rho::NFCTag.get_tech_list
 
 ## get_ID
 
-Returns a byte array containing the NFC tag ID. 
+Returns a byte array containing the NFC tag ID.
+
+	:::ruby
+	Rho::NFCTag.get_ID

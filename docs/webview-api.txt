@@ -7,8 +7,8 @@ Call on the WebView directly from your controller.
 Force WebView to refresh the current page.
 
 	:::ruby
-	refresh
-	refresh(index)
+	WebView.refresh
+	WebView.refresh(index)
 
 <table border="1">
 <tr>
@@ -22,7 +22,7 @@ Force WebView to refresh the current page.
 Force WebView to navigate to a URL.
 
 	:::ruby
-	navigate(url, index)
+	WebView.navigate(url, index)
 
 <table border="1">
 <tr>
@@ -40,8 +40,8 @@ Force WebView to navigate to a URL.
 Returns the url (location) of the current page.
 
 	:::ruby
-	current_location
-	current_location(index)
+	WebView.current_location
+	WebView.current_location(index)
 
 <table border="1">
 <tr>
@@ -55,7 +55,7 @@ Returns the url (location) of the current page.
 Execute JavaScript on the current page from your controller. Supported on iPhone, Android, Windows Mobile and Blackberry 5.0 in full browser mode.
 
 	:::ruby
-	execute_js(string)
+	WebView.execute_js(string)
 
 <table border="1">
 <tr>
@@ -68,12 +68,15 @@ Execute JavaScript on the current page from your controller. Supported on iPhone
 
 Returns an index of @tab array for the currently selected tab.
 
+	:::ruby
+	WebView.active_tab
+
 ## full_screen_mode
 
 Switch to/from full screen mode.
 
 	:::ruby
-	full_screen_mode(enable)
+	WebView.full_screen_mode(enable)
 
 <table border="1">
 <tr>
@@ -87,7 +90,7 @@ Switch to/from full screen mode.
 When WebView loads the specified url (either by selecting link or from calling WebView.navigate), it will add this cookie to the HTTP request.
 
 	:::ruby
-	set_cookie(url, cookie)
+	WebView.set_cookie(url, cookie)
 
 <table border="1">
 <tr>

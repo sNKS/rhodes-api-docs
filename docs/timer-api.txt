@@ -1,11 +1,11 @@
-# Timer API
+# Rho::Timer API
 
 Lets the device use a timer.
 
 ## start
 
 	:::ruby
-	start(interval_milliseconds, callback_url, callback_data)
+	Rho::Timer.start(interval_milliseconds, callback_url, callback_data)
 
 Start the timer and call the callback when the timer has run.
 
@@ -24,12 +24,12 @@ Start the timer and call the callback when the timer has run.
 </tr>
 </table>
 
-## stop(callback_url)
+## stop
 
 Stop the timer by callback.
 
 	:::ruby
-	stop(callback_url)
+	Rho::Timer.stop(callback_url)
 
 <table border="1">
 <tr>

@@ -1,13 +1,26 @@
-# NdefMessage API
+# Rho::NdefMessage API
 
 Convert an NdefMessage into a format from which you can extract data.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## get_byte_array
 
 Returns a byte array containing the NdefMessage.
 
+	:::ruby
+	Rho::NdefMessage.get_byte_array
+
 ## get_records
 
-Converts an NdefMessage into an NdefRecord array containing the records in the Ndef Message.
-
 Returns NdefRecord[], an array containing the records in an NdefMessage.
+
+	:::ruby
+	Rho::NdefMessage.get_records

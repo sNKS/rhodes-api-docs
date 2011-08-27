@@ -1,6 +1,15 @@
-# NFCTagTechnology_MifareClassic API
+# Rho::NFCTagTechnology_MifareClassic API
 
 Subset of NFCTagTechnology.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## Constants
 
@@ -26,7 +35,7 @@ Returns an int: the type of a MifareClassic tag.
 Returns a string: the named type of a MifareClassic tag.
 
 	:::ruby
-	convert_type_to_string(type)
+	Rho::NFCTagTechnology_MifareClassic.convert_type_to_string(type)
 
 <table border="1">
 <tr>
@@ -40,7 +49,7 @@ Returns a string: the named type of a MifareClassic tag.
 Writes a block to a MifareClassic tag.
 
 	:::ruby
-	write_block(index, block)
+	Rho::NFCTagTechnology_MifareClassic.write_block(index, block)
 
 <table border="1">
 <tr>
@@ -58,7 +67,7 @@ Writes a block to a MifareClassic tag.
 Returns a block: a 16 byte array of data read from a MifareClassic tag.
 
 	:::ruby
-	read_block(index)
+	Rho::NFCTagTechnology_MifareClassic.read_block(index)
 
 <table border="1">
 <tr>
@@ -71,6 +80,9 @@ Returns a block: a 16 byte array of data read from a MifareClassic tag.
 
 Return the size in bytes of a MifareClassic tag.
 
+	:::ruby
+	Rho::NFCTagTechnology_MifareClassic.get_size
+
 ## get_block_count
 
 Return the number of blocks in a MifareClassic tag.
@@ -79,12 +91,15 @@ Return the number of blocks in a MifareClassic tag.
 
 Returns the sector count in a MifareClassic tag.
 
-### NFCTagTechnology_MifareClassic.get_blocks_in_sector_count(index)
+	:::ruby
+	Rho::NFCTagTechnology_MifareClassic.get_block_count
+
+### get_blocks_in_sector_count
 
 Returns the number of blocks in a sector of a MifareClassic tag.
 
 	:::ruby
-	get_blocks_in_sector_count(index)
+	Rho::NFCTagTechnology_MifareClassic.get_blocks_in_sector_count(index)
 
 <table border="1">
 <tr>
@@ -95,10 +110,10 @@ Returns the number of blocks in a sector of a MifareClassic tag.
 
 ## sector_to_block
 
-Returns the index of the first block in a sector in a MifareClassic tag.
+Returns the index of the first block in a sector in a MifareClassic tag. Does not cause any RF activity.
 
 	:::ruby
-	sector_to_block(index)
+	Rho::NFCTagTechnology_MifareClassic.sector_to_block(index)
 
 <table border="1">
 <tr>
@@ -112,7 +127,7 @@ Returns the index of the first block in a sector in a MifareClassic tag.
 Authenticates a sector with a key. Returns true if the authenticate was passed.
 
 	:::ruby
-	authenticate_sector_with_key_A(index, key)
+	Rho::NFCTagTechnology_MifareClassic.authenticate_sector_with_key_A(index, key)
 
 <table border="1">
 <tr>
@@ -130,7 +145,7 @@ Authenticates a sector with a key. Returns true if the authenticate was passed.
 Authenticates a sector with a key. Returns true if the authenticate was passed.
 
 	:::ruby
-	authenticate_sector_with_key_B(index, key)
+	Rho::NFCTagTechnology_MifareClassic.authenticate_sector_with_key_B(index, key)
 
 <table border="1">
 <tr>
@@ -148,7 +163,7 @@ Authenticates a sector with a key. Returns true if the authenticate was passed.
 Sends data in a byte array to a tag and returns the result from the tag in a byte array.
 
 	:::ruby
-	transceive(data)
+	Rho::NFCTagTechnology_MifareClassic.transceive(data)
 
 <table border="1">
 <tr>

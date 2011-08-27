@@ -1,21 +1,36 @@
-# NFCTagTechnology_NfcA API
+# Rho::NFCTagTechnology_NfcA API
 	    
 Subset of NFCTagTechnology class.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## get_Atqa
 
 Returns a byte array containing Atqa.
 
+	:::ruby
+	Rho::NFCTagTechnology_NfcA.get_Atqa
+
 ## get_Sak
 
 Returns an int containing Sak.
+
+	:::ruby
+	Rho::NFCTagTechnology_NfcA.get_Sak
 
 ## transceive
 
 Sends data in a byte array to a tag and returns the result from the tag in a byte array.
 
 	:::ruby
-	transceive(data)
+	Rho::NFCTagTechnology_NfcA.transceive(data)
 
 <table border="1">
 <tr>

@@ -1,4 +1,4 @@
-# RhoEvent API
+# Rho::RhoEvent API
 
 Access a device's calendar and events.
 
@@ -17,7 +17,7 @@ To use the RhoEvent API, you need to enable read and write for the calendar on t
 Returns the events in the device calendar.
 
 	:::ruby
-	find(events)
+	Rho::RhoEvent.find(events)
 
 <table border="1">
 <tr>
@@ -31,7 +31,7 @@ Returns the events in the device calendar.
 Returns the events in the device calendar within a specified range.
 
 	:::ruby
-	find(:all, :start_date, :end_date, :find_type, :include_repeating)
+	Rho::RhoEvent.find(:all, :start_date, :end_date, :find_type, :include_repeating)
 
 <table border="1">
 <tr>
@@ -73,10 +73,13 @@ Code sample:
 
 Creates a new event in the calendar. Returns a hash of the properties in the event.
 
+	:::ruby
+	Rho::RhoEvent.create!(event)
+
 <table border="1">
 <tr>
 	<td><code>event</code></td>
-	<td>@params['event'] - a hash of the properties for the new event.</td>
+	<td>a hash of the properties for the new event.</td>
 </tr>
 </table>
 
@@ -84,10 +87,13 @@ Creates a new event in the calendar. Returns a hash of the properties in the eve
 
 Update the properties for this event and save the event in the calendar.
 
+	:::ruby
+	Rho::RhoEvent.update_attributes(event)
+
 <table border="1">
 <tr>
 	<td><code>event</code></td>
-	<td>@params['event'] - a hash of the updated properties for the new event.</td>
+	<td>a hash of the updated properties for the new event.</td>
 </tr>
 </table>
 
@@ -95,10 +101,13 @@ Update the properties for this event and save the event in the calendar.
 
 Remove this event from the calendar.
 
+	:::ruby
+	Rho::RhoEvent.destroy(id)
+
 <table border="1">
 <tr>
-	<td><code>event</code></td>
-	<td>@params['id'] - remove the event identified by this id.</td>
+	<td><code>id</code></td>
+	<td>remove the event identified by this id.</td>
 </tr>
 </table>
 

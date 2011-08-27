@@ -1,6 +1,15 @@
-# NFCTagTechnology_Ndef API
+# Rho::NFCTagTechnology_Ndef API
 
 Subset of NFCTagTechnology class.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## Types
 	        
@@ -16,30 +25,45 @@ Returns int - Maximum size of the Ndef tag.
 
 ## is_writable
 
-Returns true if the Ndef tag is writeable, false otherwise.
+Returns true if the Ndef tag is in read-write status, false otherwise. NFC Forum tags can be in read-only or read-write states. Does not cause any RF activity.
+
+	:::ruby
+	Rho::NFCTagTechnology_Ndef.is_writable
 
 ## can_make_read_only
 
 Returns true if the Ndef tag can be made read only, false otherwise.
 
+	:::ruby
+	Rho::NFCTagTechnology_Ndef.can_make_read_only
+
 ## make_read_only
 
 Returns true if the Ndef tag is made read only, false otherwise.
+
+	:::ruby
+	Rho::NFCTagTechnology_Ndef.make_read_only
 	    
 ## get_type
 
 Returns a string containing the type of the Ndef tag.
+
+	:::ruby
+	Rho::NFCTagTechnology_Ndef.get_type
 	    
 ## read_NdefMessage
 
 Returns NdefMessage - the message read from the Ndef tag.
+
+	:::ruby
+	Rho::NFCTagTechnology_Ndef.read_NdefMessage
 
 ## write_NdefMessage
 
 Writes an NdefMessage to an Ndef tag.
 
 	:::ruby
-	write_NdefMessage(msg)
+	Rho::NFCTagTechnology_Ndef.write_NdefMessage(msg)
 
 <table border="1">
 <tr>

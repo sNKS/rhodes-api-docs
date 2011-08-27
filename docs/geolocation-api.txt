@@ -14,22 +14,31 @@ To use the geolocation API, you need to enable geolocation on the device. Do thi
 
 ## latitude
 
-Get current latitude in degrees.
+Returns current latitude in degrees.
+
+	:::ruby
+	GeoLocation.latitude
 
 ## longitude
 
-Get current longitude in degrees.
+Returns current longitude in degrees.
+
+	:::ruby
+	GeoLocation.latitude
 
 ## known_position?
 
 Returns true if the location system is up and running, false otherwise.
+
+	:::ruby
+	GeoLocation.known_position?
 
 ## set_notification
 
 Set callback to track location changes.
 
 	:::ruby
-	set_notification(callback, callback_params, ping_gpssystem_timeout)
+	GeoLocation.set_notification(callback, callback_params, ping_gpssystem_timeout)
 
 <table border="1">
 <tr>
@@ -82,7 +91,7 @@ Callback parameters:
 Get the distance between two points in miles.
 
 	:::ruby
-	haversine_distance(latitude1, longitude1, latitude2, longitude2)
+	GeoLocation.haversine_distance(latitude1, longitude1, latitude2, longitude2)
 
 <table border="1">
 <tr>

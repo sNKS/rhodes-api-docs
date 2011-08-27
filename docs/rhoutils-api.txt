@@ -1,4 +1,4 @@
-# RhoUtils API
+# Rho::RhoUtils API
 
 Seed the Rhom database. For an example, see [Seeding the Database in Using the Local Database with Rhom](http://edgedocs.rhomobile.com/rhodes/rhom#seeding-the-database).
 
@@ -7,7 +7,7 @@ Seed the Rhom database. For an example, see [Seeding the Database in Using the L
 Seed the Rhom database with initial data.
 
 	:::ruby
-	load_offline_data(table_array, seed_prefix_directory)
+	Rho::RhoUtils.load_offline_data(table_array, seed_prefix_directory)
 
 <table border="1">
 <tr>

@@ -2,16 +2,27 @@
 
 Call system alert methods for popup, vibrate, or playing audio files.
 
+## Enabling Vibration
+
+To use the vibrate method, you need to enable vibration on the device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	capabilities:
+	  - vibrate
+
 ## hide_popup
 
 Closes the current popup window.
+
+	:::ruby
+	Alert.hide_popup
 
 ## play_file
 
 Play an audio file if that media type is supported by the device.
 
 	:::ruby
-	play_file(path, media_type)
+	Alert.play_file(path, media_type)
 
 <table border="1">
 	<tr>
@@ -31,7 +42,7 @@ Bring the application up front and show a message in a popup window. The message
 [Click for an example of show_popup with a button and callback.](http://docs.rhomobile.com/rhodes/device-caps#alerts)
 
 	:::ruby
-	show_popup "message"
+	Alert.show_popup "message"
 
 <table border="1" width="100%">
 <tr>
@@ -89,7 +100,7 @@ Display a window containing a status message. The window closes after the user c
 [Click for an example of show_status.](http://edgedocs.rhomobile.com/rhodes/device-caps#alert-show-status-ex)
 
 	:::ruby
-	show_status(title, status_text, hide_button_label)
+	Alert.show_status(title, status_text, hide_button_label)
 
 <table border="1">
 <tr>
@@ -109,7 +120,7 @@ Display a window containing a status message. The window closes after the user c
 ## vibrate
 
 	:::ruby
-	vibrate(duration)
+	Alert.vibrate(duration)
 
 <table border="1">
 <tr>

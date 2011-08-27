@@ -9,7 +9,7 @@ See controller.rb and index.erb view in the [/app/DateTime folder of the System 
 Opens a window where the user can choose date and time.
 
 	:::ruby
-	choose(callback, title, initial_time, fmt, opaque)
+	DateTimePicker.choose(callback, title, initial_time, fmt, opaque)
 
 <table border="1">
 <tr>
@@ -37,7 +37,7 @@ Opens a window where the user can choose date and time.
 ## choose_with_range
 
 	:::ruby
-	choose_with_range(callback, title, initial_time, fmt, user_data, mindatetime, maxdatetime)
+	DateTimePicker.choose_with_range(callback, title, initial_time, fmt, user_data, mindatetime, maxdatetime)
 
 <table border="1">
 <tr>
@@ -72,12 +72,15 @@ Opens a window where the user can choose date and time.
 
 ## set_change_value_callback
 
-Set a callback to listen for an on change event; if you use this method, use it before each call of the choose methods.
+(only for iPhone + call DateTimePicker via Ajax call) Set a callback for every change of the date/time value in the DateTimePicker UI control. You can have DateTimePicker and current page on screen together, and you can use the callback to modify date/time value on the page during editing in DateTimePicker control. If you use this method, use it before each call of the choose methods.
+
+	:::ruby
+	DateTimePicker.set_change_value_callback(callback)
 
 <table border="1">
 <tr>
 	<td><code>callback</code></td>
-	<td>url to callback method that is called on the "on change" event.</td>
+	<td>url to callback method that is called on the change event.</td>
 </tr>
 </table>
 

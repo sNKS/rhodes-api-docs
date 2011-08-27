@@ -1,13 +1,21 @@
-# BluetoothSession API
+# Rho::BluetoothSession API
 
 Makes a connection between your Bluetooth-equipped device and another Bluetooth-equipped device. [Click for a short example of using bluetooth](http://edgedocs.rhomobile.com/rhodes/device-caps#bluetooth-ex), or here for [Rhodes-System-Api-Samples – BluetoothChat](https://github.com/rhomobile/rhodes-system-api-samples/tree/master/app/BluetoothChat/).
+
+## Enabling Bluetooth
+
+You need to enable Bluetooth on the device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	capabilities:
+	  - bluetooth
 
 ## set_callback
 
 Set the Bluetooth session callback. Returns OK or ERROR.
 
 	:::ruby
-	set_callback(connected_device_name, session_callback_url)
+	Rho::BluetoothSession.set_callback(connected_device_name, session_callback_url)
 
 <table border="1">
 <tr>
@@ -26,7 +34,7 @@ Set the Bluetooth session callback. Returns OK or ERROR.
 Disconnect from the device. Returns OK or ERROR.
 
 	:::ruby
-	disconnect(connected_device_name)
+	Rho::BluetoothSession.disconnect(connected_device_name)
 
 <table border="1">
 <tr>
@@ -50,7 +58,7 @@ Disconnect from the device. Returns OK or ERROR.
 Get the session status. Returns the size of the data received by the bluetooth connection (data has not been read or parsed yet); or -1 if error; or 0 if empty (did not receive data).
 
 	:::ruby
-	get_status(connected_device_name)
+	Rho::BluetoothSession.get_status(connected_device_name)
 
 <table border="1">
 <tr>
@@ -64,7 +72,7 @@ Get the session status. Returns the size of the data received by the bluetooth c
 Read data from the connected device. Returns an array of bytes.
 
 	:::ruby
-	read(connected_device_name)
+	Rho::BluetoothSession.read(connected_device_name)
 
 <table border="1">
 <tr>
@@ -78,7 +86,7 @@ Read data from the connected device. Returns an array of bytes.
 Write data to the connected device.
 
 	:::ruby
-	write(connected_device_name, data)
+	Rho::BluetoothSession.write(connected_device_name, data)
 
 <table border="1">
 <tr>
@@ -96,7 +104,7 @@ Write data to the connected device.
 Read string from the connected device. Returns a string.
 
 	:::ruby
-	read_string(connected_device_name)
+	Rho::BluetoothSession.read_string(connected_device_name)
 
 connected_device_name – name of the connected device.
 
@@ -112,7 +120,7 @@ connected_device_name – name of the connected device.
 Write string to the connected device. Returns OK or ERROR.
 
 	:::ruby
-	write_string(connected_device_name, data)
+	Rho::BluetoothSession.write_string(connected_device_name, data)
 
 <table border="1">
 <tr>

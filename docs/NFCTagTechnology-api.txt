@@ -1,6 +1,15 @@
-# NFCTagTechnology Class API
+# Rho::NFCTagTechnology Class API
 
 Use the NFCTagTechnology to connect to NFC tags and to determine their type.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## Properties
 
@@ -20,6 +29,9 @@ The NFCTagTechnology class has several properties to determine the type of the N
 
 Returns string - the name of the NFC tag.
 
+	:::ruby
+	Rho::NFCTagTechnology.get_name
+
 ## connect
 
 Connects to an NFC tag.
@@ -28,6 +40,12 @@ Connects to an NFC tag.
 
 Closes a connection with an NFC tag.
 
+	:::ruby
+	Rho::NFCTagTechnology.close
+
 ## is_connected
 
-Returns true if the application is connected with an NFC tag, false otherwise. 
+Returns true if the application is connected with an NFC tag, false otherwise.
+
+	:::ruby
+	Rho::NFCTagTechnology.is_connected

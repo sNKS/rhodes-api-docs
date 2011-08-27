@@ -1,6 +1,15 @@
-# NFCManager API
+# Rho::NFCManager API
 
 Manage near field communications messages and records that your NFC application sends and receives.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
 
 ## Callback Tag Message Storage
 
@@ -8,27 +17,59 @@ The NFC callback stores the NFC tag messages in a hash array:
 
 @params['messages'] - array of NFC tag messages. Each message is a hash.
 
-The messages can be picked up in 'raw_message', an array of bytes containing the raw message. The messages can also be picked up in 'records', an array of records where each record is a hash. The records use the NFC Data Exchange Format. Each record has the following hash items.
+The messages can be picked up in `raw_message`, an array of bytes containing the raw message. The messages can also be picked up in `records`, an array of records where each record is a hash. The records use the NFC Data Exchange Format. Each record has the following hash items.
 
- * 'raw_record' - Array of bytes. The raw record.
- * 'id' - Array of bytes. The tag ID.
- * 'payload' - Array of bytes.
- * 'tnf' - Int. The Type Name Format. 
- * 'type' - array of bytes
- * 'payload_as_string' - String. The message payload in a string (support special formats for URI, TEXT). 
- * 'subrecords' - message hash (only for SMART_POSTER type)
+<table border="1">
+<tr>
+	<td><code>raw_record</code></td>
+	<td>Array of bytes. The raw record.</td>
+</tr>
+<tr>
+	<td><code>id</code></td>
+	<td>Array of bytes. The tag ID.</td>
+</tr>
+<tr>
+	<td><code>payload</code></td>
+	<td>Array of bytes. The tag payload.</td>
+</tr>
+<tr>
+	<td><code>tnf</code></td>
+	<td>int. The Type Name Format.</td>
+</tr>
+<tr>
+	<td><code>type</code></td>
+	<td>array of bytes</td>
+</tr>
+<tr>
+	<td><code>payload_as_string</code></td>
+	<td>String. The message payload in a string (support special formats for URI, TEXT).</td>
+</tr>
+<tr>
+	<td><code>subrecords</code></td>
+	<td>message hash (only for SMART_POSTER type)</td>
+</tr>
+</table>
 
 ## is_supported
 
 Returns true if the mobile device supports NFC, false otherwise.
 
+	:::ruby
+	Rho::NFCManager.is_supported
+
 ## enable
 
 The enable method enables NFC event processing on your mobile device. Your nfc and nfc_tech callback methods are executed only if Rhodes NFC is enabled. On Android, when Rhodes NFC is enabled and the application activity is in the foreground, the activity gets high priority for NFC events. Android will not show additional UI for the select Activity for Tag processing; the Rhodes application will process the tag.
 
+	:::ruby
+	Rho::NFCManager.enable
+
 ## disable
 
 Disables your application from receiving NFC events. Your application will not be able to receive NFC tags.
+
+	:::ruby
+	Rho::NFCManager.disable
 
 ## is_enabled
 
@@ -39,7 +80,7 @@ Returns true if the mobile device has been enabled for NFC, false otherwise.
 Tells your application what callback to perform when it receives an NFC tag and your application is in the foreground. set_nfc_callback executes when the Android events ACTION_NDEF_DISCOVERED or ACTION_TAG_DISCOVERED are processed.
 
 	:::ruby
-	set_nfc_callback(callback_url)
+	Rho::NFCManager.set_nfc_callback(callback_url)
 
 <table border="1">
 <tr>
@@ -53,7 +94,7 @@ Tells your application what callback to perform when it receives an NFC tag and 
 Tells your application what callback to perform when it receives an NFC tag and your application is in the background. The set_nfc_tech_callback method executes when the Android event ACTION_TECH_DISCOVERED is processed.
 
 	:::ruby
-	set_nfc_tech_callback(callback_url)
+	Rho::NFCManager.set_nfc_tech_callback(callback_url)
 
 <table border="1">
 <tr>
@@ -65,6 +106,9 @@ Tells your application what callback to perform when it receives an NFC tag and 
 ## get_current_Tag
 
 Returns the current NFCTag that the mobile device has just read, or returns nil if no tag has been discovered.
+
+	:::ruby
+	Rho::NFCManager.get_current_Tag
 
 ## perform_open_application_event
 
@@ -88,12 +132,15 @@ The p2p_enable_foreground_nde_push method causes your mobile device to push an N
 
 Causes your mobile device to stop pushing NFC messages to any other NFC-enabled devices that can receive them.
 
+	:::ruby
+	Rho::NFCManager.p2p_disable_foreground_nde_push
+
 ## make_NdefRecord_from_byte_array
 
 Returns an NdefRecord for an NFC tag message.
 
-	:::byte
-	make_NdefRecord_from_byte_array(array)
+	:::ruby
+	Rho::NFCManager.make_NdefRecord_from_byte_array(array)
 
 <table border="1">
 <tr>
@@ -109,7 +156,7 @@ Returns an NdefRecord for an NFC tag message.
 The make_NdefRecord_from_hash method creates a record for an NFC tag message (NdefRecord) from a hash.
 
 	:::ruby
-	make_NdefRecord_from_hash(hash)
+	Rho::NFCManager.make_NdefRecord_from_hash(hash)
 
 #### Parameters
 
@@ -159,7 +206,7 @@ Returns an NFC tag message (NdefMessage) created from a byte array.
 Returns an NFC tag message (NdefMessage) created from an array of records (NdefRecord, such as what you get from make_NdefRecord_from_hash).
 
 	:::ruby
-	make_NdefMessage_from_array_of_NdefRecord(array)
+	Rho::NFCManager.make_NdefMessage_from_array_of_NdefRecord(array)
 
 <table border="1">
 <tr>
@@ -173,7 +220,7 @@ Returns an NFC tag message (NdefMessage) created from an array of records (NdefR
 Returns a string from the payload of an NFC tag message record (NdefRecord).
 
 	:::ruby
-	make_string_from_payload(payload, tnf, type)
+	Rho::NFCManager.make_string_from_payload(payload, tnf, type)
 
 <table border="1">
 <tr>
@@ -195,7 +242,7 @@ Returns a string from the payload of an NFC tag message record (NdefRecord).
 Returns a byte array for an NFC record payload created from a string with an absolute URI.
 
 	:::ruby
-	make_payload_with_absolute_uri(uri_string)
+	Rho::NFCManager.make_payload_with_absolute_uri(uri_string)
 
 <table border="1">
 <tr>
@@ -209,7 +256,7 @@ Returns a byte array for an NFC record payload created from a string with an abs
 Returns a byte array for an NFC record payload from a string with an absolute URI.
 
 	:::ruby
-	make_payload_with_well_known_uri(prefix_code, uri_string)
+	Rho::NFCManager.make_payload_with_well_known_uri(prefix_code, uri_string)
 
 <table border="1">
 <tr>
@@ -227,7 +274,7 @@ Returns a byte array for an NFC record payload from a string with an absolute UR
 Returns a byte array for an NFC record payload from a string language code and a string text.
 
 	:::ruby
-	make_payload_with_well_known_text(language, uri_string)
+	Rho::NFCManager.make_payload_with_well_known_text(language, uri_string)
 
 <table border="1">
 <tr>

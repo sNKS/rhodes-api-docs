@@ -2,9 +2,12 @@
 
 Provides an embeddable map interface. See [GeoLocation/controller.rb of System API sample application](https://github.com/rhomobile/rhodes-system-api-samples/blob/master/app/GeoLocation/controller.rb) for some examples of using the MapView class.
 
-## create map_params
+## create
 
 Create a map on your device.
+
+	:::ruby
+	MapView.create map_params
 
 map_params is a hash consisting of:
 

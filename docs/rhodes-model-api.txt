@@ -1,4 +1,4 @@
-# Rhodes Model API
+# Rhom API
 
 Allows access to the Rhodes mini database object mapper, performing database operation on Rhodes model objects.
 
@@ -6,12 +6,15 @@ Allows access to the Rhodes mini database object mapper, performing database ope
 
 Clear notification for the object.
 
+	:::ruby
+	modelname.clear_notification
+
 ## delete_all
 
 Delete all Rhodes model objects for a source, filtering by conditions.
 
 	:::ruby
-	delete_all(:conditions, :op)
+	modelname.delete_all(:conditions, :op)
 
 <table border="1">
 <tr>
@@ -28,9 +31,17 @@ Delete all Rhodes model objects for a source, filtering by conditions.
 
 Destroy a Rhodes model object.
 
-## find(argument list)
+	:::ruby
+	modelname.destroy
 
-Find Rhodes model objects. The argument list can consist of the following arguments.
+## find
+
+Find Rhodes model objects. 
+
+	:::ruby
+	modelname.find(argument list)
+
+The argument list can consist of the following arguments.
 
 <table border="1">
 <tr>
@@ -79,14 +90,14 @@ For examples of find with advanced queries, see [Advanced Queries in Using the L
 
 ## find_all
 
-Alias for find(:all, argument list).
+Alias for modelname.find(:all, argument list).
 
 ## find_by_sql
 
 Returns Rhodes model object(s) based on sql_query. This method works only for schema models.
 
 	:::ruby
-	find_by_sql(sql_query)
+	modelname.find_by_sql(sql_query)
 
 <table border="1">
 <tr>
@@ -100,7 +111,7 @@ Returns Rhodes model object(s) based on sql_query. This method works only for sc
 Create a new Rhodes model object.
 
 	:::ruby
-	new(attributes)
+	modelname.new(attributes)
 
 <table border="1">
 <tr>
@@ -114,7 +125,7 @@ Create a new Rhodes model object.
 Create a new Rhodes model object and save it to the database.
 
 	:::ruby
-	create(attributes)
+	modelname.create(attributes)
 
 <table border="1">
 <tr>
@@ -128,7 +139,7 @@ Create a new Rhodes model object and save it to the database.
 Call `find` with a limit on the number of records.  
 
 	:::ruby
-	paginate(*arguments)
+	modelname.paginate(*arguments)
 
 The *arguments you can use are:
 
@@ -155,7 +166,10 @@ The *arguments you can use are:
 </tr>
 </table>
 
-## sync(callback_url, callback_data, show_status_popup)
+## sync
+
+	:::ruby
+	modelname.sync(callback_url, callback_data, show_status_popup)
 
 Start the sync process for a Rhodes model.
 
@@ -178,17 +192,29 @@ Start the sync process for a Rhodes model.
 
 Returns true if the Rhodes model object is not currently being synced (if it is being synced, you should disable editing of the object).
 
+	:::ruby
+	modelname.can_modify
+
 ## changed?
 
 Returns true if a Rhodes model object has local database changes that need to be synchronized, false otherwise.
+
+	:::ruby
+	modelname.changed?
 
 ## save
 
 Saves the current Rhodes model object to the database.
 
-## set_notification(callback_url, params)
+	:::ruby
+	modelname.save
+
+## set_notification
 
 Set a notification to be called when the sync is complete for this model.
+
+	:::ruby
+	modelname.set_notification(callback_url, params)
 
 <table border="1">
 <tr>
@@ -206,7 +232,7 @@ Set a notification to be called when the sync is complete for this model.
 Updates the current Rho model object attributes and saves it to the database. This is the fastest way to add or update model attributes.
 
 	:::ruby
-	update_attributes(attributes)
+	modelname.update_attributes(attributes)
 
 <table border="1">
 <tr>

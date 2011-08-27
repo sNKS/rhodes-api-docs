@@ -7,7 +7,7 @@ The NavBar API supports a native navigation bar for the iPhone.
 Creates a navigation bar for the iPhone.
 
 	:::ruby
-	create(navbar-elements)
+	NavBar.create(navbar-elements)
 
 <table border="1">
 <tr>
@@ -62,3 +62,6 @@ The :left and :right buttons use the following parameters:
 ## remove
 
 Removes a navigation bar from the iPhone.
+
+	:::ruby
+	NavBar.remove

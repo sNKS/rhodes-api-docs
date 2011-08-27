@@ -1,10 +1,13 @@
-# AsyncHttp API
+# Rho::AsyncHttp API
 
 Asynchronously make calls to http services.
 
 ## cancel
 
 Cancel the current AsyncHttp call.
+
+	:::ruby
+	Rho::AsyncHttp.cancel
 
 ## download_file
 
@@ -13,7 +16,7 @@ Download a file to the specified filename.
 [Click for an example of download_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-download_file-ex)
 
 	:::ruby
-	download_file(:url, :headers, :filename, :callback, :callback_param)
+	Rho::AsyncHttp.download_file(:url, :headers, :filename, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -45,7 +48,7 @@ Perform an HTTP GET request to the specified URL.
 [Click for an example of get.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-get-ex)
 
 	:::ruby
-	get(:url, :headers, :callback, :callback_param)
+	Rho::AsyncHttp.get(:url, :headers, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -98,7 +101,7 @@ Perform HTTP POST request to the specified URL.
 [Click for an example of post.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-post-ex)
 
 	:::ruby
-	post(:url, :headers, :body, :callback, :callback_param)
+	Rho::AsyncHttp.post(:url, :headers, :body, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -155,7 +158,7 @@ Upload the specified file using HTTP POST.
 [Click for examples of upload_file.](http://edgedocs.rhomobile.com/rhodes/connect-to-web-services#asynchttp-upload_file-ex)
 
 	:::ruby
-	upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
+	Rho::AsyncHttp.upload_file(:url, :headers, :filename, :body, :callback, :callback_param)
 
 <table border="1">
 <tr>
@@ -187,7 +190,7 @@ Upload the specified file using HTTP POST.
 `upload_file` can also send multiple files in a single request.
 
 	:::ruby
-	upload_file(:url, :multipart)
+	Rho::AsyncHttp.upload_file(:url, :multipart)
 
 <table border="1">
 <tr>

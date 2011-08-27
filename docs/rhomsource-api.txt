@@ -6,11 +6,15 @@ Exposes sync information, which you can use for alerts, status pages, and so on.
 
 Returns the number of records for this source.
 
-## find(source_name)
+	:::ruby
+	RhomSource.distinct_objects
+
+## find
 
 Returns a RhomSource object.
 
-source_name - The name of the source on the RhoSync server.
+	:::ruby
+	RhomSource.find(source_name)
 
 <table border="1">
 <tr>
@@ -23,27 +27,47 @@ source_name - The name of the source on the RhoSync server.
 
 Returns the number of records deleted on last sync.
 
+	:::ruby
+	RhomSource.last_deleted_size
+
 ## last_inserted_size
 
 Returns the number of records inserted on last sync.
 
+	:::ruby
+	RhomSource.last_inserted_size
+
 ## last_sync_duration
 
-Returns the duration in seconds of the last sync for this source.  
+Returns the duration in seconds of the last sync for this source.
+
+	:::ruby
+	RhomSource.last_sync_duration
 
 ## last_sync_success
 
 Returns 1 if last sync was successful, 0 if it failed.
 
+	:::ruby
+	RhomSource.last_sync_success
+
 ## last_updated
 
 Returns the last time the source was synchronized, in `Time.at` format.
+
+	:::ruby
+	RhomSource.last_updated
 
 ## name
 
 Returns the name of the source.
 
+	:::ruby
+	RhomSource.name
+
 ## source_id
 
 Returns the id of a source.
 
+	:::ruby
+	RhomSource.source_id

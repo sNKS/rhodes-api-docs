@@ -1,4 +1,4 @@
-# RhoContact API
+# Rho::RhoContact API
 
 Access a Device Contacts
 
@@ -14,24 +14,40 @@ To use the RhoContact API, you need to enable read and write for the contacts on
 
 ## find
 
-Returns the contacts in the device phone book.
+Returns the contacts in the device phone book. 
 
 	:::ruby
-	find(contacts)
+	Rho::RhoContact.find(argument list)
+
+The argument list can consist of the following arguments.
 
 <table border="1">
 <tr>
-	<td><code>contacts</code></td>
-	<td>:all - Return a hash of hashes of all the contacts. @params['id'] - return a hash of the properties of the contact identified by this id.</td>
+	<td><code>:all</code></td>
+	<td>Return a hash of hashes of all the contacts.</td>	
+</tr>
+<tr>
+	<td><code>id</code></td>
+	<td>return a hash of the properties of the contact identified by this id.</td>	
+</tr>
+<tr>
+	<td><code>:count</code></td>
+	<td>(optional) query overall contact count.</td>	
+</tr>
+<tr>
+	<td><code>{:offset => offset, :max_results => limit}</code></td>
+	<td>(optional) query just a particular set of contacts (for pagination purpose).</td>
 </tr>
 </table>
 
 ## create!
 
+Returns a hash of the contact properties. 
+
 Create a new contact in the phonebook, setting its properties passed as a parameter hash.
 
 	:::ruby
-	create!(@params['contact'])
+	Rho::RhoContact.create!(contact)
 
 <table border="1">
 <tr>
@@ -45,7 +61,7 @@ Create a new contact in the phonebook, setting its properties passed as a parame
 Delete this contact from the phonebook.
 
 	:::ruby
-	delete(@params['id'])
+	Rho::RhoContact.destroy(id)
 
 <table border="1">
 <tr>
@@ -59,7 +75,7 @@ Delete this contact from the phonebook.
 Create a new contact in the phonebook, setting its properties passed as a parameter hash.
 
 	:::ruby
-	update_attributes(@params['contact'])
+	Rho::RhoContact.update_attributes(contact)
 
 <table border="1">
 <tr>
@@ -72,14 +88,135 @@ Create a new contact in the phonebook, setting its properties passed as a parame
 
 The contact properties are stored in a hash.
 
-All devices support these properties: "id", "first_name", "last_name", "mobile_number", "home_number", "business_number", "email_address", "company_name".
+<table border="1">
+<tr>
+	<td><code>id</code></td>
+	<td>int. The id for this contact.</td>
+</tr>
+<tr>
+	<td><code>first_name</code></td>
+	<td>String. The first name for this contact.</td>
+</tr>
+<tr>
+	<td><code>last_name</code></td>
+	<td>String. The last name for this contact.</td>
+</tr>
+<tr>
+	<td><code>mobile_number</code></td>
+	<td>String. The mobile phone number for this contact.</td>
+</tr>
+<tr>
+	<td><code>business_number</code></td>
+	<td>String. The business phone number for this contact.</td>
+</tr>
+<tr>
+	<td><code>email_address</code></td>
+	<td>String. The email address for this contact. On iPhone, mapped to "work".</td>
+</tr>
+<tr>
+	<td><code>company_name</code></td>
+	<td>String. The company name for this contact.</td>
+</tr>
+</table>
 
-The iPhone supports additional properites: "prefix", "first_name", "middle_name", "last_name", "suffix", "nickname", "birthday", "anniversary", "created", "updated", "company_name", "job_title", "assistant_name", "assistant_number", "spouse_name", "person_note". The "birthday", "anniversary", "created",  and "updated" properties use a string date formatted as YYYY-MM-DD.
+### Additional Contact Properties for iPhone
 
-Address properties: "street_address_1", "city_1", "state_1", "zip_1", "country_1" "street_address_2", "city_2", "state_2", "zip_2", "country_2" "street_address_3", "city_3", "state_3", "zip_3", "country_3". Address 1 is mapped to "work," 2 to "home," 3 to "other".
+<table border="1">
+<tr>
+	<td><code>prefix</code></td>
+	<td>String. The prefix for the name, such as "Mr."</td>
+</tr>
+<tr>
+	<td><code>middle_name</code></td>
+	<td>String. The middle name for this contact.</td>
+</tr>
+<tr>
+	<td><code>suffix</code></td>
+	<td>String. The suffix for this contact, such as "Jr."</td>
+</tr>
+<tr>
+	<td><code>nickname</code></td>
+	<td>String. The nickname for this contact.</td>
+</tr>
+<tr>
+	<td><code>birthday</code></td>
+	<td>String. The birthday for this contact, formatted as YYYY-MM-DD.</td>
+</tr>
+<tr>
+	<td><code>anniversary</code></td>
+	<td>String. The anniversary for this contact, formatted as YYYY-MM-DD.</td>
+</tr>
+<tr>
+	<td><code>created</code></td>
+	<td>String. The date this contact was created, formatted as YYYY-MM-DD.</td>
+</tr>
+<tr>
+	<td><code>updated</code></td>
+	<td>String. The most recent date this contact was updated, formatted as YYYY-MM-DD.</td>
+</tr>
+<tr>
+	<td><code>company_name</code></td>
+	<td>String. The company name for this contact.</td>
+</tr>
+<tr>
+	<td><code>job_title</code></td>
+	<td>String. The job title for this contact.</td>
+</tr>
+<tr>
+	<td><code>assistant_name</code></td>
+	<td>String. The name of the assistant for this contact.</td>
+</tr>
+<tr>
+	<td><code>assistant_number</code></td>
+	<td>String. The phone number of the assistant for this contact.</td>
+</tr>
+<tr>
+	<td><code>spouse_name</code></td>
+	<td>String. The name of the spouse for this contact.</td>
+</tr>
+<tr>
+	<td><code>person_note</code></td>
+	<td>String. A note for this contact.</td>
+</tr>
+<tr>
+	<td><code>home_email_address</code></td>
+	<td>String. Home email address for this contact.</td>
+</tr>
+<tr>
+	<td><code>other_email_address</code></td>
+	<td>String. Other email address for this contact.</td>
+</tr>
+<tr>
+	<td><code>other_email_address</code></td>
+	<td>String. Other email address for this contact.</td>
+</tr>
+<tr>
+	<td><code>home_page</code></td>
+	<td>String. url of the contact's home page.</td>
+</tr>
+<tr>
+	<td><code>main_number</code></br>
+		<code>pager_number</code></br>
+		<code>home_fax</code></br>
+		<code>wor_fax</code></br>
+	</td>
+	<td>Strings. Additonal phone numbers for iPhone.</td>
+</tr>
+</table>
 
-Email addresses: "email_address", "home_email_address", "other_email_address". "email_address" is mapped to "work".
+### Additional Address Properties for iPhone
 
-Phone numbers: "business_number", "home_number", "mobile_number", "main_number", "pager_number", "home_fax", "work_fax".
-
-Home pages: "home_page"
+<table border="1">
+<tr>
+	<td><code>Address properties mapped to "work"</code></td>
+	<td>Strings. "street_address_1", "city_1", "state_1", "zip_1", "country_1"</td>
+</tr>
+<tr>
+	<td><code>Address properties mapped to "home"</code></td>
+	<td>Strings. "street_address_2", "city_2", "state_2", "zip_2", "country_2"</td>
+</tr>
+<tr>
+	<td><code>Address properties mapped to "other"</code></td>
+	<td>Strings. "street_address_3", "city_3", "state_3", "zip_3", "country_3"</td>
+</tr>
+</table>

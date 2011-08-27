@@ -1,6 +1,17 @@
-# NdefRecord API
+# Rho::NdefRecord API
 
 Get data from near field communications Ndef tag records.
+
+## Enabling NFC
+
+To use the NFC methods, you need to enable NFC on the Android device. Do this by adding that capability to the build.yml file:
+
+	:::yaml
+	android: 
+	  extensions: 
+	  - nfc
+
+## NFC Record Hash
 
 An Ndef record consists of a hash.
 
@@ -9,6 +20,7 @@ An Ndef record consists of a hash.
 	TNF = 'tnf'
 	TYPE = 'type'
 	PAYLOAD = 'payload'
+
 
 The Type Name Format (TNF part of the hash) is a 3-bit field that indicates how you interprete the type field (TYPE). Here is a list of the TNF values.
 
@@ -32,7 +44,7 @@ The RTD text type (TYPE part of the hash) is used with the TNF_WELL_KNOWN value.
 	RTD_HANDOVER_REQUEST = [0x48, 0x72] # "Hr"
 	RTD_HANDOVER_SELECT = [0x48, 0x73] # "Hs"
 
-Here is some code that creates a hash for an NdefRecord, which will be part of an NFCMessage to be pushed to an NFC-capable mobile device.
+This example creates a hash for an NdefRecord, which will be part of an NFCMessage to be pushed to an NFC-capable mobile device.
 
 	:::ruby
 	hash = { 'id' => [0], 'type' => Rho::NdefRecord::RTD_URI, 'tnf' => Rho::NdefRecord::TNF_WELL_KNOWN, 'payload' => payload}
@@ -42,29 +54,51 @@ Here is some code that creates a hash for an NdefRecord, which will be part of a
 You can extract data from an Ndef record with the following methods:
 
 	:::ruby
-	get_id                   # returns byte[] 
-	get_tnf                  # returns int
-	get_type                 # returns byte[]
-	get_payload              # returns byte[]
-	get_payload_as_string    # returns string
-	get_byte_array           # returns byte[]
+	Rho::NdefRecord.get_id                   # returns byte[] 
+	Rho::NdefRecord.get_tnf                  # returns int
+	Rho::NdefRecord.get_type                 # returns byte[]
+	Rho::NdefRecord.get_payload              # returns byte[]
+	Rho::NdefRecord.get_payload_as_string    # returns string
+	Rho::NdefRecord.get_byte_array           # returns byte[]
 
 ## make_hash
 
-Returns a hash from an Ndef record, from which you can then extract data with the NdefRecord get methods. The hash has the following format:
+Returns a hash from an Ndef record, from which you can then extract data with the NdefRecord get methods. 
 
- * 'id' - byte[]
- * 'tnf' - int
- * 'type' - byte[]
- * 'payload' - byte[]
- * 'payload_as_string' - string
+	:::ruby
+	Rho::NdefRecord.make_hash
+
+The hash has the following format:
+
+<table border="1">
+<tr>
+	<td><code>id</code></td>
+	<td>Array of bytes. The tag ID.</td>
+</tr>
+<tr>
+	<td><code>tnf</code></td>
+	<td>int. The Type Name Format.</td>
+</tr>
+<tr>
+	<td><code>type</code></td>
+	<td>array of bytes</td>
+</tr>
+<tr>
+	<td><code>payload</code></td>
+	<td>Array of bytes. The tag payload.</td>
+</tr>
+<tr>
+	<td><code>payload_as_string</code></td>
+	<td>String. The message payload in a string (support special formats for URI, TEXT).</td>
+</tr>
+</table>
 
 ## convert_Tnf_to_string
 
 Returns a string that is a text description of the Type Name Format.
 
 	:::ruby
-	convert_Tnf_to_string(tnf)
+	Rho::NdefRecord.convert_Tnf_to_string(tnf)
 
 <table border="1">
 <tr>
@@ -73,9 +107,12 @@ Returns a string that is a text description of the Type Name Format.
 </tr>
 </table>
 
-## NdefRecord.convert_RTD_to_string(rtd)
+## NdefRecord.convert_RTD_to_string
 
 Returns a string that is a text description of the rtd (type part of the NdefRecord hash).
+
+	:::ruby
+	Rho::NdefRecord.convert_RTD_to_string(rtd)
 
 <table border="1">
 <tr>
